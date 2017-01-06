@@ -137,7 +137,43 @@ desired effect
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 1</label>
-                  <textarea class="form-control" rows="3" placeholder="Enter ..." disabled=""></textarea>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 2</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 3</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 4</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 5</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 6</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 7</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 8</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 9</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 10</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
                 </div>
               </div>
               <!-- /.box-body -->
