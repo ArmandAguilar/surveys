@@ -179,7 +179,7 @@ desired effect
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary">Crear</button>
               </div>
             </form>
           </div>
