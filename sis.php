@@ -1,3 +1,3 @@
 <?php
- $path = "$_SERVER[DOCUMENT_ROOT]/survesy";
+ $path = "$_SERVER[DOCUMENT_ROOT]/surveys";
 ?>
