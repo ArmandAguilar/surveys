@@ -103,7 +103,7 @@ desired effect
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu menu-open" style="display: block;">
+          <ul class="treeview-menu menu-close" style="display: block;">
             <li><a href="#"><i class="fa fa-book"></i> Nueva</a></li>
             <li><a href="#"><i class="fa fa-edit"></i> Editar</a></li>
           </ul>
