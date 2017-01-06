@@ -125,16 +125,16 @@ desired effect
       <!-- Your Page Content Here -->
       <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Striped Full Width Table</h3>
+              <h3 class="box-title">Encuestas encontradas</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
               <table class="table table-striped">
                 <tbody><tr>
                   <th style="width: 10px">#</th>
-                  <th>Task</th>
-                  <th>Progress</th>
-                  <th style="width: 40px">Label</th>
+                  <th>Encuesta</th>
+                  <th>Editar</th>
+                  <th>Eliminar</th>
                 </tr>
                 <tr>
                   <td>1.</td>
