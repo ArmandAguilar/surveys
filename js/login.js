@@ -10,7 +10,7 @@ function login()
                      var vals = data
                      if(vals>=1)
                        {
-                          window.location.href="panel.php";
+                          window.location.href="home.php";
                        }
                        else {
                          alert('Error: Usuario o password');
