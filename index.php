@@ -31,7 +31,7 @@
   <div class="login-box-body">
     <p class="login-box-msg"></p>
 
-    <form action="home.html" method="post">
+    <form action="" method="post">
       <div class="form-group has-feedback">
         <input type="text" name="txtUser" id="txtUser" class="form-control" placeholder="Usuario SAP">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -45,7 +45,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <button type="button" class="btn btn-primary btn-block btn-flat" onclick="login();">Sign In</button>
         </div>
         <!-- /.col -->
       </div>
