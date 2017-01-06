@@ -140,18 +140,18 @@ desired effect
                   <td>1.</td>
                   <td>Update software</td>
                   <td>
-                    <span class="badge bg-red">Editar</span>
+                    <span class="badge bg-red" sytle="cursor:pointer">Editar</span>
                   </td>
-                  <td><span class="badge bg-red">Borrar</span></td>
+                  <td><span class="badge bg-red" sytle="cursor:pointer">Borrar</span></td>
                 </tr>
                 <tr>
                   <td>2.</td>
                   <td>Clean database</td>
                   <td>
-                    <button type="button" class="btn btn-block btn-primary">Editar</button>
+                    <span class="badge bg-red">Editar</span>
                   </td>
                   <td>
-                    <button type="button" class="btn btn-block btn-danger">Eliminar</button>
+                    <span class="badge bg-red">Borrar</span>
                   </td>
                 </tr>
                 <tr>
