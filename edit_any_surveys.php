@@ -123,56 +123,65 @@ desired effect
     <section class="content">
 
       <!-- Your Page Content Here -->
-      <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Encuestas encontradas</h3>
+      <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Crear Encuesta</h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody><tr>
-                  <th style="width: 10px">#</th>
-                  <th>Encuesta</th>
-                  <th>Editar</th>
-                  <th>Eliminar</th>
-                </tr>
-                <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
-                    <span class="badge bg-red">Editar</span>
-                  </td>
-                  <td><span class="badge bg-red">Borrar</span></td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Clean database</td>
-                  <td>
-                    <button type="button" class="btn btn-block btn-primary">Editar</button>
-                  </td>
-                  <td>
-                    <button type="button" class="btn btn-block btn-danger">Eliminar</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Cron job running</td>
-                  <td>
-                    <span class="badge bg-red">Editar</span>
-                  </td>
-                  <td><span class="badge bg-red">Borrar</span></td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Fix and squish bugs</td>
-                  <td>
-                    <span class="badge bg-red">Editar</span>
-                  </td>
-                  <td><span class="badge bg-red">Borrar</span></td>
-                </tr>
-              </tbody></table>
-            </div>
-            <!-- /.box-body -->
+            <!-- form start -->
+            <form role="form" lpformnum="1" _lpchecked="1">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Encuesta</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAmJJREFUWAntV7uKIkEUvbYGM4KID3wEIgjKRLLpKGLgFwiCfslGhkb7IbLgAzE1GhMxWxRRBEEwmEgDERWfW6fXuttq60a2wU6B1qlzb9U5fatsKROJVigUArvd7oeAyePx6Af3qGYymT7F2h8Wi+V7Pp+fmE7iv4Sw81GieusKIzNh4puCJzdaHIagCW1F4KSeQ4O4pPLoPb/3INBGBZ7avgz8fxWIxWIUCoX43Blegbe3NwoGg88zwMoncFUB8Yokj8dDdrv9MpfHVquV/H4/iVcpc1qgKAp5vV6y2WxaWhefreB0OimXy6kGkD0YDKhSqdB2u+XJqVSK4vE4QWS5XKrx0WjEcZ/PR9lslhwOh8p1Oh2q1Wp0OBw4RwvOKpBOp1kcSdivZPLvmxrjRCKhiiOOSmQyGXp5ecFQbRhLcRDRaJTe39//BHW+2cDr6ysFAoGrlEgkwpwWS1I7z+VykdvtliHuw+Ew40vABvb7Pf6hLuMk/rGY02ImBZC8dqv04lpOYjaw2WzUPZcB2WMPZet2u1cmZ7MZTSYTNWU+n9N4PJbp3GvXYPIE2ADG9Xqder2e+kTr9ZqazSa1222eA6FqtUoQwqHCuFgscgWQWC6XaTgcEiqKQ9poNOiegbNfwWq1olKppB6yW6cWVcDHbDarIuzuBBaLhWrqVvwy/6wCMnhLXMbR4wnvtX/F5VxdAzJoRH+2BUYItlotmk6nLGW4gX6/z+IAT9+CLwPPr8DprnZ2MIwaQBsV+DBKUEfnQ8EtFRdFneBDKWhCW8EVGbdUQfxESR6qKhaHBrSgCe3fbLTpPlS70M0AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 1</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 2</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 3</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 4</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 5</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 6</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 7</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 8</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 9</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Pregunta 10</label>
+                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                </div>
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="button" class="btn btn-primary">Editar</button>
+              </div>
+            </form>
           </div>
 
     </section>
