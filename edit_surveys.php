@@ -148,11 +148,9 @@ desired effect
                   <td>2.</td>
                   <td>Clean database</td>
                   <td>
-                    <span class="badge bg-red">Editar</span>
+                    <span class="badge bg-red" sytle="cursor:pointer">Editar</span>
                   </td>
-                  <td>
-                    <span class="badge bg-red">Borrar</span>
-                  </td>
+                  <td><span class="badge bg-red" sytle="cursor:pointer">Borrar</span></td>
                 </tr>
                 <tr>
                   <td>3.</td>
