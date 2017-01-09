@@ -32,7 +32,7 @@ function encuesta_save()
                         txtPregunta8:$('#txtPregunta8').val('');
                         txtPregunta9:$('#txtPregunta9').val('');
                         txtPregunta10:$('#txtPregunta10').val('');
-                        alert(data)
+                        alert('The reuslt data' + data)
                         /*window.location.href = 'home.php';*/
                     },
              error:function(req,e,er) {
