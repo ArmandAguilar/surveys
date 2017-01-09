@@ -51,7 +51,7 @@ class CEncuestas extends poolConnecion
                 $obj->CerrarSQLSAP($RSet,$con);
        }
      }
-      return $Sql;
+      return $SqlAsk;
   }
 
   function save_edit_encuesta($info)

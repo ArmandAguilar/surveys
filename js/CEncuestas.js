@@ -32,7 +32,8 @@ function encuesta_save()
                         txtPregunta8:$('#txtPregunta8').val('');
                         txtPregunta9:$('#txtPregunta9').val('');
                         txtPregunta10:$('#txtPregunta10').val('');
-                        window.location.href = 'home.php';
+                        alert(data)
+                        /*window.location.href = 'home.php';*/
                     },
              error:function(req,e,er) {
                 $("#alerta-oka").show(1000);
