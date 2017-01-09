@@ -180,12 +180,17 @@ desired effect
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <div class="alert alert-success alert-dismissible">
+                <div id="alerta-oka" class="alert alert-success alert-dismissible" style="display:none">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h4><i class="icon fa fa-check"></i> Alert!</h4>
-                Success alert preview. This alert is dismissable.
+                <h4><i class="icon fa fa-check"></i> Alerta!</h4>
+                Encuesta creada con exito.
               </div>
-                <button type="button" class="btn btn-primary">Crear</button>
+              <div id="alerta-err" class="alert alert-danger alert-dismissible" style="display:none">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
+                Error: No se pudo crear la encuesta.
+              </div>
+                <button type="button" class="btn btn-primary" onclick="encuesta_save();">Crear</button>
               </div>
             </form>
           </div>
@@ -297,6 +302,6 @@ desired effect
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout. -->
-<script src="../js/CEncuestas.js"></script>
+<script src="./js/CEncuestas.js"></script>
 </body>
 </html>
