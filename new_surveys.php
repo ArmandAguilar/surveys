@@ -129,56 +129,62 @@ desired effect
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" lpformnum="1" _lpchecked="1">
+            <form action = "" role="form" lpformnum="1" _lpchecked="1" method="post">
+              <input type="hidden" name="txtIdUsuario" id="txtIdUsuario" value="<?php echo $_SESSION[IdUsuario]; ?>"/>
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Encuesta</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAmJJREFUWAntV7uKIkEUvbYGM4KID3wEIgjKRLLpKGLgFwiCfslGhkb7IbLgAzE1GhMxWxRRBEEwmEgDERWfW6fXuttq60a2wU6B1qlzb9U5fatsKROJVigUArvd7oeAyePx6Af3qGYymT7F2h8Wi+V7Pp+fmE7iv4Sw81GieusKIzNh4puCJzdaHIagCW1F4KSeQ4O4pPLoPb/3INBGBZ7avgz8fxWIxWIUCoX43Blegbe3NwoGg88zwMoncFUB8Yokj8dDdrv9MpfHVquV/H4/iVcpc1qgKAp5vV6y2WxaWhefreB0OimXy6kGkD0YDKhSqdB2u+XJqVSK4vE4QWS5XKrx0WjEcZ/PR9lslhwOh8p1Oh2q1Wp0OBw4RwvOKpBOp1kcSdivZPLvmxrjRCKhiiOOSmQyGXp5ecFQbRhLcRDRaJTe39//BHW+2cDr6ysFAoGrlEgkwpwWS1I7z+VykdvtliHuw+Ew40vABvb7Pf6hLuMk/rGY02ImBZC8dqv04lpOYjaw2WzUPZcB2WMPZet2u1cmZ7MZTSYTNWU+n9N4PJbp3GvXYPIE2ADG9Xqder2e+kTr9ZqazSa1222eA6FqtUoQwqHCuFgscgWQWC6XaTgcEiqKQ9poNOiegbNfwWq1olKppB6yW6cWVcDHbDarIuzuBBaLhWrqVvwy/6wCMnhLXMbR4wnvtX/F5VxdAzJoRH+2BUYItlotmk6nLGW4gX6/z+IAT9+CLwPPr8DprnZ2MIwaQBsV+DBKUEfnQ8EtFRdFneBDKWhCW8EVGbdUQfxESR6qKhaHBrSgCe3fbLTpPlS70M0AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                  <input type="text" class="form-control" id="txtEncuesta" name="txtEncuesta" placeholder="Nombre de la encuesta.." style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAmJJREFUWAntV7uKIkEUvbYGM4KID3wEIgjKRLLpKGLgFwiCfslGhkb7IbLgAzE1GhMxWxRRBEEwmEgDERWfW6fXuttq60a2wU6B1qlzb9U5fatsKROJVigUArvd7oeAyePx6Af3qGYymT7F2h8Wi+V7Pp+fmE7iv4Sw81GieusKIzNh4puCJzdaHIagCW1F4KSeQ4O4pPLoPb/3INBGBZ7avgz8fxWIxWIUCoX43Blegbe3NwoGg88zwMoncFUB8Yokj8dDdrv9MpfHVquV/H4/iVcpc1qgKAp5vV6y2WxaWhefreB0OimXy6kGkD0YDKhSqdB2u+XJqVSK4vE4QWS5XKrx0WjEcZ/PR9lslhwOh8p1Oh2q1Wp0OBw4RwvOKpBOp1kcSdivZPLvmxrjRCKhiiOOSmQyGXp5ecFQbRhLcRDRaJTe39//BHW+2cDr6ysFAoGrlEgkwpwWS1I7z+VykdvtliHuw+Ew40vABvb7Pf6hLuMk/rGY02ImBZC8dqv04lpOYjaw2WzUPZcB2WMPZet2u1cmZ7MZTSYTNWU+n9N4PJbp3GvXYPIE2ADG9Xqder2e+kTr9ZqazSa1222eA6FqtUoQwqHCuFgscgWQWC6XaTgcEiqKQ9poNOiegbNfwWq1olKppB6yW6cWVcDHbDarIuzuBBaLhWrqVvwy/6wCMnhLXMbR4wnvtX/F5VxdAzJoRH+2BUYItlotmk6nLGW4gX6/z+IAT9+CLwPPr8DprnZ2MIwaQBsV+DBKUEfnQ8EtFRdFneBDKWhCW8EVGbdUQfxESR6qKhaHBrSgCe3fbLTpPlS70M0AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 1</label>
-                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                  <textarea class="form-control" id="txtPregunta1" name="txtPregunta1" rows="3" placeholder="texto..."></textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 2</label>
-                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                  <textarea class="form-control" id="txtPregunta2" name="txtPregunta3" rows="3" placeholder="texto..."></textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 3</label>
-                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                  <textarea class="form-control" id="txtPregunta3" name="txtPregunta3" rows="3" placeholder="texto..."></textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 4</label>
-                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                  <textarea class="form-control" id="txtPregunta4" name="txtPregunta4" rows="3" placeholder="texto..."></textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 5</label>
-                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                  <textarea class="form-control" id="txtPregunta5" name="txtPregunta5"rows="3" placeholder="texto..."></textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 6</label>
-                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                  <textarea class="form-control" id="txtPregunta6" name="txtPregunta6" rows="3" placeholder="texto..."></textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 7</label>
-                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                  <textarea class="form-control" id="txtPregunta7" name="txtPregunta7" rows="3" placeholder="texto..."></textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 8</label>
-                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                  <textarea class="form-control" id="txtPregunta8" name="txtPregunta8" rows="3" placeholder="texto..."></textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 9</label>
-                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                  <textarea class="form-control" id="txtPregunta9" name="txtPregunta9" rows="3" placeholder="texto..."></textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 10</label>
-                  <textarea class="form-control" rows="3" placeholder="texto..."></textarea>
+                  <textarea class="form-control" id="txtPregunta10" name="txtPregunta10" rows="3" placeholder="texto..."></textarea>
                 </div>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
+                <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-check"></i> Alert!</h4>
+                Success alert preview. This alert is dismissable.
+              </div>
                 <button type="button" class="btn btn-primary">Crear</button>
               </div>
             </form>
@@ -291,5 +297,6 @@ desired effect
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout. -->
+<script src="../js/CEncuestas.js"></script>
 </body>
 </html>
