@@ -9,7 +9,7 @@ class CEncuestas extends poolConnecion
   function save_encuesta($info)
   {
     /*we create a inser to AAEncuesta*/
-    /*$IdUsuario = $info->IdUsuario;
+    $IdUsuario = $info->IdUsuario;
     $Encuesta = $info->Encuesta;
     $arrayAks[0] = $info->Pregunta1;
     $arrayAks[1] = $info->Pregunta2;
@@ -30,7 +30,7 @@ class CEncuestas extends poolConnecion
       $obj = new poolConnecion();
       $con=$obj->ConexionSQLSAP();
       $RSet=$obj->QuerySQLSAP($Sql,$con);
-      $obj->CerrarSQLSAP($RSet,$con);*/
+      $obj->CerrarSQLSAP($RSet,$con);
     /* get the id of surveys */
     $objLastId = new poolConnecion();
     $SqlID="SELECT [Id] FROM [SAP].[dbo].[AAEncuesta] order by [Id] asc";
@@ -42,7 +42,7 @@ class CEncuestas extends poolConnecion
     			 }
      $objLastId->CerrarSQLSAP($RSet,$con);
      /* save the ask in the table AAPreguntas */
-     /*foreach ($arrayAks as $key => $value) {
+     foreach ($arrayAks as $key => $value) {
        if (!empty($value)) {
                 $SqlAsk = "INSERT INTO [SAP].[dbo].[AAPregunta] VALUES ('$IdEcuesta','$value')";
                 $obj = new poolConnecion();
@@ -50,8 +50,8 @@ class CEncuestas extends poolConnecion
                 $RSet=$obj->QuerySQLSAP($SqlAsk,$con);
                 $obj->CerrarSQLSAP($RSet,$con);
        }
-     }*/
-      return $IdEncuesta;
+     }
+      return $SqlAsk;
   }
 
   function save_edit_encuesta($info)
