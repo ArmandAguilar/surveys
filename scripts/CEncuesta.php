@@ -43,7 +43,7 @@ class CEncuestas extends poolConnecion
      $objLastId->CerrarSQLSAP($RSet,$con);
      /* save the ask in the table AAPreguntas */
      foreach ($arrayAks as $key => $value) {
-       if (!empty($vale)) {
+       if (!empty($value)) {
                 $SqlAsk = "INSERT INTO [SAP].[dbo].[AAPregunta] VALUES ('$IdEcuesta','$value')";
                 $obj = new poolConnecion();
                 $con=$obj->ConexionSQLSAP();
