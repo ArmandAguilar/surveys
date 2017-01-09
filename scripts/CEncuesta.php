@@ -44,7 +44,7 @@ class CEncuestas extends poolConnecion
      /* save the ask in the table AAPreguntas */
      foreach ($arrayAks as $key => $value) {
        if (!empty($vale)) {
-                $SqlAsk = "INSERT INTO [SAP].[dbo].[AAPregunta] VALUES ('$IdEcuesta','$value')"
+                $SqlAsk = "INSERT INTO [SAP].[dbo].[AAPregunta] VALUES ('$IdEcuesta','$value')";
                 $obj = new poolConnecion();
                 $con=$obj->ConexionSQLSAP();
                 $RSet=$obj->QuerySQLSAP($SqlAsk,$con);
