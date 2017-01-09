@@ -10,7 +10,7 @@ class CEncuestas extends poolConnecion
   {
     $IdUsuario = $info->IdUsuario;
     $Encuesta = $info->Encuesta;
-    $Area = $info->Area;
+    $Area = ".";
     $d = date(d);
     $m = date(m);
     $y = date(Y);
