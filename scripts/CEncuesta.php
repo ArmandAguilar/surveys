@@ -38,7 +38,7 @@ class CEncuestas extends poolConnecion
     $RSet=$objLastId->QuerySQLSAP($SqlID,$con);
      while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
     			 {
-    					 $IdEcuesta = $fila[Id];
+    					 $IdEncuesta = $fila[Id];
     			 }
      $objLastId->CerrarSQLSAP($RSet,$con);
      /* save the ask in the table AAPreguntas */
@@ -51,7 +51,7 @@ class CEncuestas extends poolConnecion
                 $obj->CerrarSQLSAP($RSet,$con);
        }
      }*/
-      return $IdEcuesta;
+      return $IdEncuesta;
   }
 
   function save_edit_encuesta($info)

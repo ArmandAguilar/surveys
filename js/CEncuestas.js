@@ -20,6 +20,7 @@ function encuesta_save()
              data:losdatos,
              success:function(data)
                     {
+                       alert(data)
                         $("#alerta-oka").show(1000);
                         txtEncuesta:$('#txtEncuesta').val('');
                         txtPregunta1:$('#txtPregunta1').val('');
@@ -32,7 +33,7 @@ function encuesta_save()
                         txtPregunta8:$('#txtPregunta8').val('');
                         txtPregunta9:$('#txtPregunta9').val('');
                         txtPregunta10:$('#txtPregunta10').val('');
-                        alert('The reuslt data' + data)
+
                         /*window.location.href = 'home.php';*/
                     },
              error:function(req,e,er) {
