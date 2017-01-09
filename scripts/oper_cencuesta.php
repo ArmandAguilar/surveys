@@ -18,7 +18,7 @@ switch ($_GET[o])
               $info->Pregunta8 = $_POST[txtPregunta8];
               $info->Pregunta9 = $_POST[txtPregunta9];
               $info->Pregunta10 = $_POST[txtPregunta10];
-              $obj->save_encuesta($info);
+              echo $obj->save_encuesta($info);
       break;
   }
 
