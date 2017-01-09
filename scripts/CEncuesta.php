@@ -33,7 +33,7 @@ class CEncuestas extends poolConnecion
       $obj->CerrarSQLSAP($RSet,$con);
     /* get the id of surveys */
     $objLastId = new poolConnecion();
-    $SqlID="SELECT [IdFacturacion] FROM [SAP].[dbo].[AAEncuesta] order by [Id] asc";
+    $SqlID="SELECT [Id] FROM [SAP].[dbo].[AAEncuesta] order by [Id] asc";
     $con=$objLastId->ConexionSQLSAP();
     $RSet=$objLastId->QuerySQLSAP($SqlID,$con);
      while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
