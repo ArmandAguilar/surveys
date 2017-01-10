@@ -1,6 +1,9 @@
 <?php
 ini_set('session.auto_start()','On');
 session_start();
+include("../sis.php");
+include("$path/libs/conexion.php");
+
  ?>
 <!DOCTYPE html>
 <!--
@@ -136,6 +139,25 @@ desired effect
                   <th>Editar</th>
                   <th>Eliminar</th>
                 </tr>
+                <?php
+                          $objTable = new poolConnecion();
+                          $SqlID="SELECT [Id],[Encuesta] FROM [SAP].[dbo].[AAEncuesta] order by [Id] asc";
+                          $con=$objTable->ConexionSQLSAP();
+                          $RSet=$objTable->QuerySQLSAP($SqlID,$con);
+                           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                 {
+                                   $i++;
+                  ?>
+                      <tr>
+                          <td><?php echo $i; ?>.</td>
+                          <td><?php echo $fila[Encuesta]; ?></td>
+                          <td>Editar</td>
+                          <td>Borrar</td>
+                      </tr>
+                  <?php
+                             }
+                           $objTable->CerrarSQLSAP($RSet,$con);
+                 ?>
                 <tr>
                   <td>1.</td>
                   <td>Update software</td>
