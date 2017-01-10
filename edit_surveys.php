@@ -158,38 +158,7 @@ desired effect
                              }
                            $objTable->CerrarSQLSAP($RSet,$con);
                  ?>
-                <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
-                  <td>
-                    <span class="badge bg-red" sytle="cursor:pointer">Editar</span>
-                  </td>
-                  <td><span class="badge bg-red" sytle="cursor:pointer">Borrar</span></td>
-                </tr>
-                <tr>
-                  <td>2.</td>
-                  <td>Clean database</td>
-                  <td>
-                    <span class="badge bg-red" sytle="cursor:pointer">Editar</span>
-                  </td>
-                  <td><span class="badge bg-red" sytle="cursor:pointer">Borrar</span></td>
-                </tr>
-                <tr>
-                  <td>3.</td>
-                  <td>Cron job running</td>
-                  <td>
-                    <span class="badge bg-red">Editar</span>
-                  </td>
-                  <td><span class="badge bg-red">Borrar</span></td>
-                </tr>
-                <tr>
-                  <td>4.</td>
-                  <td>Fix and squish bugs</td>
-                  <td>
-                    <span class="badge bg-red">Editar</span>
-                  </td>
-                  <td><span class="badge bg-red">Borrar</span></td>
-                </tr>
+                
               </tbody></table>
             </div>
             <!-- /.box-body -->
