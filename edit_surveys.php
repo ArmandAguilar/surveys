@@ -161,8 +161,8 @@ desired effect
                       <tr>
                           <td><?php echo $i; ?>.</td>
                           <td><?php echo $fila[Encuesta]; ?></td>
-                          <td><div style="cursor:pointer">Editar</div></td>
-                          <td><div style="cursor:pointer">Borrar</div></td>
+                          <td><div style="cursor:pointer;">Editar</div></td>
+                          <td><div style="cursor:pointer;" onclick="encuesta_delete('<?php echo $fila[Id]; ?>');">Borrar</div></td>
                       </tr>
                   <?php
                              }
@@ -276,7 +276,7 @@ desired effect
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
-
+<script src="./js/CEncuestas.js"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the

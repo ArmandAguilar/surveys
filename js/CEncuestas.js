@@ -53,7 +53,7 @@ function encuesta_delete(id)
                     {
                        alert(data)
                         $("#alerta-oka").show(1000);
-                        window.location.href = 'home.php';
+                        window.location.href = 'edit_serveys.php';
                     },
              error:function(req,e,er) {
                 $("#alerta-oka").show(1000);

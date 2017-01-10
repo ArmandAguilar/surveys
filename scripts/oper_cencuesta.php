@@ -23,7 +23,8 @@ switch ($_GET[o])
       break;
       /*delete*/
       case '2':
-              
+              $info->Id = $_POST[Id];
+              echo "Oka";
       break;
 
   }
