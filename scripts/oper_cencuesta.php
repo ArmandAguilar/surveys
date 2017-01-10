@@ -5,6 +5,7 @@ include("$path/scripts/CEncuesta.php");
 $obj = new CEncuestas();
 switch ($_GET[o])
   {
+    /*insert */
       case '1':
               $info->IdUsuario = $_POST[txtIdUsuario];
               $info->Encuesta = $_POST[txtEncuesta];
@@ -20,6 +21,11 @@ switch ($_GET[o])
               $info->Pregunta10 = $_POST[txtPregunta10];
               echo $obj->save_encuesta($info);
       break;
+      /*delete*/
+      case '2':
+              
+      break;
+
   }
 
 ?>

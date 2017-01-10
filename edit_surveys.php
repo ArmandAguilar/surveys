@@ -126,6 +126,16 @@ desired effect
     <section class="content">
 
       <!-- Your Page Content Here -->
+      <div id="alerta-oka" class="alert alert-success alert-dismissible" style="display:none">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <h4><i class="icon fa fa-check"></i> Alerta!</h4>
+      Encuesta creada con exito.
+    </div>
+    <div id="alerta-err" class="alert alert-danger alert-dismissible" style="display:none">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
+      Error: No se pudo crear la encuesta.
+    </div>
       <div class="box">
             <div class="box-header">
               <h3 class="box-title">Encuestas encontradas</h3>
@@ -158,7 +168,7 @@ desired effect
                              }
                            $objTable->CerrarSQLSAP($RSet,$con);
                  ?>
-                
+
               </tbody></table>
             </div>
             <!-- /.box-body -->

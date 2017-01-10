@@ -41,3 +41,22 @@ function encuesta_save()
              }
           });
 }
+
+function encuesta_delete(id)
+{
+  var losdatos = {txtId:$('#txtId').val()};
+   $.ajax({
+             url:'./scripts/oper_cencuesta.php?o=2',
+             type:'POST',
+             data:losdatos,
+             success:function(data)
+                    {
+                       alert(data)
+                        $("#alerta-oka").show(1000);
+                        window.location.href = 'home.php';
+                    },
+             error:function(req,e,er) {
+                $("#alerta-oka").show(1000);
+             }
+          });
+}

@@ -68,8 +68,16 @@ class CEncuestas extends poolConnecion
   }
   function delete_encuesta($info)
   {
+    /* delete survesy */
     $Id = $info->Id;
-    $Sql = "DELETE FROM [SAP].[dbo].[AAEncuesta] WHERE  Id=''";
+    $Sql = "DELETE FROM [SAP].[dbo].[AAEncuesta] WHERE  Id='$Id'";
+    $obj = new poolConnecion();
+    $con=$obj->ConexionSQLSAP();
+    $RSet=$obj->QuerySQLSAP($Sql,$con);
+    $obj->CerrarSQLSAP($RSet,$con);
+
+    /*Delete  all ask*/
+    $Sql = "DELETE FROM [SAP].[dbo].[AAPreguntas] WHERE  IdEncuesta = '$Id'";
     $obj = new poolConnecion();
     $con=$obj->ConexionSQLSAP();
     $RSet=$obj->QuerySQLSAP($Sql,$con);
