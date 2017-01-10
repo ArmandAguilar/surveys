@@ -151,8 +151,8 @@ desired effect
                       <tr>
                           <td><?php echo $i; ?>.</td>
                           <td><?php echo $fila[Encuesta]; ?></td>
-                          <td>Editar</td>
-                          <td>Borrar</td>
+                          <td><div style="curso:pointer">Editar</div></td>
+                          <td><div style="curso:pointer">Borrar</div></td>
                       </tr>
                   <?php
                              }
