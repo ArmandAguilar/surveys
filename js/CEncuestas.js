@@ -44,7 +44,7 @@ function encuesta_save()
 
 function encuesta_delete(id)
 {
-  var losdatos = {txtId:$('#txtId').val()};
+  var losdatos = {Id:id};
    $.ajax({
              url:'./scripts/oper_cencuesta.php?o=2',
              type:'POST',

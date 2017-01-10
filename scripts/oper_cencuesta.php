@@ -23,7 +23,7 @@ switch ($_GET[o])
       break;
       /*delete*/
       case '2':
-              $info->Id = $_POST[Id];
+              $info -> Id = $_POST[Id];
               echo $obj->delete_encuesta($info);
       break;
 

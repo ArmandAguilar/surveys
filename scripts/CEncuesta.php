@@ -70,19 +70,19 @@ class CEncuestas extends poolConnecion
   {
     /* delete survesy */
     $Id = $info->Id;
-    $Sql = "DELETE FROM [SAP].[dbo].[AAEncuesta] WHERE  Id='$Id'";
+    $Sql1 = "DELETE FROM [SAP].[dbo].[AAEncuesta] WHERE  Id='$Id'";
     $obj = new poolConnecion();
     $con=$obj->ConexionSQLSAP();
-    $RSet=$obj->QuerySQLSAP($Sql,$con);
+    $RSet=$obj->QuerySQLSAP($Sql1,$con);
     $obj->CerrarSQLSAP($RSet,$con);
 
     /*Delete  all ask*/
-    $Sql = "DELETE FROM [SAP].[dbo].[AAPreguntas] WHERE  IdEncuesta = '$Id'";
+    $Sql2 = "DELETE FROM [SAP].[dbo].[AAPreguntas] WHERE  IdEncuesta = '$Id'";
     $obj = new poolConnecion();
     $con=$obj->ConexionSQLSAP();
-    $RSet=$obj->QuerySQLSAP($Sql,$con);
+    $RSet=$obj->QuerySQLSAP($Sql2,$con);
     $obj->CerrarSQLSAP($RSet,$con);
-    return $Sql;
+    return "$Sql1 - $Sql2";
   }
 
 
