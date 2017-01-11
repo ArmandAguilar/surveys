@@ -8,9 +8,9 @@ include("$path/libs/conexion.php");
   $Sql = "SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] WHERE [IdEncuesta] = '$_GET[Id]'";
 
   $con=$obj->ConexionSQLSAP();
-  $RSet=$obj->QuerySQLSAP($Sql,$con);
+  /*$RSet=$obj->QuerySQLSAP($Sql,$con);
   $i = 0;
-/*  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
          {
            $txtPregunta[$i] = $fila[$i];
            $IdPregunta[$i] = $fila[$i];
