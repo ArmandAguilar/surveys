@@ -10,13 +10,13 @@ include("$path/libs/conexion.php");
   $con=$obj->ConexionSQLSAP();
   $RSet=$obj->QuerySQLSAP($Sql,$con);
   $i = 0;
-  /* while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
          {
            $txtPregunta[$i] = $fila[$i];
            $IdPregunta[$i] = $fila[$i];
            $i++;
          }
-   $obj->CerrarSQLSAP($RSet,$con);*/
+   $obj->CerrarSQLSAP($RSet,$con);
 
  ?>
 <!DOCTYPE html>
