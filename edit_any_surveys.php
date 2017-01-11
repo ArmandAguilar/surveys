@@ -6,6 +6,7 @@ include("$path/libs/conexion.php");
 
   /* Get Id for serach the data for edit */
   $Sql = "SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] WHERE [IdEncuesta] = '$_GET[Id]'";
+  echo $Sql;
   /*$con=$obj->ConexionSQLSAP();
   $RSet=$obj->QuerySQLSAP($Sql,$con);
   $i = 0;
