@@ -5,6 +5,17 @@ include("../sis.php");
 include("$path/libs/conexion.php");
 
   /* Get Id for serach the data for edit */
+  $Sql = "SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] WHERE IdEncuesta] = "$_GET[Id];
+  $con=$obj->ConexionSQLSAP();
+  $RSet=$obj->QuerySQLSAP($Sql,$con);
+  $i = 0;
+   while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+         {
+           $txtPregunta[$i] = $fila[$i];
+           $IdPregunta[$i] = $fila[$i];
+           $i++;
+         }
+   $obj->CerrarSQLSAP($RSet,$con);
 
  ?>
 <!DOCTYPE html>
@@ -143,53 +154,53 @@ desired effect
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 1</label>
-                  <textarea class="form-control" id="txtPregunta1" name="txtPregunta1" rows="3" placeholder="texto..."><?php echo $txtPregunta1; ?></textarea>
-                  <input type="hidden" id="txtIdPregunta1" name="txtIdPregunta1" value="<?php echo $IdPregunta1; ?>"/>
+                  <textarea class="form-control" id="txtPregunta1" name="txtPregunta1" rows="3" placeholder="texto..."><?php echo $txtPregunta[0]; ?></textarea>
+                  <input type="hidden" id="txtIdPregunta1" name="txtIdPregunta1" value="<?php echo $IdPregunta[0]; ?>"/>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 2</label>
-                  <textarea class="form-control" id="txtPregunta2" name="txtPregunta3" rows="3" placeholder="texto..."><?php echo $txtPregunta2; ?></textarea>
-                  <input type="hidden" id="txtIdPregunta2" name="txtIdPregunta2" value="<?php echo $IdPregunta2; ?>"/>
+                  <textarea class="form-control" id="txtPregunta2" name="txtPregunta3" rows="3" placeholder="texto..."><?php echo $txtPregunta[1]; ?></textarea>
+                  <input type="hidden" id="txtIdPregunta2" name="txtIdPregunta2" value="<?php echo $IdPregunta[1]; ?>"/>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 3</label>
-                  <textarea class="form-control" id="txtPregunta3" name="txtPregunta3" rows="3" placeholder="texto..."><?php echo $txtPregunta3; ?></textarea>
-                  <input type="hidden" id="txtIdPregunta3" name="txtIdPregunta3" value="<?php echo $IdPregunta3; ?>"/>
+                  <textarea class="form-control" id="txtPregunta3" name="txtPregunta3" rows="3" placeholder="texto..."><?php echo $txtPregunta[2]; ?></textarea>
+                  <input type="hidden" id="txtIdPregunta3" name="txtIdPregunta3" value="<?php echo $IdPregunta[2]; ?>"/>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 4</label>
-                  <textarea class="form-control" id="txtPregunta4" name="txtPregunta4" rows="3" placeholder="texto..."><?php echo $txtPregunta; ?></textarea>
-                  <input type="hidden" id="txtIdPregunta4" name="txtIdPregunta4" value="<?php echo $IdPregunta4; ?>"/>
+                  <textarea class="form-control" id="txtPregunta4" name="txtPregunta4" rows="3" placeholder="texto..."><?php echo $txtPregunta[3]; ?></textarea>
+                  <input type="hidden" id="txtIdPregunta4" name="txtIdPregunta4" value="<?php echo $IdPregunta[3]; ?>"/>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 5</label>
-                  <textarea class="form-control" id="txtPregunta5" name="txtPregunta5"rows="3" placeholder="texto..."></textarea>
-                  <input type="hidden" id="txtIdPregunta5" name="txtIdPregunta5" value="<?php echo $IdPregunta5; ?>"/>
+                  <textarea class="form-control" id="txtPregunta5" name="txtPregunta5"rows="3" placeholder="texto..."><?php echo $txtPregunta[4]; ?></textarea>
+                  <input type="hidden" id="txtIdPregunta5" name="txtIdPregunta5" value="<?php echo $IdPregunta[4]; ?>"/>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 6</label>
-                  <textarea class="form-control" id="txtPregunta6" name="txtPregunta6" rows="3" placeholder="texto..."></textarea>
-                  <input type="hidden" id="txtIdPregunta6" name="txtIdPregunta6" value="<?php echo $IdPregunta6; ?>"/>
+                  <textarea class="form-control" id="txtPregunta6" name="txtPregunta6" rows="3" placeholder="texto..."><?php echo $txtPregunta[5]; ?></textarea>
+                  <input type="hidden" id="txtIdPregunta6" name="txtIdPregunta6" value="<?php echo $IdPregunta[5]; ?>"/>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 7</label>
-                  <textarea class="form-control" id="txtPregunta7" name="txtPregunta7" rows="3" placeholder="texto..."></textarea>
-                  <input type="hidden" id="txtIdPregunta7" name="txtIdPregunta7" value="<?php echo $IdPregunta7; ?>"/>
+                  <textarea class="form-control" id="txtPregunta7" name="txtPregunta7" rows="3" placeholder="texto..."><?php echo $txtPregunta[6]; ?></textarea>
+                  <input type="hidden" id="txtIdPregunta7" name="txtIdPregunta7" value="<?php echo $IdPregunta[6]; ?>"/>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 8</label>
-                  <textarea class="form-control" id="txtPregunta8" name="txtPregunta8" rows="3" placeholder="texto..."></textarea>
-                  <input type="hidden" id="txtIdPregunta8" name="txtIdPregunta8" value="<?php echo $IdPregunta8; ?>"/>
+                  <textarea class="form-control" id="txtPregunta8" name="txtPregunta8" rows="3" placeholder="texto..."><?php echo $txtPregunta[7]; ?></textarea>
+                  <input type="hidden" id="txtIdPregunta8" name="txtIdPregunta8" value="<?php echo $IdPregunta[7]; ?>"/>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 9</label>
-                  <textarea class="form-control" id="txtPregunta9" name="txtPregunta9" rows="3" placeholder="texto..."></textarea>
-                  <input type="hidden" id="txtIdPregunta9" name="txtIdPregunta9" value="<?php echo $IdPregunta9; ?>"/>
+                  <textarea class="form-control" id="txtPregunta9" name="txtPregunta9" rows="3" placeholder="texto..."><?php echo $txtPregunta[8]; ?></textarea>
+                  <input type="hidden" id="txtIdPregunta9" name="txtIdPregunta9" value="<?php echo $IdPregunta[8]; ?>"/>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 10</label>
-                  <textarea class="form-control" id="txtPregunta10" name="txtPregunta10" rows="3" placeholder="texto..."></textarea>
-                  <input type="hidden" id="txtIdPregunta10" name="txtIdPregunta10" value="<?php echo $IdPregunta10; ?>"/>
+                  <textarea class="form-control" id="txtPregunta10" name="txtPregunta10" rows="3" placeholder="texto..."><?php echo $txtPregunta[9]; ?></textarea>
+                  <input type="hidden" id="txtIdPregunta10" name="txtIdPregunta10" value="<?php echo $IdPregunta[9]; ?>"/>
                 </div>
               </div>
               <!-- /.box-body -->
