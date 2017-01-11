@@ -60,3 +60,8 @@ function encuesta_delete(id)
              }
           });
 }
+
+function encuesta_see(id)
+{
+  window.location.href = 'edit_any_surveys.php?Id=' + id;
+}

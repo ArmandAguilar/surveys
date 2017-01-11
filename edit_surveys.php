@@ -161,7 +161,7 @@ desired effect
                       <tr>
                           <td><?php echo $i; ?>.</td>
                           <td><?php echo $fila[Encuesta]; ?></td>
-                          <td><div style="cursor:pointer;">Editar</div></td>
+                          <td><div style="cursor:pointer;" onclick="encuesta_see(<?php echo $fila[Id]; ?>);">Editar</div></td>
                           <td><div style="cursor:pointer;" onclick="encuesta_delete('<?php echo $fila[Id]; ?>');">Borrar</div></td>
                       </tr>
                   <?php

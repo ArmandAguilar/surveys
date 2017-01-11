@@ -26,6 +26,10 @@ switch ($_GET[o])
               $info -> Id = $_POST[Id];
               echo $obj->delete_encuesta($info);
       break;
+      /*see*/
+      case '3':
+              echo "Oka";
+      break;
 
   }
 
