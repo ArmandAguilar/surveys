@@ -159,7 +159,6 @@ desired effect
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <?php echo "$path/libs/conexion.php"; ?>
             <form action = "" role="form" lpformnum="1" _lpchecked="1" method="post">
               <input type="hidden" name="txtIdUsuario" id="txtIdUsuario" value="<?php echo $_SESSION[IdUsuario]; ?>"/>
               <div class="box-body">
