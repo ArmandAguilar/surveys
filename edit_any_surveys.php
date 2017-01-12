@@ -28,7 +28,7 @@ include("$path/libs/conexion.php");
    $i = 0;
    while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
           {
-            $txtEncuenta = $fila[Pregunta];
+            $txtEncuenta = $fila[Encuesta];
           }
     $obj->CerrarSQLSAP($RSet,$con);
 
