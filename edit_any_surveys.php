@@ -1,13 +1,14 @@
 <?php
 ini_set('session.auto_start()','On');
 session_start();
+
 include("sis.php");
 include("$path/libs/conexion.php");
 
   /* Get Id for serach the data for edit */
   $Sql = "SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] WHERE [IdEncuesta] = '$_GET[Id]'";
 
-  $con=$obj->ConexionSQLSAP();
+  /*$con=$obj->ConexionSQLSAP();*/
   /*$RSet=$obj->QuerySQLSAP($Sql,$con);
   $i = 0;
   while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -145,6 +146,7 @@ desired effect
             </div>
             <!-- /.box-header -->
             <!-- form start -->
+            <?php echo "$path/libs/conexion.php"; ?>
             <form action = "" role="form" lpformnum="1" _lpchecked="1" method="post">
               <input type="hidden" name="txtIdUsuario" id="txtIdUsuario" value="<?php echo $_SESSION[IdUsuario]; ?>"/>
               <div class="box-body">
