@@ -7,7 +7,7 @@ include("$path/libs/conexion.php");
 
   /* Get Id for serach the data for edit */
   $obj = new poolConnecion();
-  $Sql = "SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] WHERE [IdEncuesta] = '$_GET[Id]' order by asc";
+  $Sql = "SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] WHERE [IdEncuesta] = '$_GET[Id]' order by Id asc";
 
   $con=$obj->ConexionSQLSAP();
   $RSet=$obj->QuerySQLSAP($Sql,$con);
