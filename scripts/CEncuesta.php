@@ -92,25 +92,31 @@ class CEncuestas extends poolConnecion
      {
           if(!empty($value))
           {
-                //$Pregunta = $txtPregunta[$key];
-                //if(!empty($Pregunta))
-                //{
+                $Pregunta = $txtPregunta[$key];
+                if(!empty($Pregunta))
+                {
                   $sql = "UPDATE [SAP].[dbo].[AAPreguntas] SET [Pregunta] = '$txtPregunta[$key]' WHERE Id='$value'";
                   $obj = new poolConnecion();
                   $con=$obj->ConexionSQLSAP();
                   $RSet=$obj->QuerySQLSAP($sql,$con);
                   $obj->CerrarSQLSAP($RSet,$con);
-                //}
-                //else
-                //{
-                  //$sql = "Delete FROM [SAP].[dbo].[AAPreguntas] WHERE Id='$value'";
-                  //update_mssql_encuesta($sql);
-                //}
+                }
+                else
+                {
+                  $sql = "Delete FROM [SAP].[dbo].[AAPreguntas] WHERE Id='$value'";
+                  $obj = new poolConnecion();
+                  $con=$obj->ConexionSQLSAP();
+                  $RSet=$obj->QuerySQLSAP($sql,$con);
+                  $obj->CerrarSQLSAP($RSet,$con);
+                }
           }
           else
           {
                 $sql = "INSERT INTO [SAP].[dbo].[AAPreguntas] VALUES ('$IdEncuesta','$txtPregunta[$key]')";
-                update_mssql_encuesta($sql);
+                $obj = new poolConnecion();
+                $con=$obj->ConexionSQLSAP();
+                $RSet=$obj->QuerySQLSAP($sql,$con);
+                $obj->CerrarSQLSAP($RSet,$con);
           }
       }
     return $sql;
