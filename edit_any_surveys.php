@@ -161,6 +161,7 @@ desired effect
             <!-- form start -->
             <form action = "" role="form" lpformnum="1" _lpchecked="1" method="post">
               <input type="hidden" name="txtIdUsuario" id="txtIdUsuario" value="<?php echo $_SESSION[IdUsuario]; ?>"/>
+              <input type="hidden" name="txtIdEncuesta" id="txtIdEncuesta" value="<?php echo $_GET[Id]; ?>"/>
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Encuesta</label>
@@ -230,7 +231,7 @@ desired effect
                 <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
                 Error: No se pudo crear la encuesta.
               </div>
-                <button type="button" class="btn btn-primary" onclick="encuesta_save();">Crear</button>
+                <button type="button" class="btn btn-primary" onclick="encuesta_save_edit();">Gurdar</button>
               </div>
             </form>
           </div>

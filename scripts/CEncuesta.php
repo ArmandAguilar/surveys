@@ -56,16 +56,54 @@ class CEncuestas extends poolConnecion
 
   function save_edit_encuesta($info)
   {
-    $Id = $info->Id;
-    $Encuesta = $info->Encuesta;
-    $Area = $info->Area;
-    $Sql = "UPDATE [SAP].[dbo].[AAEncuesta] SET [Encuesta] = '$Encuesta' ,[Area] = '$Area' WHERE Id='$Id'";
+    $txtEncuesta=$info->txtEncuesta;
+    $txtIdEncuesta = $info->txtIdEncuesta;
+    $txtPregunta[0]=$info->txtPregunta1;
+    $txtPregunta[1]=$info->txtPregunta2;
+    $txtPregunta[2]=$info->txtPregunta3;
+    $txtPregunta[3]=$info->txtPregunta4;
+    $txtPregunta[4]=$info->txtPregunta5;
+    $txtPregunta[5]=$info->txtPregunta6;
+    $txtPregunta[6]=$info->txtPregunta7;
+    $txtPregunta[7]=$info->txtPregunta8;
+    $txtPregunta[8]=$info->txtPregunta9;
+    $txtPregunta[9]=$info->txtPregunta10;
+    $txtIdPregunta[0]=$info->txtIdPregunta1;
+    $txtIdPregunta[1]=$info->txtIdPregunta2;
+    $txtIdPregunta[2]=$info->txtIdPregunta3;
+    $txtIdPregunta[3]=$info->txtIdPregunta4;
+    $txtIdPregunta[4]=$info->txtIdPregunta5;
+    $txtIdPregunta[5]=$info->txtIdPregunta6;
+    $txtIdPregunta[6]=$info->txtIdPregunta7;
+    $txtIdPregunta[7]=$info->txtIdPregunta8;
+    $txtIdPregunta[8]=$info->txtIdPregunta9;
+    $txtIdPregunta[9]=$info->txtIdPregunta10;
+
+    /* we update a name of surveys */
+    $Sql = "UPDATE [SAP].[dbo].[AAEncuesta] SET [Encuesta] = '$txtEncuesta'  WHERE Id='$IdEncuesta'";
     $obj = new poolConnecion();
     $con=$obj->ConexionSQLSAP();
     $RSet=$obj->QuerySQLSAP($Sql,$con);
     $obj->CerrarSQLSAP($RSet,$con);
-    return $Sql;
+    /*We update or insert ask */
+    foreach ($txtIdPregunta as $key => $value)
+     {
+          if(!empty($value))
+          {
+                /*update*/
+                $sql = "UPDATE [SAP].[dbo].[AAPreguntas] SET [Pregunta] = '$txtPregunta[$key]' WHERE Id='$value'";
+                update_mssql($sql);
+          }
+          else
+          {
+                /*insert*/
+                $sql = "INSERT INTO [SAP].[dbo].[AAPreguntas] VALUES ('$IdEncuesta','$txtPregunta[$key]')";
+                update_mssql($sql);
+          }
+      }
+    return $sql;
   }
+
   function delete_encuesta($info)
   {
     /* delete survesy */
@@ -84,7 +122,13 @@ class CEncuestas extends poolConnecion
     $obj->CerrarSQLSAP($RSet,$con);
     return "$Sql1 - $Sql2";
   }
-
+function update_mssql($Sql)
+{
+  $obj = new poolConnecion();
+  $con=$obj->ConexionSQLSAP();
+  $RSet=$obj->QuerySQLSAP($Sql,$con);
+  $obj->CerrarSQLSAP($RSet,$con);
+}
 
 }
 

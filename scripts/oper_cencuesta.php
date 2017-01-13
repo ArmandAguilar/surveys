@@ -26,9 +26,32 @@ switch ($_GET[o])
               $info -> Id = $_POST[Id];
               echo $obj->delete_encuesta($info);
       break;
-      /*see*/
+      /*update*/
       case '3':
-              echo "Oka";
+                $txtEncuesta->$_POST[txtEncuesta];
+                $txtIdEncuesta->$_POST[txtIdEncuesta];
+                $txtPregunta1->$_POST[txtPregunta1];
+                $txtPregunta2->$_POST[txtPregunta2];
+                $txtPregunta3->$_POST[txtPregunta3];
+                $txtPregunta4->$_POST[txtPregunta4];
+                $txtPregunta5->$_POST[txtPregunta5];
+                $txtPregunta6->$_POST[txtPregunta6];
+                $txtPregunta7->$_POST[txtPregunta7];
+                $txtPregunta8->$_POST[txtPregunta8];
+                $txtPregunta9->$_POST[txtPregunta9];
+                $txtPregunta10->$_POST[txtPregunta10];
+                $txtIdPregunta1->$_POST[txtIdPregunta1];
+                $txtIdPregunta2->$_POST[txtIdPregunta2];
+                $txtIdPregunta3->$_POST[txtIdPregunta3];
+                $txtIdPregunta4->$_POST[txtIdPregunta4];
+                $txtIdPregunta5->$_POST[txtIdPregunta5];
+                $txtIdPregunta6->$_POST[txtIdPregunta6];
+                $txtIdPregunta7->$_POST[txtIdPregunta7];
+                $txtIdPregunta8->$_POST[txtIdPregunta8];
+                $txtIdPregunta9->$_POST[txtIdPregunta9];
+                $txtIdPregunta10->$_POST[txtIdPregunta10];
+                echo $obj->save_edit_encuesta($info);
+
       break;
 
   }
