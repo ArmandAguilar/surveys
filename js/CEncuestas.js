@@ -20,7 +20,7 @@ function encuesta_save()
              data:losdatos,
              success:function(data)
                     {
-                       $("#alerta-err").show(500);
+                       $("#alerta-err").hide(500);
                         $("#alerta-oka").show(1000);
                         txtEncuesta:$('#txtEncuesta').val('');
                         txtPregunta1:$('#txtPregunta1').val('');
@@ -98,7 +98,7 @@ function encuesta_save_edit()
              success:function(data)
                     {
                         alert(data);
-                        $("#alerta-err").show(500);
+                        $("#alerta-err").hide(500);
                         $("#alerta-oka").show(1000);
                         txtEncuesta:$('#txtEncuesta').val('');
                         txtPregunta1:$('#txtPregunta1').val('');
