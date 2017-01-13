@@ -86,21 +86,21 @@ class CEncuestas extends poolConnecion
     $RSet=$obj->QuerySQLSAP($Sql,$con);
     $obj->CerrarSQLSAP($RSet,$con);
     /*We update or insert ask */
-    foreach ($txtIdPregunta as $key => $value)
+    /*foreach ($txtIdPregunta as $key => $value)
      {
           if(!empty($value))
           {
                 /*update*/
-                $sql = "UPDATE [SAP].[dbo].[AAPreguntas] SET [Pregunta] = '$txtPregunta[$key]' WHERE Id='$value'";
+              /*  $sql = "UPDATE [SAP].[dbo].[AAPreguntas] SET [Pregunta] = '$txtPregunta[$key]' WHERE Id='$value'";
                 update_mssql($sql);
           }
           else
           {
                 /*insert*/
-                $sql = "INSERT INTO [SAP].[dbo].[AAPreguntas] VALUES ('$IdEncuesta','$txtPregunta[$key]')";
+              /*  $sql = "INSERT INTO [SAP].[dbo].[AAPreguntas] VALUES ('$IdEncuesta','$txtPregunta[$key]')";
                 update_mssql($sql);
           }
-      }
+      }*/
     return $sql;
   }
 
