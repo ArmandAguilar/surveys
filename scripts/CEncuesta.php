@@ -88,7 +88,7 @@ class CEncuestas extends poolConnecion
 
 
     /*We update or insert ask */
-    foreach ($txtIdPregunta as $key => $value)
+    /*foreach ($txtIdPregunta as $key => $value)
      {
           if(!empty($value))
           {
@@ -102,7 +102,7 @@ class CEncuestas extends poolConnecion
                 $sql = "INSERT INTO [SAP].[dbo].[AAPreguntas] VALUES ('$IdEncuesta','$txtPregunta[$key]')";
                 update_mssql($sql);
           }
-      }
+      }*/
     return $Sql;
   }
 
