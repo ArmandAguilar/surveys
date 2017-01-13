@@ -100,13 +100,11 @@ class CEncuestas extends poolConnecion
                 else
                 {
                   $sql = "Delete FROM [SAP].[dbo].[AAPreguntas] WHERE Id='$value'";
-                  update_mssql_encuesta($sql);
+                  //update_mssql_encuesta($sql);
                 }
-
           }
           else
           {
-
                 $sql = "INSERT INTO [SAP].[dbo].[AAPreguntas] VALUES ('$IdEncuesta','$txtPregunta[$key]')";
                 update_mssql($sql);
           }
