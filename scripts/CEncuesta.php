@@ -129,7 +129,7 @@ function update_mssql_encuesta($Sql)
   $obj = new poolConnecion();
   $con=$obj->ConexionSQLSAP();
   $RSet=$obj->QuerySQLSAP($Sql,$con);
-  $obj->CerrarSQLSAP($RSet,$con);
+  //$obj->CerrarSQLSAP($RSet,$con);
 }
 
 }
