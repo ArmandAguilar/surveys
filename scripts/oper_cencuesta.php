@@ -51,7 +51,6 @@ switch ($_GET[o])
                 $info->$txtIdPregunta9=$_POST[txtIdPregunta9];
                 $info->$txtIdPregunta10=$_POST[txtIdPregunta10];
                 echo $obj->save_edit_encuesta($info);
-
       break;
 
   }

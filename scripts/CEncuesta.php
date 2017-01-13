@@ -101,7 +101,7 @@ class CEncuestas extends poolConnecion
                 update_mssql($sql);
           }
       }*/
-    return $sql;
+    return $Sql;
   }
 
   function delete_encuesta($info)
