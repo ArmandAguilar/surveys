@@ -57,7 +57,7 @@ class CEncuestas extends poolConnecion
   function save_edit_encuesta($info)
   {
     $txtEncuesta = $info->txtEncuesta;
-    $txtIdEncuesta = $info->txtIdEncuesta;
+    $IdEncuesta = $info->txtIdEncuesta;
     $txtPregunta[0] = $info->txtPregunta1;
     $txtPregunta[1] = $info->txtPregunta2;
     $txtPregunta[2] = $info->txtPregunta3;
@@ -88,7 +88,7 @@ class CEncuestas extends poolConnecion
 
 
     /*We update or insert ask */
-    /*foreach ($txtIdPregunta as $key => $value)
+    foreach ($txtIdPregunta as $key => $value)
      {
           if(!empty($value))
           {
@@ -102,7 +102,7 @@ class CEncuestas extends poolConnecion
                 $sql = "INSERT INTO [SAP].[dbo].[AAPreguntas] VALUES ('$IdEncuesta','$txtPregunta[$key]')";
                 update_mssql($sql);
           }
-      }*/
+      }
     return $Sql;
   }
 
