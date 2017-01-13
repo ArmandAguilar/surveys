@@ -20,7 +20,7 @@ function encuesta_save()
              data:losdatos,
              success:function(data)
                     {
-                       alert(data)
+                       $("#alerta-err").show(500);
                         $("#alerta-oka").show(1000);
                         txtEncuesta:$('#txtEncuesta').val('');
                         txtPregunta1:$('#txtPregunta1').val('');
@@ -56,7 +56,7 @@ function encuesta_delete(id)
                         window.location.href = 'edit_surveys.php';
                     },
              error:function(req,e,er) {
-                $("#alerta-oka").show(1000);
+                $("#alerta-err").show(1000);
              }
           });
 }
@@ -97,7 +97,7 @@ function encuesta_save_edit()
              data:losdatos,
              success:function(data)
                     {
-                       alert(data)
+                        $("#alerta-err").show(500);
                         $("#alerta-oka").show(1000);
                         txtEncuesta:$('#txtEncuesta').val('');
                         txtPregunta1:$('#txtPregunta1').val('');
@@ -110,11 +110,10 @@ function encuesta_save_edit()
                         txtPregunta8:$('#txtPregunta8').val('');
                         txtPregunta9:$('#txtPregunta9').val('');
                         txtPregunta10:$('#txtPregunta10').val('');
-
-                        /*window.location.href = 'home.php';*/
+                        $("#alerta-oka").hide(1000);
                     },
              error:function(req,e,er) {
-                $("#alerta-oka").show(1000);
+                $("#alerta-err").show(1000);
              }
           });
 }
