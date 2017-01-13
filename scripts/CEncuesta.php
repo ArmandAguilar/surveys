@@ -92,7 +92,7 @@ class CEncuestas extends poolConnecion
      {
           if(!empty($value))
           {
-                $Pregunta = $txtPregunta[$key];
+                //$Pregunta = $txtPregunta[$key];
                 //if(!empty($Pregunta))
                 //{
                   $sql = "UPDATE [SAP].[dbo].[AAPreguntas] SET [Pregunta] = '$txtPregunta[$key]' WHERE Id='$value'";
