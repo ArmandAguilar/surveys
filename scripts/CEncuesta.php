@@ -96,7 +96,10 @@ class CEncuestas extends poolConnecion
                 //if(!empty($Pregunta))
                 //{
                   $sql = "UPDATE [SAP].[dbo].[AAPreguntas] SET [Pregunta] = '$txtPregunta[$key]' WHERE Id='$value'";
-                  update_mssql_encuesta($sql);
+                  $obj = new poolConnecion();
+                  $con=$obj->ConexionSQLSAP();
+                  $RSet=$obj->QuerySQLSAP($sql,$con);
+                  $obj->CerrarSQLSAP($RSet,$con);
                 //}
                 //else
                 //{
@@ -136,7 +139,7 @@ function update_mssql_encuesta($Sql)
   $obj = new poolConnecion();
   $con=$obj->ConexionSQLSAP();
   $RSet=$obj->QuerySQLSAP($Sql,$con);
-  //$obj->CerrarSQLSAP($RSet,$con);
+  $obj->CerrarSQLSAP($RSet,$con);
 }
 
 }
