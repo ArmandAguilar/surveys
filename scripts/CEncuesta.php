@@ -56,7 +56,7 @@ class CEncuestas extends poolConnecion
 
   function save_edit_encuesta($info)
   {
-    /*$txtEncuesta = $info->txtEncuesta;
+    $txtEncuesta = $info->txtEncuesta;
     $txtIdEncuesta = $info->txtIdEncuesta;
     $txtPregunta[0] = $info->txtPregunta1;
     $txtPregunta[1] = $info->txtPregunta2;
@@ -77,32 +77,32 @@ class CEncuestas extends poolConnecion
     $txtIdPregunta[6] = $info->txtIdPregunta7;
     $txtIdPregunta[7] = $info->txtIdPregunta8;
     $txtIdPregunta[8] = $info->txtIdPregunta9;
-    $txtIdPregunta[9] = $info->txtIdPregunta10;*/
+    $txtIdPregunta[9] = $info->txtIdPregunta10;
 
     /* we update a name of surveys */
     $Sql = "UPDATE [SAP].[dbo].[AAEncuesta] SET [Encuesta] = '$txtEncuesta'  WHERE Id='$IdEncuesta'";
-    /*$obj = new poolConnecion();
+    $obj = new poolConnecion();
     $con=$obj->ConexionSQLSAP();
     $RSet=$obj->QuerySQLSAP($Sql,$con);
-    $obj->CerrarSQLSAP($RSet,$con);*/
+    $obj->CerrarSQLSAP($RSet,$con);
 
 
     /*We update or insert ask */
-    /*foreach ($txtIdPregunta as $key => $value)
+    foreach ($txtIdPregunta as $key => $value)
      {
           if(!empty($value))
           {
                 /*update*/
-              /*  $sql = "UPDATE [SAP].[dbo].[AAPreguntas] SET [Pregunta] = '$txtPregunta[$key]' WHERE Id='$value'";
+                $sql = "UPDATE [SAP].[dbo].[AAPreguntas] SET [Pregunta] = '$txtPregunta[$key]' WHERE Id='$value'";
                 update_mssql($sql);
           }
           else
           {
                 /*insert*/
-              /*  $sql = "INSERT INTO [SAP].[dbo].[AAPreguntas] VALUES ('$IdEncuesta','$txtPregunta[$key]')";
+                $sql = "INSERT INTO [SAP].[dbo].[AAPreguntas] VALUES ('$IdEncuesta','$txtPregunta[$key]')";
                 update_mssql($sql);
           }
-      }*/
+      }
     return $Sql;
   }
 
