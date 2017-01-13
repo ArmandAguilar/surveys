@@ -106,7 +106,7 @@ class CEncuestas extends poolConnecion
           else
           {
                 $sql = "INSERT INTO [SAP].[dbo].[AAPreguntas] VALUES ('$IdEncuesta','$txtPregunta[$key]')";
-                update_mssql($sql);
+                update_mssql_encuesta($sql);
           }
       }
     return $sql;
