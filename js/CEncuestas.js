@@ -97,6 +97,7 @@ function encuesta_save_edit()
              data:losdatos,
              success:function(data)
                     {
+                        alert(data);
                         $("#alerta-err").show(500);
                         $("#alerta-oka").show(1000);
                         txtEncuesta:$('#txtEncuesta').val('');
