@@ -1,3 +1,10 @@
+<?php
+ini_set('session.auto_start()','On');
+session_start();
+include("../sis.php");
+include("$path/libs/conexion.php");
+
+ ?>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -79,10 +86,10 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo $_SESSION[Avatar]; ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p><?php echo $_SESSION[Usuario]; ?></p>
           <!-- Status -->
         </div>
       </div>
@@ -91,7 +98,19 @@ desired effect
       <ul class="sidebar-menu">
         <li class="header"></li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-calendar-minus-o"></i> <span>Proyectos</span></a></li>
+        <li><a href="proyectos.html"><i class="fa fa-calendar-minus-o"></i> <span>Proyectos</span></a></li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-file-text-o"></i> <span>Encuestas</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: block;">
+            <li><a href="new_surveys.php"><i class="fa fa-book"></i> Nueva</a></li>
+            <li><a href="edit_surveys.php"><i class="fa fa-edit"></i> Editar</a></li>
+          </ul>
+        </li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
