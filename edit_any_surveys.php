@@ -126,7 +126,7 @@ desired effect
       <ul class="sidebar-menu">
         <li class="header"></li>
         <!-- Optionally, you can add icons to the links -->
-        <li><a href="proyectos.html"><i class="fa fa-calendar-minus-o"></i> <span>Proyectos</span></a></li>
+        <li><a href="proyectos.php"><i class="fa fa-calendar-minus-o"></i> <span>Proyectos</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-file-text-o"></i> <span>Encuestas</span>
