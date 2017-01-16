@@ -138,7 +138,7 @@ desired effect
                                   </tr>
                                   <?php
                                           $objTable = new poolConnecion();
-                                          $SqlID="SELECT [NumProyecto],[NomProyecto] FROM [SAP].[dbo].[CatalogoDeProyectos] order by  [NumProyecto] desc";
+                                          $SqlID="SELECT [NumProyecto],[NomProyecto] FROM [SAP].[dbo].[CatalogoDeProyectos] Where [EstadoCompra] = 'Activo' order by  [NumProyecto] desc";
                                           $con=$objTable->ConexionSQLSAP();
                                           $RSet=$objTable->QuerySQLSAP($SqlID,$con);
                                            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
