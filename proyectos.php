@@ -134,24 +134,24 @@ desired effect
                           <tbody>
                                   <tr>
                                       <th style="width: 10px">#</th>
-                                      <th>Task</th>
+                                      <th>Proyectos</th>
                                   </tr>
+                                  <?php
+                                          $objTable = new poolConnecion();
+                                          $SqlID="SELECT [NumProyecto],[NomProyecto]vFROM [SAP].[dbo].[CatalogoDeProyectos]";
+                                          $con=$objTable->ConexionSQLSAP();
+                                          $RSet=$objTable->QuerySQLSAP($SqlID,$con);
+                                           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                                 {
+                                                   $i++;
+                                   ?>
                                  <tr>
-                                    <td>1720.-</td>
-                                    <td><a href='task.html'> Reserva Escondida Fase Encino </a></td>
+                                    <td><?php echo $i; ?>.</td>
+                                    <td><div style="cursor:pinter"><?php echo $fila[NumProyecto]; ?> .- <?php echo $fila[NomProyecto]; ?></div></td>
                                 </tr>
-                                <tr>
-                                   <td>1718.-</td>
-                                   <td><a href='task.html'> Planos y memorias de licencias ABILIA CC TLATELOLCO </a></td>
-                               </tr>
-                               <tr>
-                                  <td>1719.-</td>
-                                  <td><a href='task.html'> Gerencia Estructural Averanda. </a></td>
-                              </tr>
-                              <tr>
-                                 <td>1726.-</td>
-                                 <td><a href='task.html'> Maramod CETRAM Constitucion 1917 </a></td>
-                             </tr>
+                                <?php
+                                                }
+                                 ?>
                         </tbody>
                 </table>
           </div>
