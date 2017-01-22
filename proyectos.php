@@ -134,7 +134,7 @@ desired effect
                           <tbody>
                                   <tr>
                                       <th style="width: 10px">#</th>
-                                      <th>Proyectos</th>
+                                      <th>Proyecto</th>
                                   </tr>
                                   <?php
                                           $objTable = new poolConnecion();
@@ -147,7 +147,7 @@ desired effect
                                    ?>
                                  <tr>
                                     <td><?php echo $i; ?>.</td>
-                                    <td><div style="cursor:pinter"><?php echo $fila[NumProyecto]; ?> .- <?php echo $fila[NomProyecto]; ?></div></td>
+                                    <td><div style="cursor:pinter" onclick="show_all_task('<?php echo $fila[NumProyecto]; ?>')"><?php echo $fila[NumProyecto]; ?> .- <?php echo $fila[NomProyecto]; ?></div></td>
                                 </tr>
                                 <?php
                                                 }
@@ -259,7 +259,7 @@ desired effect
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
-
+<script src="./js/CProyectos.js"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
