@@ -134,7 +134,9 @@ desired effect
                           <tbody>
                                   <tr>
                                       <th style="width: 10px">#</th>
-                                      <th>Proyecto</th>
+                                      <th>Tarea</th>
+                                      <th>Usuario</th>
+                                      <th>Encuesta</th>
                                   </tr>
                                   <?php
                                           $objTable = new poolConnecion();
@@ -162,7 +164,7 @@ desired effect
                                    ?>
                                  <tr>
                                     <td><?php echo $i; ?>.</td>
-                                    <td><div style="cursor:pinter" onclick="show_all_task('<?php echo $fila[NumProyecto]; ?>')"><?php echo $fila[NumProyecto]; ?> .- <?php echo $fila[NomProyecto]; ?></div></td>
+                                    <td></td>
                                 </tr>
                                 <?php
                                                 }
