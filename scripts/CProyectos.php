@@ -29,9 +29,9 @@ class CProyectos extends poolConnecion
       if (!empty($value))
       {
         $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','$idTarea','$value','0')";
-        $con=$obj->ConexionSQLSAP();
+        /*$con=$obj->ConexionSQLSAP();
         $RSet=$obj->QuerySQLSAP($sql,$con);
-        $obj->CerrarSQLNorthwind($RSet,$con);
+        $obj->CerrarSQLNorthwind($RSet,$con);*/
       }
     }
         return $sql;
