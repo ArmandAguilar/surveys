@@ -5,8 +5,8 @@ function show_all_task(IdProyecto)
 }
 function apply_surveys()
 {
-  var losdato = {
-                  idEncuestado:$('#cboEncuesta').val(),
+  var losdatos = {
+                  idEncuestado:$('#txtIdEncuestado').val(),
                   idEncuesta:$('#cboEncuesta').val()
                 }
                 alert($('#cboEncuesta').val());
