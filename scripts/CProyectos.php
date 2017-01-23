@@ -29,12 +29,18 @@ class CProyectos extends poolConnecion
       if (!empty($value))
       {
         $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','$idTarea','$value','0')";
-        /*$con=$obj->ConexionSQLSAP();
+        $con=$obj->ConexionSQLSAP();
         $RSet=$obj->QuerySQLSAP($sql,$con);
-        $obj->CerrarSQLNorthwind($RSet,$con);*/
+        $obj->CerrarSQLSAP($RSet,$con);
       }
     }
-        return $sql;
+
+    /*change tehe ststa of o in field Evaluado*/
+    $Sql="UPDATE [SAP].[dbo].[AATareasTeamWork] SET [Evaluada] = 'Si' WHERE [IdTeamWork]='$idTarea'";
+    $con=$obj->ConexionSQLSAP();
+    $RSet=$obj->QuerySQLSAP($sql,$con);
+    $obj->CerrarSQLSAP($RSet,$con);
+    return $sql;
   }
 
 }
