@@ -209,7 +209,7 @@ desired effect
                             }
                       ?>
                   </select>
-                  <input type="hidden" name = "txtIdEncuestador" id="IdtxtEncuestador"  value="<?php echo $_SESSION[IdUsuario]; ?>"/>
+                  <input type="hidden" name = "txtIdEncuestador" id="txtIdEncuestador"  value="<?php echo $_SESSION[IdUsuario]; ?>"/>
                   <input type="hidden" name = "txtIdEncuestado" id="txtIdEncuestado" />
                   <input type="hidden" name = "txtIdTarea" id="txtIdTarea" />
                 </div>
