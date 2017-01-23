@@ -209,7 +209,8 @@ desired effect
                             }
                       ?>
                   </select>
-                  <input type="text" name = "txtIdEncuestado" id="txtIdEncuestado" />
+                  <input type="hidden" name = "txtEncuestador" id="txtEncuestador" />
+                  <input type="hidden" name = "txtIdEncuestado" id="txtIdEncuestado" />
                 </div>
 
               </div>
