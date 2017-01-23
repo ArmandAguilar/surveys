@@ -134,7 +134,7 @@ desired effect
                           <tbody>
                                   <tr>
                                       <th style="width: 10px">#</th>
-                                      <th>Proyecto<th>
+                                      <th>Proyecto</th>
                                       <th>Tarea</th>
                                       <th>Usuario</th>
                                       <th>Encuesta</th>
