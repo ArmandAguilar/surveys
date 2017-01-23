@@ -147,6 +147,7 @@ desired effect
 	                                                    ,[SAP].[dbo].[AATareasTeamWork].[IdTeamWork]
                                                       ,[SAP].[dbo].[AATareasTeamWork].[NoProyecto]
                                                       ,[SAP].[dbo].CatalogoDeProyectos.[NomProyecto]
+                                                      ,[Northwind].[dbo].Usuarios.[Id] As IdUsuarioAEncuestar
                                                       ,[Northwind].[dbo].Usuarios.[Nombre]
                                                       ,[Northwind].[dbo].Usuarios.[Apellidos]
                                                       ,[SAP].[dbo].[AATareasTeamWork].[Tarea]
@@ -169,7 +170,7 @@ desired effect
                                     <td><?php echo $fila[NoProyecto]; ?></td>
                                     <td><?php echo $fila[Tarea]; ?></td>
                                     <td><?php echo "$fila[Nombre] $fila[Apellidos]"; ?></td>
-                                    <td><div data-toggle="modal" data-target="#myModal" style="cursor:pointer"> Aplicar encuesta</div></td>
+                                    <td><div data-toggle="modal" data-target="#myModal" style="cursor:pointer" onclick="set_surveys(<?php echo $fila[IdUsuarioAEncuestar]; ?>)"> Aplicar encuesta</div></td>
 
                                 </tr>
                                 <?php
