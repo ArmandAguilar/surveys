@@ -158,7 +158,7 @@ desired effect
                                                       [Northwind].[dbo].[Usuarios]
                                                       WHERE
                                                             ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] =  [SAP].[dbo].[CatalogoDeProyectos].[NumProyecto] and
-                                                            [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id]) and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '1894')";
+                                                            [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id]) and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '$_GET[NumProy]')";
                                           $con=$objTable->ConexionSQLSAP();
                                           $RSet=$objTable->QuerySQLSAP($SqlID,$con);
                                            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -170,7 +170,7 @@ desired effect
                                     <td><?php echo $fila[NoProyecto]; ?></td>
                                     <td><?php echo $fila[Tarea]; ?></td>
                                     <td><?php echo "$fila[Nombre] $fila[Apellidos]"; ?></td>
-                                    <td><div data-toggle="modal" data-target="#myModal" style="cursor:pointer" onclick="set_surveys(<?php echo $fila[IdUsuarioAEncuestar]; ?>)"> Aplicar encuesta</div></td>
+                                    <td><div data-toggle="modal" data-target="#myModal" style="cursor:pointer" onclick="set_surveys(<?php echo $fila[IdUsuarioAEncuestar]; ?>,<?php echo $fila[IdTeamWork]; ?>)"> Aplicar encuesta</div></td>
 
                                 </tr>
                                 <?php
