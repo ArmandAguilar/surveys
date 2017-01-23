@@ -38,7 +38,7 @@ class CProyectos extends poolConnecion
     /*change tehe ststa of o in field Evaluado*/
     $Sql="UPDATE [SAP].[dbo].[AATareasTeamWork] SET [Evaluada] = 'Si' WHERE [IdTeamWork]='$idTarea'";
     $con=$obj->ConexionSQLSAP();
-    $RSet=$obj->QuerySQLSAP($sql,$con);
+    $RSet=$obj->QuerySQLSAP($Sql,$con);
     $obj->CerrarSQLSAP($RSet,$con);
     return $sql;
   }
