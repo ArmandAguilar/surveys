@@ -9,4 +9,6 @@ function apply_surveys()
                   idEncuestado:$('#cboEncuesta').val(),
                   idEncuesta:$('#cboEncuesta').val()
                 }
+                alert($('#cboEncuesta').val());
+                alert($('#cboEncuesta').val()):
 }

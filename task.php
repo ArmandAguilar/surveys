@@ -213,7 +213,7 @@ desired effect
 
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Aplicar</button>
+                <button type="button" class="btn btn-primary" onclick="apply_surveys();">Aplicar</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
               </div>
             </div>
