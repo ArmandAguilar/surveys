@@ -2,7 +2,7 @@ function login_app()
 {
       var losdatos = {txtUser:$("#txtUser").val(),txtPassword:$("#txtPassword").val()};
       $.ajax({
-                url:'./scripts/login_app.php?o=1',
+                url:'../scripts/login_app.php?o=1',
                 type:'POST',
                 data:losdatos,
                 success:function(data)
