@@ -147,7 +147,7 @@ desired effect
                                    ?>
                                  <tr>
                                     <td><?php echo $i; ?>.</td>
-                                    <td><div style="cursor:pinter" onclick="show_all_task('<?php echo $fila[NumProyecto]; ?>')"><?php echo $fila[NumProyecto]; ?> .- <?php echo $fila[NomProyecto]; ?></div></td>
+                                    <td><div style="cursor:pointer" onclick="show_all_task('<?php echo $fila[NumProyecto]; ?>')"><?php echo $fila[NumProyecto]; ?> .- <?php echo $fila[NomProyecto]; ?></div></td>
                                 </tr>
                                 <?php
                                                 }
