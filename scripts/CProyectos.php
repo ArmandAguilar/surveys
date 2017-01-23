@@ -17,7 +17,7 @@ class CProyectos extends poolConnecion
     $obj = new poolConnecion();
     $Sql="SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] WHERE [IdEncuesta] = '$idEncuesta'";
     $con=$obj->ConexionSQLSAP();
-    $RSet=$obj->QuerySQLSAP($SqlID,$con);
+    $RSet=$obj->QuerySQLSAP($Sql,$con);
      while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
            {
               $ArrayID[$NumAsk] = $fila[Id];
