@@ -95,6 +95,7 @@ desired effect
       <ul class="sidebar-menu">
         <li class="header"></li>
         <!-- Optionally, you can add icons to the links -->
+        <li><a href="logout.php"><i class="fa fa-power-off"></i> <span>Salir</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

@@ -142,6 +142,7 @@ desired effect
 
             }
          ?>
+         <li><a href="logout.php"><i class="fa fa-power-off"></i> <span>Salir</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
