@@ -1,6 +1,19 @@
 <?php
 ini_set('session.auto_start()','On');
 session_start();
+include("../sis.php");
+include("$path/libs/conexion.php");
+
+/* get the las surveys  of user */
+$objLastSurveys = new poolConnecion();
+$Sql="SELECT [Encuesta] FROM [SAP].[dbo].[AAEncuesta] Where [IdUsuario] ='$_SESSION[IdUsuario]' and [Id]='17'";
+$con=$objLastSurveys->ConexionSQLSAP();
+$RSet=$objLastSurveys->QuerySQLSAP($Sql,$con);
+ while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+       {
+          $Encuesta = $fila[Encuesta];
+
+       }
  ?>
 <!DOCTYPE html>
 <!--
@@ -119,7 +132,26 @@ desired effect
     <section class="content">
 
       <!-- Your Page Content Here -->
+      <div class="box">
+          <div class="box-header">
+            <h3 class="box-title"><?php echo $Encuesta; ?></h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body no-padding">
+                <?php
+                    /*  $objLastSurveys = new poolConnecion();
+                      $Sql="";
+                      $con=$objLastSurveys->ConexionSQLSAP();
+                      $RSet=$objLastSurveys->QuerySQLSAP($Sql,$con);
+                       while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                             {
+                                $Encuesta = $fila[Encuesta];
 
+                             }*/
+                ?>
+          </div>
+          <!-- /.box-body -->
+        </div>
     </section>
     <!-- /.content -->
   </div>
