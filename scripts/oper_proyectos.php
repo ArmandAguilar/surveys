@@ -12,7 +12,7 @@ switch ($_GET[o])
             $info->idTarea = $_POST[idTarea];
             $info->idEncuesta = $_POST[idEncuesta];
 
-            $obj->apply_surveys($info);
+            echo $obj->apply_surveys($info);
       break;
 
   }
