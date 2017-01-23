@@ -5,6 +5,28 @@ session_start();
 include("sis.php");
 include("$path/libs/conexion.php");
 
+$Activar = "No";
+switch ($_SESSION[IdUsuario])
+{
+
+  case '12':
+            $Activar = "Si";
+    break;
+
+  case '44':
+            $Activar = "Si";
+    break;
+
+  case '375':
+            $Activar = "Si";
+        break;
+
+  default:
+    $Activar = "No";
+    break;
+}
+
+
   /* Get Id for serach the data for edit */
   $obj = new poolConnecion();
   $Sql = "SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] WHERE [IdEncuesta] = '$_GET[Id]' order by Id asc";

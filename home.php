@@ -23,8 +23,6 @@ switch ($_SESSION[IdUsuario])
     break;
 }
 
-
-
  ?>
 <!DOCTYPE html>
 <!--
