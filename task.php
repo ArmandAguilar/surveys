@@ -181,25 +181,39 @@ desired effect
 
           <!-- /.box-body -->
         </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-          Launch demo modal
-        </button>
-
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                <h4 class="modal-title" id="myModalLabel">Encuestas</h4>
               </div>
               <div class="modal-body">
-                ...
+                <div class="form-group">
+                  <label>Select</label>
+                  <select class="form-control">
+                    <option value="0">--------------------------</option>
+                    <?php
+                              $objTable = new poolConnecion();
+                              $SqlID="SELECT [Id],[Encuesta] FROM [SAP].[dbo].[AAEncuesta] order by [Id] asc";
+                              $con=$objTable->ConexionSQLSAP();
+                              $RSet=$objTable->QuerySQLSAP($SqlID,$con);
+                               while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                     {
+                                       $i++;
+                      ?>
+                      <option value="<?php echo $fila[Id]; ?>"><?php echo $fila[Encuesta]; ?></option>
+                      <?php
+                            }
+                      ?>
+                  </select>
+                </div>
+
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Aplicar</button>
               </div>
             </div>
           </div>
