@@ -31,11 +31,6 @@ class CProyectos extends poolConnecion
         $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','$idTarea','$value','0')";
         $con=$obj->ConexionSQLSAP();
         $RSet=$obj->QuerySQLSAP($sql,$con);
-         while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-               {
-                  $NumAsk++;
-                  $ArrayID = $fila[Id];
-               }
         $obj->CerrarSQLNorthwind($RSet,$con);
       }
     }
