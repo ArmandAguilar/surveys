@@ -192,7 +192,7 @@ desired effect
               <div class="modal-body">
                 <div class="form-group">
                   <label>Select</label>
-                  <select class="form-control">
+                  <select class="form-control" name="cboEncuesta" id="cboEncuesta">
                     <option value="0">--------------------------</option>
                     <?php
                               $objTable = new poolConnecion();
@@ -208,6 +208,7 @@ desired effect
                             }
                       ?>
                   </select>
+                  <input type="text" name = "txtIdEncuestado" id="txtIdEncuestado" />
                 </div>
 
               </div>
