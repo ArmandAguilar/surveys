@@ -20,8 +20,8 @@ class CProyectos extends poolConnecion
     $RSet=$obj->QuerySQLSAP($SqlID,$con);
      while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
            {
+              $ArrayID[$NumAsk] = $fila[Id];
               $NumAsk++;
-              $ArrayID = $fila[Id];
            }
     $obj->CerrarSQLNorthwind($RSet,$con);
     /*insert in teh table the surveys*/
