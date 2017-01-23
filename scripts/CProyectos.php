@@ -39,7 +39,7 @@ class CProyectos extends poolConnecion
         $obj->CerrarSQLNorthwind($RSet,$con);
       }
     }
-
+        return $Sql;
   }
 
 }
