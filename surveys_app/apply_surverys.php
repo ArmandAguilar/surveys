@@ -6,7 +6,7 @@ include("$path/libs/conexion.php");
 
 /* get the las surveys  of user */
 $objLastSurveys = new poolConnecion();
-$Sql="SELECT [Encuesta] FROM [SAP].[dbo].[AAEncuesta] Where [IdUsuario] ='$_SESSION[IdUsuario]' and [Id]='17'";
+$Sql="SELECT [Encuesta] FROM [SAP].[dbo].[AAEncuesta] Where  [Id]='17'";
 $con=$objLastSurveys->ConexionSQLSAP();
 $RSet=$objLastSurveys->QuerySQLSAP($Sql,$con);
  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -139,7 +139,6 @@ desired effect
           <!-- /.box-header -->
           <div class="box-body no-padding">
                 <?php
-                echo $Sql;
                     /*  $objLastSurveys = new poolConnecion();
                       $Sql="";
                       $con=$objLastSurveys->ConexionSQLSAP();
