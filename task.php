@@ -209,8 +209,9 @@ desired effect
                             }
                       ?>
                   </select>
-                  <input type="hidden" name = "txtEncuestador" id="txtEncuestador" />
+                  <input type="hidden" name = "txtIdEncuestador" id="IdtxtEncuestador"  value="<?php echo $_SESSION[IdUsuario]; ?>"/>
                   <input type="hidden" name = "txtIdEncuestado" id="txtIdEncuestado" />
+                  <input type="hidden" name = "txtIdTarea" id="txtIdTarea" />
                 </div>
 
               </div>

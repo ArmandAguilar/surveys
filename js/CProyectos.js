@@ -12,16 +12,16 @@ function set_surveys(idEncuestado,idTarea)
 function apply_surveys()
 {
   var losdatos = {
+                  idEncuestador:$('#txtIdEncuestador').val(),
                   idEncuestado:$('#txtIdEncuestado').val(),
-                  idEncuetador:$('#txtEncuestador').val(),
-                  idEncuesta:$('#cboEncuesta').val(),
-                  idTarea:$('#txtIdTarea').val()
-
+                  idTarea:$('#txtIdTarea').val(),
+                  idEncuesta:$('#cboEncuesta').val()
                 }
-                alert($('#txtIdEncuestado').val());
-                alert($('#txtEncuestador').val());
-                alert($('#cboEncuesta').val());
-                alert($('#txtIdTarea').val());
+                alert('IdEncuestador:' + $('#txtIdEncuestador').val());
+                alert('IdEncuestado : ' + $('#txtIdEncuestado').val());
+                alert('IdTarea :' + $('#txtIdTarea').val());
+                alert('IdEncuesta :' + $('#cboEncuesta').val());
+
                 $.ajax({
                           url:'./scripts/oper_proyectos.php?o=1',
                           type:'POST',

@@ -7,10 +7,11 @@ switch ($_GET[o])
   {
     /*show all task */
       case '1':
+            $info->idEncuestador = $_POST[idEncuestador];
             $info->idEncuestado = $_POST[idEncuestado];
-            $info->idEncuetador = $_POST[idEncuetador];
-            $info->idEncuesta = $_POST[idEncuesta];
             $info->idTarea = $_POST[idTarea];
+            $info->idEncuesta = $_POST[idEncuesta];
+
             $obj->apply_surveys($info);
       break;
 

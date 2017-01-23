@@ -8,10 +8,10 @@ class CProyectos extends poolConnecion
 
   function apply_surveys($info)
   {
+    $idEncuestador = $info->idEncuestador;
     $idEncuestado = $info->idEncuestado;
-    $idEncuetador = $info->idEncuetador;
-    $idEncuesta = $info->idEncuesta;
     $idTarea = $info->idTarea;
+    $idEncuesta = $info->idEncuesta;
     /*get the number of questions */
     $NumAsk = 0;
     $obj = new poolConnecion();
@@ -28,7 +28,7 @@ class CProyectos extends poolConnecion
     foreach ($ArrayID as $key => $value) {
       if (!empty($value))
       {
-        $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuetador','$idTarea','$value','0')";
+        $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','$idTarea','$value','0')";
         $con=$obj->ConexionSQLSAP();
         $RSet=$obj->QuerySQLSAP($sql,$con);
          while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
