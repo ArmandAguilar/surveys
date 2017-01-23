@@ -13,6 +13,6 @@ function apply_surveys()
                   idEncuestado:$('#txtIdEncuestado').val(),
                   idEncuesta:$('#cboEncuesta').val()
                 }
-                alert($('#cboEncuesta').val());
+                alert($('#txtIdEncuestado').val());
                 alert($('#cboEncuesta').val());
 }
