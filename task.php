@@ -134,6 +134,7 @@ desired effect
                           <tbody>
                                   <tr>
                                       <th style="width: 10px">#</th>
+                                      <th>Proyecto<th>
                                       <th>Tarea</th>
                                       <th>Usuario</th>
                                       <th>Encuesta</th>
@@ -164,7 +165,11 @@ desired effect
                                    ?>
                                  <tr>
                                     <td><?php echo $i; ?>.</td>
-                                    <td></td>
+                                    <td><?php echo $fila[NoProyecto]; ?></td>
+                                    <td><?php echo $fila[Tarea]; ?></td>
+                                    <td><?php echo "$fila[Nombre] $fila[Apellidos]"; ?></td>
+                                    <td>Aplicar encuesta</td>
+
                                 </tr>
                                 <?php
                                                 }
