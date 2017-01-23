@@ -82,7 +82,14 @@ desired effect
 -->
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-
+  <?php
+    if(empty($_SESSION[IdUsuario]))
+    {
+       echo "<script>
+                  window.location.href='logout.php'
+            </script>";
+    }
+  ?>
   <!-- Main Header -->
   <header class="main-header">
 
