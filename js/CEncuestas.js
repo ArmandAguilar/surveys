@@ -98,10 +98,10 @@ function encuesta_save_edit()
              success:function(data)
                     {
                         /*alert(data);*/
-                        window.location.href = 'edit_surveys.php';
                         $("#alerta-err").hide(500);
                         $("#alerta-oka").show(1000);
                         $("#alerta-oka").hide(1000);
+                        window.location.href = 'edit_surveys.php';
                     },
              error:function(req,e,er) {
                 $("#alerta-err").show(1000);
