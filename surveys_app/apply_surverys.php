@@ -139,6 +139,7 @@ desired effect
           <!-- /.box-header -->
           <div class="box-body no-padding">
                 <?php
+                echo $Sql;
                     /*  $objLastSurveys = new poolConnecion();
                       $Sql="";
                       $con=$objLastSurveys->ConexionSQLSAP();
