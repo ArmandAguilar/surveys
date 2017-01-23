@@ -127,6 +127,9 @@ desired effect
         <li class="header"></li>
         <!-- Optionally, you can add icons to the links -->
         <li><a href="proyectos.php"><i class="fa fa-calendar-minus-o"></i> <span>Proyectos</span></a></li>
+        <?php
+              if ($Activar == "Si") {
+        ?>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-file-text-o"></i> <span>Encuestas</span>
@@ -139,6 +142,12 @@ desired effect
             <li><a href="edit_surveys.php"><i class="fa fa-edit"></i> Editar</a></li>
           </ul>
         </li>
+        <?php
+            }
+            else{
+
+            }
+         ?>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
