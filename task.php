@@ -169,7 +169,7 @@ desired effect
                                     <td><?php echo $fila[NoProyecto]; ?></td>
                                     <td><?php echo $fila[Tarea]; ?></td>
                                     <td><?php echo "$fila[Nombre] $fila[Apellidos]"; ?></td>
-                                    <td>Aplicar encuesta</td>
+                                    <td><div data-toggle="modal" data-target="#myModal" style="cursor:pointer"> Aplicar encuesta</div></td>
 
                                 </tr>
                                 <?php
