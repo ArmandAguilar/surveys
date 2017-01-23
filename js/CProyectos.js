@@ -17,10 +17,10 @@ function apply_surveys()
                   idTarea:$('#txtIdTarea').val(),
                   idEncuesta:$('#cboEncuesta').val()
                 }
-                alert('IdEncuestador:' + $('#txtIdEncuestador').val());
+                /*alert('IdEncuestador:' + $('#txtIdEncuestador').val());
                 alert('IdEncuestado : ' + $('#txtIdEncuestado').val());
                 alert('IdTarea :' + $('#txtIdTarea').val());
-                alert('IdEncuesta :' + $('#cboEncuesta').val());
+                alert('IdEncuesta :' + $('#cboEncuesta').val());*/
 
                 $.ajax({
                           url:'./scripts/oper_proyectos.php?o=1',
@@ -28,7 +28,8 @@ function apply_surveys()
                           data:losdatos,
                           success:function(data)
                           {
-                              alert(data);
+                              /*alert(data);*/
+                              window.location.href='task.php';
                           },
                           error:function(req,e,er) {
                             alert(er);

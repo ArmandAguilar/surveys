@@ -158,7 +158,7 @@ desired effect
                                                       [Northwind].[dbo].[Usuarios]
                                                       WHERE
                                                             ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] =  [SAP].[dbo].[CatalogoDeProyectos].[NumProyecto] and
-                                                            [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id]) and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '$_GET[NumProy]')";
+                                                            [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id] and [SAP].[dbo].[AATareasTeamWork].[Evaluada]='No') and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '$_GET[NumProy]')";
                                           $con=$objTable->ConexionSQLSAP();
                                           $RSet=$objTable->QuerySQLSAP($SqlID,$con);
                                            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
