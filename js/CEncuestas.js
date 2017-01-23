@@ -51,7 +51,7 @@ function encuesta_delete(id)
              data:losdatos,
              success:function(data)
                     {
-                       alert(data)
+                       /*alert(data)*/
                         $("#alerta-oka").show(1000);
                         window.location.href = 'edit_surveys.php';
                     },
@@ -97,7 +97,8 @@ function encuesta_save_edit()
              data:losdatos,
              success:function(data)
                     {
-                        alert(data);
+                        /*alert(data);*/
+                        window.location.href = 'edit_surveys.php';
                         $("#alerta-err").hide(500);
                         $("#alerta-oka").show(1000);
                         $("#alerta-oka").hide(1000);
