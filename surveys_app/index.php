@@ -33,7 +33,7 @@
     <p class="login-box-msg"></p>
 
     <form action="" method="post">
-      <input type = "text" id="Idencuesta" name="Idencuesta" value="<?php echo $_GET[Id]; ?>" />
+      <input type = "hidden" id="Idencuesta" name="Idencuesta" value="<?php echo $_GET[Id]; ?>" />
       <div class="form-group has-feedback">
         <input type="text" name="txtUser" id="txtUser" class="form-control" placeholder="Usuario SAP">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
