@@ -323,6 +323,7 @@ desired effect
 
 function setValPregunta(Id,Valor)
 {
+  alert('IdActualizar: ' + Id + 'Valor :' + Valor);
   var losdatos = {txtId:Id,txtValor:Valor};
   $.ajax({
             url:'../scripts/oper_app.php?o=1',
