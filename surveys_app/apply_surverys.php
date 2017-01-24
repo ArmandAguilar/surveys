@@ -160,7 +160,7 @@ desired effect
                                                             <div class="form-group">
                                                                   <div class="radio">
                                                                       <label>
-                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="1" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>'','1')">
+                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="1" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>','1')">
                                                                           Simpre
                                                                       </label>
                                                                     </div>
@@ -169,7 +169,7 @@ desired effect
                                                             <div class="form-group">
                                                                   <div class="radio">
                                                                       <label>
-                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="0.75" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>'','0.75')">
+                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="0.75" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>','0.75')">
                                                                           Normalmente Si
                                                                       </label>
                                                                     </div>
@@ -178,7 +178,7 @@ desired effect
                                                             <div class="form-group">
                                                                   <div class="radio">
                                                                       <label>
-                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="0.5" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>'','0.5')">
+                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="0.5" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>','0.5')">
                                                                           Normalmente No
                                                                       </label>
                                                                     </div>
@@ -187,7 +187,7 @@ desired effect
                                                             <div class="form-group">
                                                                   <div class="radio">
                                                                       <label>
-                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="0.25" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>'','0.25')">
+                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="0.25" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>','0.25')">
                                                                           Nunca
                                                                       </label>
                                                                     </div>
