@@ -1,4 +1,6 @@
 <?php
+ini_set('session.auto_start()','On');
+session_start();
 session_destroy();
  ?>
 <html>

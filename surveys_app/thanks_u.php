@@ -1,20 +1,8 @@
 <?php
 ini_set('session.auto_start()','On');
 session_start();
-include("../sis.php");
-include("$path/libs/conexion.php");
-
-/* get the las surveys  of user */
-$objLastSurveys = new poolConnecion();
-$Sql="SELECT [Encuesta] FROM [SAP].[dbo].[AAEncuesta] Where  [Id]='17'";
-$con=$objLastSurveys->ConexionSQLSAP();
-$RSet=$objLastSurveys->QuerySQLSAP($Sql,$con);
- while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-       {
-          $Encuesta = $fila[Encuesta];
-
-       }
- ?>
+session_destroy();
+?>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -69,14 +57,9 @@ desired effect
 |---------------------------------------------------------|
 -->
 <body class="hold-transition skin-blue sidebar-mini">
-  <?php
-  	if(empty($_SESSION[IdUsuario]))
-  	{
-  		 echo "<script>
-  		 						window.location.href='logout.php'
-  					</script>";
-  	}
-  ?>
+<script>
+setTimeout(function(){ window.location.href='login.php';}, 9000);
+</script>
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -134,77 +117,16 @@ desired effect
       <!-- Your Page Content Here -->
       <div class="box">
           <div class="box-header">
-            <h3 class="box-title"><?php echo $Encuesta; ?></h3>
+            <h3 class="box-title">Gracias por respoder</h3>
           </div>
           <!-- /.box-header -->
           <div class="box-body no-padding">
-                  <table class="table table-condensed">
-                          <tbody>
-                                <?php
-                                      $j = 1;
-                                      $objLastSurveysForm = new poolConnecion();
-                                      $Sql="SELECT AA_Encuestado.Id As IdActualizar,AA_Encuestado.IdTarea,AA_Encuestado.IdPregunta,AAPreguntas.Pregunta
-                                            FROM
-                		                            AA_Encuestado,
-                		                            AAPreguntas
-                                            WHERE
-                	                             (AA_Encuestado.IdPregunta = AAPreguntas.Id and AA_Encuestado.IdEncuesta = '17') and AA_Encuestado.IdUsuario='38'";
-                                      $con=$objLastSurveysForm->ConexionSQLSAP();
-                                      $RSet=$objLastSurveysForm->QuerySQLSAP($Sql,$con);
-                                       while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-                                             {
-                                ?>
-                                                <tr><td><?php echo $fila[Pregunta]; ?></td></tr>
-                                                <tr>
-                                                      <td>
-                                                            <div class="form-group">
-                                                                  <div class="radio">
-                                                                      <label>
-                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="1" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>','1')">
-                                                                          Simpre
-                                                                      </label>
-                                                                    </div>
-
-                                                            </div>
-                                                            <div class="form-group">
-                                                                  <div class="radio">
-                                                                      <label>
-                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="0.75" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>','0.75')">
-                                                                          Normalmente Si
-                                                                      </label>
-                                                                    </div>
-
-                                                            </div>
-                                                            <div class="form-group">
-                                                                  <div class="radio">
-                                                                      <label>
-                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="0.5" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>','0.5')">
-                                                                          Normalmente No
-                                                                      </label>
-                                                                    </div>
-
-                                                            </div>
-                                                            <div class="form-group">
-                                                                  <div class="radio">
-                                                                      <label>
-                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="0.25" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>','0.25')">
-                                                                          Nunca
-                                                                      </label>
-                                                                    </div>
-
-                                                            </div>
-                                                      </td>
-                                                </tr>
-                                <?php
-                                              $j++;
-                                             }
-                                ?>
-                          </tbody>
-                  </table>
+                <div class="callout callout-success">
+                        <h4>En un momento la sesion terminar</h4>
+                        <p></p>
+                </div>
           </div>
           <!-- /.box-body -->
-            <button type="button" class="btn btn-primary" onclick="terminar();">Terminar</button>
-          </div>
         </div>
     </section>
     <!-- /.content -->
@@ -308,30 +230,6 @@ desired effect
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/app.min.js"></script>
-<script>
-
-function setValPregunta(Id,Valor)
-{
-  alert('IdActualizar: ' + Id + ' Valor :' + Valor);
-  var losdatos = {txtId:Id,txtValor:Valor};
-  $.ajax({
-            url:'../scripts/oper_app.php?o=1',
-            type:'POST',
-            data:losdatos,
-            success:function(data)
-            {
-
-            },
-            error:function(req,e,er) {
-              alert(er);
-            }
-          });
-}
-function terminar()
-{
-  window.location.href = 'thanks_u.php';
-}
-</script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
