@@ -154,7 +154,46 @@ desired effect
                                              {
                                 ?>
                                                 <tr><td><?php echo $fila[Pregunta]; ?></td></tr>
-                                                <tr><td></td></tr>
+                                                <tr>
+                                                      <td>
+                                                            <div class="form-group">
+                                                                  <div class="radio">
+                                                                      <label>
+                                                                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                                          Simpre
+                                                                      </label>
+                                                                    </div>
+
+                                                            </div>
+                                                            <div class="form-group">
+                                                                  <div class="radio">
+                                                                      <label>
+                                                                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                                          Normalmente Si
+                                                                      </label>
+                                                                    </div>
+
+                                                            </div>
+                                                            <div class="form-group">
+                                                                  <div class="radio">
+                                                                      <label>
+                                                                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                                          Normalmente No
+                                                                      </label>
+                                                                    </div>
+
+                                                            </div>
+                                                            <div class="form-group">
+                                                                  <div class="radio">
+                                                                      <label>
+                                                                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                                          Nunca
+                                                                      </label>
+                                                                    </div>
+
+                                                            </div>
+                                                      </td>
+                                                </tr>
                                 <?php
                                              }
                                 ?>
@@ -173,7 +212,7 @@ desired effect
             <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
             Error: No se pudo crear la encuesta.
           </div>
-            <button type="button" class="btn btn-primary" onclick="encuesta_save();">Enviar</button>
+            <button type="button" class="btn btn-primary" >Enviar</button>
           </div>
         </div>
     </section>
