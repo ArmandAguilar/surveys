@@ -178,7 +178,7 @@ desired effect
                                   </tr>
                                   <?php
                                           $objTable = new poolConnecion();
-                                          $SqlID="SELECT [NumProyecto],[NomProyecto] FROM [SAP].[dbo].[CatalogoDeProyectos] Where [EstadoCompra] = 'Activo' order by  [NumProyecto] desc";
+                                          $SqlID="SELECT [NoProyecto],[Proyecto] FROM [SAP].[dbo].[Presupuestos] Where [EstatusCompras] = 'Activo' order by  [NoProyecto] desc";
                                           $con=$objTable->ConexionSQLSAP();
                                           $RSet=$objTable->QuerySQLSAP($SqlID,$con);
                                            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -187,7 +187,7 @@ desired effect
                                    ?>
                                  <tr>
                                     <td><?php echo $i; ?>.</td>
-                                    <td><div style="cursor:pointer" onclick="show_all_task('<?php echo $fila[NumProyecto]; ?>')"><?php echo $fila[NumProyecto]; ?> .- <?php echo $fila[NomProyecto]; ?></div></td>
+                                    <td><div style="cursor:pointer" onclick="show_all_task('<?php echo $fila[NoProyecto]; ?>')"><?php echo $fila[NoProyecto]; ?> .- <?php echo $fila[Proyecto]; ?></div></td>
                                 </tr>
                                 <?php
                                                 }
