@@ -208,7 +208,7 @@ desired effect
                                  <tr>
                                     <td><?php echo $i; ?>.</td>
                                     <td><?php echo $fila[NoProyecto]; ?></td>
-                                    <td><?php echo $fila[Tarea]; ?></td>
+                                    <td><?php echo ($fila[Proyecto];) $fila[Tarea]; ?></td>
                                     <td><?php echo "$fila[Nombre] $fila[Apellidos]"; ?></td>
                                     <td><div data-toggle="modal" data-target="#myModal" style="cursor:pointer" onclick="set_surveys(<?php echo $fila[IdUsuarioAEncuestar]; ?>,<?php echo $fila[IdTeamWork]; ?>)"> Aplicar encuesta</div></td>
 
