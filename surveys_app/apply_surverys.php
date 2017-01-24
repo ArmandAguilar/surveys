@@ -205,7 +205,7 @@ desired effect
           <!-- /.box-body -->
           <div class="box-footer">
                 <button type="button" class="btn btn-primary" onclick="terminar();">Terminar</button>
-          </div>  
+          </div>
           </div>
         </div>
     </section>
@@ -314,7 +314,7 @@ desired effect
 
 function setValPregunta(Id,Valor)
 {
-  alert('IdActualizar: ' + Id + ' Valor :' + Valor);
+  /*alert('IdActualizar: ' + Id + ' Valor :' + Valor);*/
   var losdatos = {txtId:Id,txtValor:Valor};
   $.ajax({
             url:'../scripts/oper_app.php?o=1',
