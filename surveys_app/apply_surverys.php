@@ -138,17 +138,27 @@ desired effect
           </div>
           <!-- /.box-header -->
           <div class="box-body no-padding">
-                <?php
-                    /*  $objLastSurveys = new poolConnecion();
-                      $Sql="";
-                      $con=$objLastSurveys->ConexionSQLSAP();
-                      $RSet=$objLastSurveys->QuerySQLSAP($Sql,$con);
-                       while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-                             {
-                                $Encuesta = $fila[Encuesta];
+            <table class="table table-condensed">
+                    <tbody>
+                          <?php
+                                $objLastSurveysForm = new poolConnecion();
+                                $Sql="SELECT AA_Encuestado.Id,AA_Encuestado.IdTarea,AA_Encuestado.IdPregunta,AAPreguntas.Pregunta
+                                      FROM
+          		                            AA_Encuestado,
+          		                            AAPreguntas
+                                      WHERE
+          	                             (AA_Encuestado.IdPregunta = AAPreguntas.Id and AA_Encuestado.IdEncuesta = '17') and AA_Encuestado.IdUsuario='38'";
+                                $con=$objLastSurveysForm->ConexionSQLSAP();
+                                $RSet=$objLastSurveysForm->QuerySQLSAP($Sql,$con);
+                                 while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                       {
+                          ?>
+                                      <td><?php echo $fila[Pregunta]; ?></td>
+                          <?php
+                                       }
+                          ?>
 
-                             }*/
-                ?>
+              </tbody>
           </div>
           <!-- /.box-body -->
         </div>
