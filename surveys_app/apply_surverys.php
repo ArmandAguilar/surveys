@@ -154,6 +154,7 @@ desired effect
                                              {
                                 ?>
                                                 <tr><td><?php echo $fila[Pregunta]; ?></td></tr>
+                                                <tr><td></td></tr>
                                 <?php
                                              }
                                 ?>
