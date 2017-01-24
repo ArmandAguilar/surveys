@@ -149,7 +149,7 @@ desired effect
                 		                            AAPreguntas
                                             WHERE
                 	                             (AA_Encuestado.IdPregunta = AAPreguntas.Id and AA_Encuestado.IdEncuesta = '$_SESSION[IdEncuesta]') and AA_Encuestado.IdUsuario='$_SESSION[IdUsuario]'";
-                                      //echo "$SqlN<br>$Sql";
+                                      echo "$SqlN<br>$Sql";
                                       $con=$objLastSurveysForm->ConexionSQLSAP();
                                       $RSet=$objLastSurveysForm->QuerySQLSAP($Sql,$con);
                                        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
