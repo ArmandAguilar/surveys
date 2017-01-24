@@ -7,15 +7,15 @@ include("$path/scripts/PHPMailer/PHPMailerAutoload.php");
 if ($_GET[SendNotification]==1)
 {
 
-  $msj = "----------------------------------------------------------------- <br>
-            Tarea : $_GET[txtTarea]
-          ----------------------------------------------------------------- <br>
+  $msj = "----------------------------------------------------------------- \n
+            Tarea : $_GET[txtTarea]\n
+          ----------------------------------------------------------------- \n
           Por favor copia este enlase a tu navegador web<br>
           http://187.188.109.47:82/surveys/surveys_app/index.php?Id=$_GET[IdEncuesta]
           o da click <a href='http://187.188.109.47:82/surveys/surveys_app/index.php?Id=$_GET[IdEncuesta]'>aqui</a> para responder a una encuesta.<br>
-          ----------------------------------------------------------------- <br>
+          ----------------------------------------------------------------- \n
           No responder este mensaje.
-          ----------------------------------------------------------------- <br>";
+          ----------------------------------------------------------------- \n";
 
   //Create a new PHPMailer instance
   $mail = new PHPMailer;
