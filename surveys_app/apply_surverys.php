@@ -162,6 +162,19 @@ desired effect
                   </table>
           </div>
           <!-- /.box-body -->
+          <div class="box-footer">
+            <div id="alerta-oka" class="alert alert-success alert-dismissible" style="display:none">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4><i class="icon fa fa-check"></i> Alerta!</h4>
+            Encuesta creada con exito.
+          </div>
+          <div id="alerta-err" class="alert alert-danger alert-dismissible" style="display:none">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
+            Error: No se pudo crear la encuesta.
+          </div>
+            <button type="button" class="btn btn-primary" onclick="encuesta_save();">Enviar</button>
+          </div>
         </div>
     </section>
     <!-- /.content -->
