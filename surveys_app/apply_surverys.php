@@ -141,8 +141,9 @@ desired effect
                   <table class="table table-condensed">
                           <tbody>
                                 <?php
+                                      $j = 1;
                                       $objLastSurveysForm = new poolConnecion();
-                                      $Sql="SELECT AA_Encuestado.Id,AA_Encuestado.IdTarea,AA_Encuestado.IdPregunta,AAPreguntas.Pregunta
+                                      $Sql="SELECT AA_Encuestado.Id As IdActualizar,AA_Encuestado.IdTarea,AA_Encuestado.IdPregunta,AAPreguntas.Pregunta
                                             FROM
                 		                            AA_Encuestado,
                 		                            AAPreguntas
@@ -159,7 +160,7 @@ desired effect
                                                             <div class="form-group">
                                                                   <div class="radio">
                                                                       <label>
-                                                                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="1" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>'','1')">
                                                                           Simpre
                                                                       </label>
                                                                     </div>
@@ -168,7 +169,7 @@ desired effect
                                                             <div class="form-group">
                                                                   <div class="radio">
                                                                       <label>
-                                                                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="0.75" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>'','0.75')">
                                                                           Normalmente Si
                                                                       </label>
                                                                     </div>
@@ -177,7 +178,7 @@ desired effect
                                                             <div class="form-group">
                                                                   <div class="radio">
                                                                       <label>
-                                                                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="0.5" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>'','0.5')">
                                                                           Normalmente No
                                                                       </label>
                                                                     </div>
@@ -186,7 +187,7 @@ desired effect
                                                             <div class="form-group">
                                                                   <div class="radio">
                                                                       <label>
-                                                                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                                          <input type="radio" name="rdbtn_<?php echo $j; ?>" id="rdbtn_<?php echo $j; ?>" value="0.25" onclick="setValPregunta('<?php echo $fila[IdActualizar]?>'','0.25')">
                                                                           Nunca
                                                                       </label>
                                                                     </div>
@@ -195,6 +196,7 @@ desired effect
                                                       </td>
                                                 </tr>
                                 <?php
+                                              $j++;
                                              }
                                 ?>
                           </tbody>
@@ -212,7 +214,7 @@ desired effect
             <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
             Error: No se pudo crear la encuesta.
           </div>
-            <button type="button" class="btn btn-primary" >Enviar</button>
+            <button type="button" class="btn btn-primary" >Terminar</button>
           </div>
         </div>
     </section>
@@ -317,7 +319,27 @@ desired effect
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/app.min.js"></script>
+<script>
 
+function setValPregunta(Id,Valor)
+{
+  var losdatos = {txtId:Id,txtValor:Valor};
+  $.ajax({
+            url:'../scripts/oper_app.php?o=1',
+            type:'POST',
+            data:losdatos,
+            success:function(data)
+            {
+
+            },
+            error:function(req,e,er) {
+              alert(er);
+            }
+          });
+}
+
+
+</script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
