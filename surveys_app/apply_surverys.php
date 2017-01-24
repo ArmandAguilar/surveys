@@ -6,9 +6,9 @@ include("$path/libs/conexion.php");
 
 /* get the las surveys  of user */
 $objLastSurveys = new poolConnecion();
-$Sql="SELECT [Encuesta] FROM [SAP].[dbo].[AAEncuesta] Where  [Id]='$_SESSION[Idencuesta]'";
+$SqlN="SELECT [Encuesta] FROM [SAP].[dbo].[AAEncuesta] Where  [Id]='$_SESSION[Idencuesta]'";
 $con=$objLastSurveys->ConexionSQLSAP();
-$RSet=$objLastSurveys->QuerySQLSAP($Sql,$con);
+$RSet=$objLastSurveys->QuerySQLSAP($SqlN,$con);
  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
        {
           $Encuesta = $fila[Encuesta];
@@ -149,6 +149,7 @@ desired effect
                 		                            AAPreguntas
                                             WHERE
                 	                             (AA_Encuestado.IdPregunta = AAPreguntas.Id and AA_Encuestado.IdEncuesta = '$_SESSION[Idencuesta]') and AA_Encuestado.IdUsuario='$_SESSION[IdUsuario]'";
+                                      echo "$SqlN<br>$Sql";
                                       $con=$objLastSurveysForm->ConexionSQLSAP();
                                       $RSet=$objLastSurveysForm->QuerySQLSAP($Sql,$con);
                                        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
