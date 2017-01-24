@@ -203,7 +203,9 @@ desired effect
                   </table>
           </div>
           <!-- /.box-body -->
-            <button type="button" class="btn btn-primary" onclick="terminar();">Terminar</button>
+          <div class="box-footer">
+                <button type="button" class="btn btn-primary" onclick="terminar();">Terminar</button>
+          </div>  
           </div>
         </div>
     </section>

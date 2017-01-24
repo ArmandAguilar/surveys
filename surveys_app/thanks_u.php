@@ -58,7 +58,7 @@ desired effect
 -->
 <body class="hold-transition skin-blue sidebar-mini">
 <script>
-setTimeout(function(){ window.location.href='login.php';}, 9000);
+setTimeout(function(){ window.location.href='index.php';}, 9000);
 </script>
 <div class="wrapper">
 
