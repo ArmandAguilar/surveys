@@ -6,7 +6,7 @@ include("$path/libs/conexion.php");
 
 /* get the las surveys  of user */
 $objLastSurveys = new poolConnecion();
-$Sql="SELECT [Encuesta] FROM [SAP].[dbo].[AAEncuesta] Where  [Id]='17'";
+$Sql="SELECT [Encuesta] FROM [SAP].[dbo].[AAEncuesta] Where  [Id]='$_SESSION[Idencuesta]'";
 $con=$objLastSurveys->ConexionSQLSAP();
 $RSet=$objLastSurveys->QuerySQLSAP($Sql,$con);
  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))

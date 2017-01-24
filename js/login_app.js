@@ -1,6 +1,6 @@
 function login_app()
 {
-      var losdatos = {txtUser:$("#txtUser").val(),txtPassword:$("#txtPassword").val()};
+      var losdatos = {txtUser:$("#txtUser").val(),txtPassword:$("#txtPassword").val(),IdEncuesta:$("#Idencuesta").val()};
       $.ajax({
                 url:'../scripts/login_app.php?o=1',
                 type:'POST',

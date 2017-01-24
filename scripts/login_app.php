@@ -16,6 +16,8 @@ if($_GET[o]=='1')
                       $_SESSION["Usuario"]="$fila[Nombre] $fila[Apellidos]";
                       $_SESSION["IdUsuario"]="$fila[Id]";
                       $_SESSION["CobranzaPerfil"]=$fila[CobranzaPerfil];
+                      $_SESSION["IdEncuesta"]=$_POST[IdEncuesta];
+
                       $Avatar = $fila[Avatar];
                       if(!empty($Avatar))
                       {
