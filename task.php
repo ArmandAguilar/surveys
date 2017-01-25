@@ -258,7 +258,11 @@ desired effect
                   <input type="hidden" name = "txtNombre" id="txtNombre" value=""/>
                   <input type="hidden" name = "txtTareaNombre" id="txtTareaNombre" value=""/>
                 </div>
-
+                <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-check"></i> Alert!</h4>
+                Success alert preview. This alert is dismissable.
+              </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-primary" onclick="apply_surveys();">Aplicar</button>
