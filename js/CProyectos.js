@@ -58,7 +58,7 @@ function SendNotification()
                           data:losdatos,
                           success:function(data)
                           {
-                              /*alert(data);*/
+                              alert(data);
                               window.location.href='task.php?NumProy=' + $('#txtNumProyectos').val();
                           },
                           error:function(req,e,er) {
