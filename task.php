@@ -190,6 +190,7 @@ desired effect
                                                       ,[Northwind].[dbo].Usuarios.[Id] As IdUsuarioAEncuestar
                                                       ,[Northwind].[dbo].Usuarios.[Nombre]
                                                       ,[Northwind].[dbo].Usuarios.[Apellidos]
+                                                      ,[Northwind].[dbo].Usuarios.[Email]
                                                       ,[SAP].[dbo].[AATareasTeamWork].[Tarea]
                                                       ,[SAP].[dbo].[AATareasTeamWork].[Evaluada]
                                                 FROM
@@ -210,7 +211,7 @@ desired effect
                                     <td><?php echo $fila[NoProyecto]; ?></td>
                                     <td><?php echo "($fila[IdTeamWork]) $fila[Tarea]"; ?></td>
                                     <td><?php echo "$fila[Nombre] $fila[Apellidos]"; ?></td>
-                                    <td><div data-toggle="modal" data-target="#myModal" style="cursor:pointer" onclick="set_surveys(<?php echo $fila[IdUsuarioAEncuestar]; ?>,<?php echo $fila[IdTeamWork]; ?>)"> Aplicar encuesta</div></td>
+                                    <td><div data-toggle="modal" data-target="#myModal" style="cursor:pointer" onclick="set_surveys(<?php echo $fila[IdUsuarioAEncuestar]; ?>,<?php echo $fila[IdTeamWork]; ?>,'<?php echo $fila[Tarea]; ?>','<?php echo "$fila[Nombre] $fila[Apellidos]"; ?>','<?php echo $fila[Email]; ?>')"> Aplicar encuesta</div></td>
 
                                 </tr>
                                 <?php
@@ -252,6 +253,10 @@ desired effect
                   <input type="hidden" name = "txtIdEncuestador" id="txtIdEncuestador"  value="<?php echo $_SESSION[IdUsuario]; ?>"/>
                   <input type="hidden" name = "txtIdEncuestado" id="txtIdEncuestado" />
                   <input type="hidden" name = "txtIdTarea" id="txtIdTarea" />
+                  <input type="hidden" name = "txtNumProyectos" id="txtNumProyectos" value="<?php echo $_GET[NumProy]; ?>"/>
+                  <input type="hidden" name = "txtCorreo" id="txtCorreo" value=""/>
+                  <input type="hidden" name = "txtNombre" id="txtNombre" value=""/>
+                  <input type="hidden" name = "txtTareaNombre" id="txtTareaNombre" value=""/>
                 </div>
 
               </div>
