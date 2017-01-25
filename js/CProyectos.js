@@ -53,7 +53,7 @@ function SendNotification()
                 alert('IdEncuesta :' + $('#cboEncuesta').val());*/
 
                 $.ajax({
-                          url:'./scripts/nofication.php?o=1',
+                          url:'./scripts/nofication.php?SendNotification=1',
                           type:'GET',
                           data:losdatos,
                           success:function(data)
