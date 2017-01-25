@@ -31,7 +31,7 @@ function apply_surveys()
                           data:losdatos,
                           success:function(data)
                           {
-                              /*alert(data);*/
+                              $('#msj').show();
                               SendNotification();
                           },
                           error:function(req,e,er) {

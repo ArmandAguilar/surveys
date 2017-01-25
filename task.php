@@ -258,7 +258,7 @@ desired effect
                   <input type="hidden" name = "txtNombre" id="txtNombre" value=""/>
                   <input type="hidden" name = "txtTareaNombre" id="txtTareaNombre" value=""/>
                 </div>
-                <div class="alert alert-success alert-dismissible">
+                <div id="msj" class="alert alert-success alert-dismissible" style="display:none">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <h4><i class="icon fa fa-check"></i> Encuesta aplicada</h4>
                 En un momento se notificara al usuario y se actualizara el sistema.

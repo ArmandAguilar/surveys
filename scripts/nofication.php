@@ -38,7 +38,7 @@ if ($_GET[SendNotification]==1)
   //Username to use for SMTP authentication
   $mail->Username = "notification@fortaingenieria.mx";
   //Password to use for SMTP authentication
-  $mail->Password = "fortalezaMX01**!!";
+  $mail->Password = "fortaMX01**";
   //Set who the message is to be sent from
   $mail->setFrom('notification@fortaingenieria.mx', 'Notificaciones');
   //Set an alternative reply-to address
