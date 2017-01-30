@@ -221,7 +221,7 @@ desired effect
                                             }
                                             else{
                                             ?>
-                                              <td><div> Encuenta aplicada</div></td>
+                                              <td><div> Encuesta aplicada</div></td>
                                           <?php
                                             }
                                      ?>
