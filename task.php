@@ -221,7 +221,7 @@ desired effect
                                             }
                                             else{
                                             ?>
-                                              <td><div data-toggle="modal" data-target="#myModal" > En cuenta aplicada</div></td>
+                                              <td><div> En cuenta aplicada</div></td>
                                           <?php
                                             }
                                      ?>
