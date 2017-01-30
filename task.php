@@ -221,7 +221,7 @@ desired effect
                                             }
                                             else{
                                             ?>
-                                              <td><div> En cuenta aplicada</div></td>
+                                              <td><div> Encuenta aplicada</div></td>
                                           <?php
                                             }
                                      ?>
