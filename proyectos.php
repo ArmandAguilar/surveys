@@ -178,7 +178,10 @@ desired effect
                                   </tr>
                                   <?php
                                           $objTable = new poolConnecion();
-                                          $SqlID="SELECT [NoProyecto],[Proyecto] FROM [SAP].[dbo].[Presupuestos] Where [EstatusCompras] = 'Activo' order by  [NoProyecto] desc";
+                                          $SqlID="SELECT distinct([SAP].[dbo].[Presupuestos].[Proyecto]),[SAP].[dbo].[Presupuestos].[NoProyecto]
+                                            FROM [SAP].[dbo].[Presupuestos],[SAP].dbo.AATareasTeamWork
+                                            Where [SAP].[dbo].[Presupuestos].[NoProyecto] = [SAP].dbo.AATareasTeamWork.NoProyecto
+                                            order by [SAP].[dbo].[Presupuestos].[NoProyecto] desc";
                                           $con=$objTable->ConexionSQLSAP();
                                           $RSet=$objTable->QuerySQLSAP($SqlID,$con);
                                            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
