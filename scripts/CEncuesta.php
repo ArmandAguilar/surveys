@@ -81,7 +81,7 @@ class CEncuestas extends poolConnecion
     $Area = $info->IdArea;
 
     /* we update a name of surveys */
-    $Sql = "UPDATE [SAP].[dbo].[AAEncuesta] SET [Encuesta] = '$txtEncuesta' ,Area='$Area' WHERE Id='$IdEncuesta'";
+    $Sql = "UPDATE [SAP].[dbo].[AAEncuesta] SET [Encuesta] = '$txtEncuesta' ,[Area] ='$Area' WHERE Id='$IdEncuesta'";
     $obj = new poolConnecion();
     $con=$obj->ConexionSQLSAP();
     $RSet=$obj->QuerySQLSAP($Sql,$con);
