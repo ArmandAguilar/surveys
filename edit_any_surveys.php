@@ -43,7 +43,7 @@ switch ($_SESSION[IdUsuario])
    $obj->CerrarSQLSAP($RSet,$con);
    /*Get the name*/
    $obj = new poolConnecion();
-   $Sql = "SELECT [Encuesta] FROM [SAP].[dbo].[AAEncuesta] WHERE [Id] = '$_GET[Id]'";
+   $Sql = "SELECT [Encuesta],[Area] FROM [SAP].[dbo].[AAEncuesta] WHERE [Id] = '$_GET[Id]'";
 
    $con=$obj->ConexionSQLSAP();
    $RSet=$obj->QuerySQLSAP($Sql,$con);
@@ -51,6 +51,7 @@ switch ($_SESSION[IdUsuario])
    while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
           {
             $txtEncuenta = $fila[Encuesta];
+            $CboArea = $fila[Area];
           }
     $obj->CerrarSQLSAP($RSet,$con);
 
@@ -206,6 +207,25 @@ desired effect
                 <div class="form-group">
                   <label for="exampleInputEmail1">Encuesta</label>
                   <input type="text" class="form-control" id="txtEncuesta" name="txtEncuesta" value="<?php echo $txtEncuenta; ?>" placeholder="Nombre de la encuesta.." style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAmJJREFUWAntV7uKIkEUvbYGM4KID3wEIgjKRLLpKGLgFwiCfslGhkb7IbLgAzE1GhMxWxRRBEEwmEgDERWfW6fXuttq60a2wU6B1qlzb9U5fatsKROJVigUArvd7oeAyePx6Af3qGYymT7F2h8Wi+V7Pp+fmE7iv4Sw81GieusKIzNh4puCJzdaHIagCW1F4KSeQ4O4pPLoPb/3INBGBZ7avgz8fxWIxWIUCoX43Blegbe3NwoGg88zwMoncFUB8Yokj8dDdrv9MpfHVquV/H4/iVcpc1qgKAp5vV6y2WxaWhefreB0OimXy6kGkD0YDKhSqdB2u+XJqVSK4vE4QWS5XKrx0WjEcZ/PR9lslhwOh8p1Oh2q1Wp0OBw4RwvOKpBOp1kcSdivZPLvmxrjRCKhiiOOSmQyGXp5ecFQbRhLcRDRaJTe39//BHW+2cDr6ysFAoGrlEgkwpwWS1I7z+VykdvtliHuw+Ew40vABvb7Pf6hLuMk/rGY02ImBZC8dqv04lpOYjaw2WzUPZcB2WMPZet2u1cmZ7MZTSYTNWU+n9N4PJbp3GvXYPIE2ADG9Xqder2e+kTr9ZqazSa1222eA6FqtUoQwqHCuFgscgWQWC6XaTgcEiqKQ9poNOiegbNfwWq1olKppB6yW6cWVcDHbDarIuzuBBaLhWrqVvwy/6wCMnhLXMbR4wnvtX/F5VxdAzJoRH+2BUYItlotmk6nLGW4gX6/z+IAT9+CLwPPr8DprnZ2MIwaQBsV+DBKUEfnQ8EtFRdFneBDKWhCW8EVGbdUQfxESR6qKhaHBrSgCe3fbLTpPlS70M0AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                </div>
+                <div class="form-group">
+                  <label>Perfil</label>
+                  <select class="form-control" name='cboPerfil' id='cboPerfil'>
+                    $CboArea
+                    <?php
+                            $SqlCbo = "SELECT distinct([Perfil]) FROM [Northwind].[dbo].[Usuarios] Where Departamento <> 'Baja'";
+                            $objPefil = new poolConnecion();
+                            $con=$objPefil->ConexionSQLSAP();
+                            $RSet=$objPefil->QuerySQLSAP($SqlCbo,$con);
+                            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                 {
+                     ?>
+                    <option value = '<?php echo $fila[Perfil]; ?>' selected><?php echo $fila[Perfil]; ?></option>
+                    <?php
+                                 }
+                            $objPefil->CerrarSQLSAP($RSet,$con);
+                     ?>
+                  </select>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 1</label>
