@@ -21,7 +21,7 @@ class CEncuestas extends poolConnecion
     $arrayAks[7] = $info->Pregunta8;
     $arrayAks[8] = $info->Pregunta9;
     $arrayAks[9] = $info->Pregunta10;
-    $Area = ".";
+    $Area = $info->IdArea;
     $d = date(d);
     $m = date(m);
     $y = date(Y);
@@ -78,9 +78,10 @@ class CEncuestas extends poolConnecion
     $txtIdPregunta[7] = $info->txtIdPregunta8;
     $txtIdPregunta[8] = $info->txtIdPregunta9;
     $txtIdPregunta[9] = $info->txtIdPregunta10;
+    $Area = $info->IdArea;
 
     /* we update a name of surveys */
-    $Sql = "UPDATE [SAP].[dbo].[AAEncuesta] SET [Encuesta] = '$txtEncuesta'  WHERE Id='$IdEncuesta'";
+    $Sql = "UPDATE [SAP].[dbo].[AAEncuesta] SET [Encuesta] = '$txtEncuesta' ,Area='$Area' WHERE Id='$IdEncuesta'";
     $obj = new poolConnecion();
     $con=$obj->ConexionSQLSAP();
     $RSet=$obj->QuerySQLSAP($Sql,$con);

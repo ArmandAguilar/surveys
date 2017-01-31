@@ -89,7 +89,8 @@ function encuesta_save_edit()
                     txtIdPregunta7:$('#txtIdPregunta7').val(),
                     txtIdPregunta8:$('#txtIdPregunta8').val(),
                     txtIdPregunta9:$('#txtIdPregunta9').val(),
-                    txtIdPregunta10:$('#txtIdPregunta10').val()
+                    txtIdPregunta10:$('#txtIdPregunta10').val(),
+                    txtIdArea:$('#cboPerfil').val()
                   };
    $.ajax({
              url:'./scripts/oper_cencuesta.php?o=3',
