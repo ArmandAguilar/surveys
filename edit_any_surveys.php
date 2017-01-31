@@ -211,7 +211,7 @@ desired effect
                 <div class="form-group">
                   <label>Perfil</label>
                   <select class="form-control" name='cboPerfil' id='cboPerfil'>
-                    $CboArea
+                    <option value = '<?php echo $CboArea; ?>' selected><?php echo $CboArea; ?></option>
                     <?php
                             $SqlCbo = "SELECT distinct([Perfil]) FROM [Northwind].[dbo].[Usuarios] Where Departamento <> 'Baja'";
                             $objPefil = new poolConnecion();
@@ -220,7 +220,7 @@ desired effect
                             while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                                  {
                      ?>
-                    <option value = '<?php echo $fila[Perfil]; ?>' selected><?php echo $fila[Perfil]; ?></option>
+                    <option value = '<?php echo $fila[Perfil]; ?>'><?php echo $fila[Perfil]; ?></option>
                     <?php
                                  }
                             $objPefil->CerrarSQLSAP($RSet,$con);
