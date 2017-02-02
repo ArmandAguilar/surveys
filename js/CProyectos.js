@@ -27,6 +27,7 @@ function set_surveys(idEncuestado,idTarea,Tarea,Nombre,Correo)
                           data:losdatos,
                           success:function(data)
                           {
+                            alert(data);
                               $('#Pencuesta').append(data);
 
                           },
