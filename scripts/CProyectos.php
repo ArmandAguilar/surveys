@@ -95,7 +95,7 @@ class CProyectos extends poolConnecion
 
     $claves_aleatorias = array_rand($ArrayAsk, 5);
 $j = 0;
-foreach ($claves_aleatorias as $key => $value)
+/*foreach ($claves_aleatorias as $key => $value)
   {
       if ($value)
        {
@@ -151,7 +151,7 @@ foreach ($claves_aleatorias as $key => $value)
                     </td>
               </tr>";
             }
-  }
+  }*/
     $Surveys .= "         </tbody>
                 </table>";
     return $Surveys;
