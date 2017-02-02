@@ -247,6 +247,7 @@ desired effect
               <div class="modal-body">
                 <div class="form-group">
                    <!-- Aqui la encuesta -->
+                   <div id="Pencuesta"></div>
                   <input type="hidden" name = "txtIdEncuestador" id="txtIdEncuestador"  value="<?php echo $_SESSION[IdUsuario]; ?>"/>
                   <input type="hidden" name = "txtIdEncuestado" id="txtIdEncuestado" />
                   <input type="hidden" name = "txtIdTarea" id="txtIdTarea" />

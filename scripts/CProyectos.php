@@ -87,62 +87,74 @@ class CProyectos extends poolConnecion
     $RSet=$objAks->QuerySQLSAP($Sql,$con);
      while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
            {
-                  $ArrayAsk[$i] =  $fila[Pregunta];
+                  $ArrayAsk[$i] =  "$fila[Id]";
                   $i++;
            }
     $objAks->CerrarSQLSAP($RSet,$con);
 
 
     $claves_aleatorias = array_rand($ArrayAsk, 5);
+$j = 0;
+foreach ($claves_aleatorias as $key => $value)
+  {
+      if ($value)
+       {
+         $j++;
+         $Sql="SELECT [Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta' and [Id] = '$vale'";
+         $con=$objAks->ConexionSQLSAP();
+         $RSet=$objAks->QuerySQLSAP($Sql,$con);
+          while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                {
+                       $Pregunta "$fila[Pregunta]";
 
-foreach ($claves_aleatorias as $key => $value) {
-  # code...
+                }
+         $objAks->CerrarSQLSAP($RSet,$con);
+              $Surveys .= <"tr><td>$Pregunta</td></tr>
+              <tr>
+                    <td>
+                          <div class=\"form-group\">
+                                <div class=\"radio\">
+                                    <label>
+                                        <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"1\" onclick=\"setValPregunta('$vale','1')\">
+                                        Simpre
+                                    </label>
+                                  </div>
 
-    $Surveys = <"tr><td>$fila[Pregunta]</td></tr>
-    <tr>
-          <td>
-                <div class=\"form-group\">
-                      <div class=\"radio\">
-                          <label>
-                              <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"1\" onclick=\"setValPregunta('$fila[IdActualizar]','1')\">
-                              Simpre
-                          </label>
-                        </div>
+                          </div>
+                          <div class=\"form-group\">
+                                <div class=\"radio\">
+                                    <label>
+                                        <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.75\" onclick=\"setValPregunta('$vale','0.75')\">
+                                        Normalmente Si
+                                    </label>
+                                  </div>
 
-                </div>
-                <div class=\"form-group\">
-                      <div class=\"radio\">
-                          <label>
-                              <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.75\" onclick=\"setValPregunta('$fila[IdActualizar]','0.75')\">
-                              Normalmente Si
-                          </label>
-                        </div>
+                          </div>
+                          <div class=\"form-group\">
+                                <div class=\"radio\">
+                                    <label>
+                                        <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.5\" onclick=\"setValPregunta('$vale','0.5')\">
+                                        Normalmente No
+                                    </label>
+                                  </div>
 
-                </div>
-                <div class=\"form-group\">
-                      <div class=\"radio\">
-                          <label>
-                              <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.5\" onclick=\"setValPregunta('$fila[IdActualizar]','0.5')\">
-                              Normalmente No
-                          </label>
-                        </div>
+                          </div>
+                          <div class=\"form-group\">
+                                <div class=\"radio\">
+                                    <label>
+                                        <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.25\" onclick=\"setValPregunta('$vale','0.25')\">
+                                        Nunca
+                                    </label>
+                                  </div>
 
-                </div>
-                <div class=\"form-group\">
-                      <div class=\"radio\">
-                          <label>
-                              <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.25\" onclick=\"setValPregunta('$fila[IdActualizar]','0.25')\">
-                              Nunca
-                          </label>
-                        </div>
-
-                </div>
-          </td>
-    </tr>";
-    }
+                          </div>
+                    </td>
+              </tr>";
+            }
+  }
     $Surveys .= "         </tbody>
                 </table>";
-    return $Encuesta;
+    return $Surveys;
   }
 
 }

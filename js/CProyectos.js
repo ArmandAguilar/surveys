@@ -5,11 +5,37 @@ function show_all_task(IdProyecto)
 }
 function set_surveys(idEncuestado,idTarea,Tarea,Nombre,Correo)
 {
+
+  $('#Pencuesta').empty();
+
   $('#txtIdEncuestado').val(idEncuestado);
   $('#txtIdTarea').val(idTarea);
   $('txtCorreo').val(Correo);
   $('txtNombre').val(Nombre);
   $('txtTareaNombre').val(Tarea);
+
+  var losdatos = {
+                  idEncuestador:$('#txtIdEncuestador').val(),
+                  idEncuestado:$('#txtIdEncuestado').val(),
+                  idTarea:$('#txtIdTarea').val(),
+                  idEncuesta:$('#cboEncuesta').val()
+                }
+
+                $.ajax({
+                          url:'./scripts/oper_proyectos.php?o=2',
+                          type:'POST',
+                          data:losdatos,
+                          success:function(data)
+                          {
+                              $('#Pencuesta').append(data);
+
+                          },
+                          error:function(req,e,er) {
+                            alert(er);
+                          }
+                        });
+
+
 
 }
 function apply_surveys()
@@ -26,7 +52,7 @@ function apply_surveys()
                 alert('IdEncuesta :' + $('#cboEncuesta').val());*/
 
                 $.ajax({
-                          url:'./scripts/oper_proyectos.php?o=1',
+                          url:'./scripts/oper_proyectos.php?o=3',
                           type:'POST',
                           data:losdatos,
                           success:function(data)
