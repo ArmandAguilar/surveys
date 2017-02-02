@@ -246,23 +246,7 @@ desired effect
               </div>
               <div class="modal-body">
                 <div class="form-group">
-                  <label>Select</label>
-                  <select class="form-control" name="cboEncuesta" id="cboEncuesta">
-                    <option value="0">--------------------------</option>
-                    <?php
-                              $objTable = new poolConnecion();
-                              $SqlID="SELECT [Id],[Encuesta] FROM [SAP].[dbo].[AAEncuesta] order by [Id] asc";
-                              $con=$objTable->ConexionSQLSAP();
-                              $RSet=$objTable->QuerySQLSAP($SqlID,$con);
-                               while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
-                                     {
-                                       $i++;
-                      ?>
-                      <option value="<?php echo $fila[Id]; ?>"><?php echo $fila[Encuesta]; ?></option>
-                      <?php
-                            }
-                      ?>
-                  </select>
+                   <!-- Aqui la encuesta -->
                   <input type="hidden" name = "txtIdEncuestador" id="txtIdEncuestador"  value="<?php echo $_SESSION[IdUsuario]; ?>"/>
                   <input type="hidden" name = "txtIdEncuestado" id="txtIdEncuestado" />
                   <input type="hidden" name = "txtIdTarea" id="txtIdTarea" />
