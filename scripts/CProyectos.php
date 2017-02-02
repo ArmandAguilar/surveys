@@ -79,6 +79,7 @@ class CProyectos extends poolConnecion
 
     /* print the survey in random mode */
     /* we create a array with all ask */
+    $i = 0;
     $Surveys = "<table class="table table-condensed">
                     <tbody>";
     $Sql="SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta'";
@@ -86,12 +87,59 @@ class CProyectos extends poolConnecion
     $RSet=$objAks->QuerySQLSAP($Sql,$con);
      while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
            {
-                        
+                  $ArrayAsk[$i] =  $fila[Pregunta];
+                  $i++;
            }
     $objAks->CerrarSQLSAP($RSet,$con);
 
 
+    $claves_aleatorias = array_rand($ArrayAsk, 5);
 
+foreach ($claves_aleatorias as $key => $value) {
+  # code...
+
+    $Surveys = <"tr><td>$fila[Pregunta]</td></tr>
+    <tr>
+          <td>
+                <div class=\"form-group\">
+                      <div class=\"radio\">
+                          <label>
+                              <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"1\" onclick=\"setValPregunta('$fila[IdActualizar]','1')\">
+                              Simpre
+                          </label>
+                        </div>
+
+                </div>
+                <div class=\"form-group\">
+                      <div class=\"radio\">
+                          <label>
+                              <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.75\" onclick=\"setValPregunta('$fila[IdActualizar]','0.75')\">
+                              Normalmente Si
+                          </label>
+                        </div>
+
+                </div>
+                <div class=\"form-group\">
+                      <div class=\"radio\">
+                          <label>
+                              <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.5\" onclick=\"setValPregunta('$fila[IdActualizar]','0.5')\">
+                              Normalmente No
+                          </label>
+                        </div>
+
+                </div>
+                <div class=\"form-group\">
+                      <div class=\"radio\">
+                          <label>
+                              <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.25\" onclick=\"setValPregunta('$fila[IdActualizar]','0.25')\">
+                              Nunca
+                          </label>
+                        </div>
+
+                </div>
+          </td>
+    </tr>";
+    }
     $Surveys .= "         </tbody>
                 </table>";
     return $Encuesta;
