@@ -49,7 +49,7 @@ class CProyectos extends poolConnecion
     $idTarea = $info->idTarea;
     $idEncuesta = $info->idEncuesta;
     /*get the number of questions */
-    $NumAsk = 0;
+    /*$NumAsk = 0;
     $obj = new poolConnecion();
     $Sql="SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] WHERE [IdEncuesta] = '$idEncuesta'";
     $con=$obj->ConexionSQLSAP();
@@ -59,7 +59,7 @@ class CProyectos extends poolConnecion
               $ArrayID[$NumAsk] = $fila[Id];
               $NumAsk++;
            }
-    $obj->CerrarSQLSAP($RSet,$con);
+    $obj->CerrarSQLSAP($RSet,$con);*/
     /*insert in teh table the surveys*/
     /*foreach ($ArrayID as $key => $value) {
       if (!empty($value))
@@ -80,7 +80,7 @@ class CProyectos extends poolConnecion
     /* print the survey in random mode */
     /* we create a array with all ask */
     $i = 0;
-    $Surveys = "<table class="table table-condensed">
+    $Surveys = "<table class=\"table table-condensed\">
                     <tbody>";
     /*$Sql="SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta'";
     $con=$objAks->ConexionSQLSAP();
