@@ -167,7 +167,7 @@ foreach ($NewArrayAks as $key => $value)
     $RSet=$obj->QuerySQLSAP($Sql,$con);
     $obj->CerrarSQLSAP($RSet,$con);
 
-    return $valor
+    return $valor;
   }
 
 }
