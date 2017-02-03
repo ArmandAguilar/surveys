@@ -90,7 +90,6 @@ class CProyectos extends poolConnecion
      while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
            {
                   $ArrayAsk[$i] =  $fila[Id];
-                  $Surveys .= $fila[Id];
                   $i++;
            }
     $objAks->CerrarSQLSAP($RSet,$con);
