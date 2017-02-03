@@ -200,11 +200,14 @@ desired effect
                                                       WHERE
                                                             ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] =  [SAP].[dbo].[CatalogoDeProyectos].[NumProyecto] and
                                                             [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id]) and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '$_GET[NumProy]')";
+
                                           $con=$objTable->ConexionSQLSAP();
                                           $RSet=$objTable->QuerySQLSAP($SqlID,$con);
                                            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                                                  {
                                                    $i++;
+                                                   /* Get id encuesta for perfil  */
+                                                   $IdEncuesta = 17;
                                    ?>
                                  <tr>
                                     <td><?php echo $i; ?>.</td>
@@ -215,7 +218,7 @@ desired effect
                                             if ($fila[Evaluada] == "No") {
                                               # code...
                                               ?>
-                                              <td><div data-toggle="modal" data-target="#myModal" style="cursor:pointer" onclick="set_surveys(<?php echo $fila[IdUsuarioAEncuestar]; ?>,<?php echo $fila[IdTeamWork]; ?>,'<?php echo $fila[Tarea]; ?>','<?php echo "$fila[Nombre] $fila[Apellidos]"; ?>','<?php echo $fila[Email]; ?>')"> Aplicar encuesta</div></td>
+                                              <td><div data-toggle="modal" data-target="#myModal" style="cursor:pointer" onclick="set_surveys(<?php echo $IdEncuesta;?>,<?php echo $fila[IdUsuarioAEncuestar]; ?>,<?php echo $fila[IdTeamWork]; ?>,'<?php echo $fila[Tarea]; ?>','<?php echo "$fila[Nombre] $fila[Apellidos]"; ?>','<?php echo $fila[Email]; ?>')"> Aplicar encuesta</div></td>
 
                                     <?php
                                             }

@@ -3,11 +3,12 @@ function show_all_task(IdProyecto)
   /*redirecto to new script where , we show all task*/
   window.location.href= 'task.php?NumProy=' + IdProyecto
 }
-function set_surveys(idEncuestado,idTarea,Tarea,Nombre,Correo)
+function set_surveys(idEncuesta,idEncuestado,idTarea,Tarea,Nombre,Correo)
 {
 
   $('#Pencuesta').empty();
 
+  $('#txtIdEncuesta').val(idEncuesta);
   $('#txtIdEncuestado').val(idEncuestado);
   $('#txtIdTarea').val(idTarea);
   $('txtCorreo').val(Correo);
@@ -18,7 +19,7 @@ function set_surveys(idEncuestado,idTarea,Tarea,Nombre,Correo)
                   idEncuestador:$('#txtIdEncuestador').val(),
                   idEncuestado:$('#txtIdEncuestado').val(),
                   idTarea:$('#txtIdTarea').val(),
-                  idEncuesta:$('#cboEncuesta').val()
+                  idEncuesta:$('#txtIdEncuesta').val()
                 }
 
                 $.ajax({
