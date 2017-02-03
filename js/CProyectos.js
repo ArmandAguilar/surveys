@@ -21,7 +21,7 @@ function set_surveys(idEncuesta,idEncuestado,idTarea,Tarea,Nombre,Correo)
                   idTarea:$('#txtIdTarea').val(),
                   idEncuesta:$('#txtIdEncuesta').val()
                 }
-
+                alert()
                 $.ajax({
                           url:'./scripts/oper_proyectos.php?o=2',
                           type:'POST',
