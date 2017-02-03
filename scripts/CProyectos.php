@@ -102,7 +102,7 @@ class CProyectos extends poolConnecion
     $NewArrayAks[3] = $ArrayAsk[3];
     $NewArrayAks[4] = $ArrayAsk[4];
     $j = 0;
-foreach ($NewArrayAsk as $key => $value)
+foreach ($NewArrayAks as $key => $value)
   {
       if ($value)
        {
