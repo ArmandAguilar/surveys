@@ -112,7 +112,7 @@ foreach ($claves_aleatorias as $key => $value)
 
                 }
 
-         $Surveys .= "$Sql<tr><td>$Pregunta</td></tr>
+         $Surveys .= "$Sql <tr><td>$Pregunta</td></tr>
               <tr>
                     <td>
                           <div class=\"form-group\">
