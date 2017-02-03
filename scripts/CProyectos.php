@@ -61,7 +61,7 @@ class CProyectos extends poolConnecion
            }
     $obj->CerrarSQLSAP($RSet,$con);
     /*insert in teh table the surveys*/
-    foreach ($ArrayID as $key => $value) {
+    /*foreach ($ArrayID as $key => $value) {
       if (!empty($value))
       {
         $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','$idTarea','$value','0','$idEncuesta')";
@@ -69,20 +69,20 @@ class CProyectos extends poolConnecion
         $RSet=$obj->QuerySQLSAP($sql,$con);
         $obj->CerrarSQLSAP($RSet,$con);
       }
-    }
+    }*/
 
     /*change the staus of 0 in field Evaluado*/
-    $Sql="UPDATE [SAP].[dbo].[AATareasTeamWork] SET [Evaluada] = 'Si' WHERE [IdTeamWork]='$idTarea'";
+    /*$Sql="UPDATE [SAP].[dbo].[AATareasTeamWork] SET [Evaluada] = 'Si' WHERE [IdTeamWork]='$idTarea'";
     $con=$obj->ConexionSQLSAP();
     $RSet=$obj->QuerySQLSAP($Sql,$con);
-    $obj->CerrarSQLSAP($RSet,$con);
+    $obj->CerrarSQLSAP($RSet,$con);*/
 
     /* print the survey in random mode */
     /* we create a array with all ask */
     $i = 0;
     $Surveys = "<table class="table table-condensed">
                     <tbody>";
-    $Sql="SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta'";
+    /*$Sql="SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta'";
     $con=$objAks->ConexionSQLSAP();
     $RSet=$objAks->QuerySQLSAP($Sql,$con);
      while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -90,12 +90,12 @@ class CProyectos extends poolConnecion
                   $ArrayAsk[$i] =  "$fila[Id]";
                   $i++;
            }
-    $objAks->CerrarSQLSAP($RSet,$con);
+    $objAks->CerrarSQLSAP($RSet,$con);*/
 
 
-    $claves_aleatorias = array_rand($ArrayAsk, 5);
+    /*$claves_aleatorias = array_rand($ArrayAsk, 5);*/
 $j = 0;
-foreach ($claves_aleatorias as $key => $value)
+/*foreach ($claves_aleatorias as $key => $value)
   {
       if ($value)
        {
@@ -151,7 +151,7 @@ foreach ($claves_aleatorias as $key => $value)
                     </td>
               </tr>";
             }
-  }
+  }*/
     $Surveys .= "         </tbody>
                 </table>";
     return $Surveys;
