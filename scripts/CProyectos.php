@@ -95,23 +95,26 @@ class CProyectos extends poolConnecion
     $objAks->CerrarSQLSAP($RSet,$con);
 
 
-    $claves_aleatorias = array_rand($ArrayAsk, 6);
-$j = 0;
-foreach ($claves_aleatorias as $key => $value)
+    shuffle($ArrayAsk);
+    $NewArrayAks[0] = $ArrayAsk[0];
+    $NewArrayAks[1] = $ArrayAsk[1];
+    $NewArrayAks[2] = $ArrayAsk[2];
+    $NewArrayAks[3] = $ArrayAsk[3];
+    $NewArrayAks[4] = $ArrayAsk[4];
+    $j = 0;
+foreach ($NewArrayAsk as $key => $value)
   {
       if ($value)
        {
          $j++;
-         $Sql="SELECT [Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta' and [Id] = '$ArrayAsk[$claves_aleatorias[0]]'";
+         $Sql="SELECT [Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta' and [Id] = '$value'";
          $objAksAll = new poolConnecion();
          $con=$objAksAll->ConexionSQLSAP();
          $RSet=$objAksAll->QuerySQLSAP($Sql,$con);
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                 {
-                       $Pregunta = $fila[Pregunta];
-
+                      $Pregunta = $fila[Pregunta];
                 }
-
          $Surveys .= "$Sql <tr><td>$Pregunta</td></tr>
               <tr>
                     <td>
