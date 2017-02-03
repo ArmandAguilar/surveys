@@ -88,7 +88,7 @@ class CProyectos extends poolConnecion
     $RSet=$objAks->QuerySQLSAP($Sql,$con);
      while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
            {
-                  $ArrayAsk[$i] =  "$fila[Id]";
+                  $ArrayAsk[$i] =  $fila[Id];
                   $i++;
            }
     $objAks->CerrarSQLSAP($RSet,$con);
@@ -98,6 +98,7 @@ class CProyectos extends poolConnecion
 $j = 0;
 foreach ($claves_aleatorias as $key => $value)
   {
+     $Surveys .= $value;
       if ($value)
        {
          $j++;
