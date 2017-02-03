@@ -23,6 +23,9 @@ switch ($_GET[o])
                 echo $obj->apply_surveys_random($info);
                 /*echo "Good";*/
         break;
+        case '3':
+                echo $obj->Close_Surveys($_POST[idTarea]);
+        break;
 
   }
 ?>

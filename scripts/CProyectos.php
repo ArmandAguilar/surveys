@@ -71,11 +71,7 @@ class CProyectos extends poolConnecion
       }
     }*/
 
-    /*change the staus of 0 in field Evaluado*/
-    /*$Sql="UPDATE [SAP].[dbo].[AATareasTeamWork] SET [Evaluada] = 'Si' WHERE [IdTeamWork]='$idTarea'";
-    $con=$obj->ConexionSQLSAP();
-    $RSet=$obj->QuerySQLSAP($Sql,$con);
-    $obj->CerrarSQLSAP($RSet,$con);*/
+
 
     /* print the survey in random mode */
     /* we create a array with all ask */
@@ -115,7 +111,7 @@ foreach ($NewArrayAks as $key => $value)
                 {
                       $Pregunta = $fila[Pregunta];
                 }
-         $Surveys .= "$Sql <tr><td>$Pregunta</td></tr>
+         $Surveys .= "<tr><td>$Pregunta</td></tr>
               <tr>
                     <td>
                           <div class=\"form-group\">
@@ -161,6 +157,17 @@ foreach ($NewArrayAks as $key => $value)
     $Surveys .= "         </tbody>
                 </table>";
     return $Surveys;
+  }
+  function Close_Surveys($idTarea)
+  {
+
+    /*change the staus of 0 in field Evaluado*/
+    $Sql="UPDATE [SAP].[dbo].[AATareasTeamWork] SET [Evaluada] = 'Si' WHERE [IdTeamWork]='$idTarea'";
+    $con=$obj->ConexionSQLSAP();
+    $RSet=$obj->QuerySQLSAP($Sql,$con);
+    $obj->CerrarSQLSAP($RSet,$con);
+
+    return
   }
 
 }
