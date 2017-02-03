@@ -110,7 +110,7 @@ foreach ($claves_aleatorias as $key => $value)
                        $Pregunta "$fila[Pregunta]";
 
                 }
-         $objAksAll->CerrarSQLSAP($RSet,$con);
+
          $Surveys .= "<tr><td>$Pregunta</td></tr>
               <tr>
                     <td>
