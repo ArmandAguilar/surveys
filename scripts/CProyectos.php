@@ -84,7 +84,6 @@ class CProyectos extends poolConnecion
                     <tbody>";
 
     $Sql="SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta'";
-    $Surveys .= $Sql;
     $objAks = new poolConnecion();
     $con=$objAks->ConexionSQLSAP();
     $RSet=$objAks->QuerySQLSAP($Sql,$con);
@@ -101,7 +100,6 @@ class CProyectos extends poolConnecion
 $j = 0;
 foreach ($claves_aleatorias as $key => $value)
   {
-     $Surveys .= $value;
       if ($value)
        {
          $j++;
@@ -111,11 +109,11 @@ foreach ($claves_aleatorias as $key => $value)
          $RSet=$objAksAll->QuerySQLSAP($Sql,$con);
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                 {
-                       $Pregunta = "$fila[Pregunta]";
+                       $Pregunta = $fila[Pregunta];
 
                 }
 
-         $Surveys .= "<tr><td>sssss$Pregunta</td></tr>
+         $Surveys .= "$Sql<tr><td>$Pregunta</td></tr>
               <tr>
                     <td>
                           <div class=\"form-group\">
