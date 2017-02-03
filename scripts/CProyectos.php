@@ -160,14 +160,14 @@ foreach ($NewArrayAks as $key => $value)
   }
   function Close_Surveys($idTarea)
   {
-
+    $valor  = "Si";
     /*change the staus of 0 in field Evaluado*/
     $Sql="UPDATE [SAP].[dbo].[AATareasTeamWork] SET [Evaluada] = 'Si' WHERE [IdTeamWork]='$idTarea'";
     $con=$obj->ConexionSQLSAP();
     $RSet=$obj->QuerySQLSAP($Sql,$con);
     $obj->CerrarSQLSAP($RSet,$con);
 
-    return
+    return $valor
   }
 
 }
