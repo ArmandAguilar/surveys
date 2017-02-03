@@ -50,7 +50,7 @@ class CProyectos extends poolConnecion
     $idEncuesta = $info->idEncuesta;
     /*get the number of questions */
     $NumAsk = 0;
-    $obj = new poolConnecion();
+    /*$obj = new poolConnecion();
     $Sql="SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] WHERE [IdEncuesta] = '$idEncuesta'";
     $con=$obj->ConexionSQLSAP();
     $RSet=$obj->QuerySQLSAP($Sql,$con);
@@ -61,7 +61,7 @@ class CProyectos extends poolConnecion
            }
     $obj->CerrarSQLSAP($RSet,$con);
     /*insert in teh table the surveys*/
-    foreach ($ArrayID as $key => $value) {
+    /*foreach ($ArrayID as $key => $value) {
       if (!empty($value))
       {
         $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','$idTarea','$value','0','$idEncuesta')";
@@ -69,13 +69,13 @@ class CProyectos extends poolConnecion
         $RSet=$obj->QuerySQLSAP($sql,$con);
         $obj->CerrarSQLSAP($RSet,$con);
       }
-    }
+    }*/
 
     /*change the staus of 0 in field Evaluado*/
-    $Sql="UPDATE [SAP].[dbo].[AATareasTeamWork] SET [Evaluada] = 'Si' WHERE [IdTeamWork]='$idTarea'";
+    /*$Sql="UPDATE [SAP].[dbo].[AATareasTeamWork] SET [Evaluada] = 'Si' WHERE [IdTeamWork]='$idTarea'";
     $con=$obj->ConexionSQLSAP();
     $RSet=$obj->QuerySQLSAP($Sql,$con);
-    $obj->CerrarSQLSAP($RSet,$con);
+    $obj->CerrarSQLSAP($RSet,$con);*/
 
     /* print the survey in random mode */
     /* we create a array with all ask */
@@ -83,6 +83,7 @@ class CProyectos extends poolConnecion
     $Surveys = "<table class=\"table table-condensed\">
                     <tbody>";
     $Sql="SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta'";
+    $objAks = new poolConnecion();
     $con=$objAks->ConexionSQLSAP();
     $RSet=$objAks->QuerySQLSAP($Sql,$con);
      while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
@@ -101,15 +102,16 @@ foreach ($claves_aleatorias as $key => $value)
        {
          $j++;
          $Sql="SELECT [Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta' and [Id] = '$vale'";
-         $con=$objAks->ConexionSQLSAP();
-         $RSet=$objAks->QuerySQLSAP($Sql,$con);
+         $objAksAll = new poolConnecion();
+         $con=$objAksAll->ConexionSQLSAP();
+         $RSet=$objAksAll->QuerySQLSAP($Sql,$con);
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                 {
                        $Pregunta "$fila[Pregunta]";
 
                 }
-         $objAks->CerrarSQLSAP($RSet,$con);
-              $Surveys .= <"tr><td>$Pregunta</td></tr>
+         $objAksAll->CerrarSQLSAP($RSet,$con);
+         $Surveys .= "<tr><td>$Pregunta</td></tr>
               <tr>
                     <td>
                           <div class=\"form-group\">
