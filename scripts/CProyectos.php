@@ -82,8 +82,9 @@ class CProyectos extends poolConnecion
     $i = 0;
     $Surveys = "<table class=\"table table-condensed\">
                     <tbody>";
-    $Surveys .= $Sql;
+
     $Sql="SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta'";
+    $Surveys .= $Sql;
     $objAks = new poolConnecion();
     $con=$objAks->ConexionSQLSAP();
     $RSet=$objAks->QuerySQLSAP($Sql,$con);
