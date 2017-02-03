@@ -102,7 +102,7 @@ foreach ($claves_aleatorias as $key => $value)
       if ($value)
        {
          $j++;
-         $Sql="SELECT [Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta' and [Id] = '$value'";
+         $Sql="SELECT [Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta' and [Id] = '$claves_aleatorias[$value]'";
          $objAksAll = new poolConnecion();
          $con=$objAksAll->ConexionSQLSAP();
          $RSet=$objAksAll->QuerySQLSAP($Sql,$con);
