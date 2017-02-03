@@ -96,12 +96,12 @@ class CProyectos extends poolConnecion
 
     $claves_aleatorias = array_rand($ArrayAsk, 5);
 $j = 0;
-/*foreach ($claves_aleatorias as $key => $value)
+foreach ($claves_aleatorias as $key => $value)
   {
       if ($value)
        {
          $j++;
-         $Sql="SELECT [Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta' and [Id] = '$vale'";
+         $Sql="SELECT [Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta' and [Id] = '$value'";
          $objAksAll = new poolConnecion();
          $con=$objAksAll->ConexionSQLSAP();
          $RSet=$objAksAll->QuerySQLSAP($Sql,$con);
@@ -153,7 +153,7 @@ $j = 0;
                     </td>
               </tr>";
             }
-  }*/
+  }
     $Surveys .= "         </tbody>
                 </table>";
     return $Surveys;
