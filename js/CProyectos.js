@@ -42,7 +42,7 @@ function set_surveys(idEncuesta,idEncuestado,idTarea,Tarea,Nombre,Correo)
 
 function Close_Surveys(NumProy)
 {
-     var losdatos {idTarea:$('#txtIdTarea').val(idTarea)};
+     var losdatos = {idTarea:$('#txtIdTarea').val(idTarea)};
       $.ajax({
                 url:'./scripts/oper_proyectos.php?o=3',
                 type:'POST',
