@@ -107,11 +107,11 @@ foreach ($claves_aleatorias as $key => $value)
          $RSet=$objAksAll->QuerySQLSAP($Sql,$con);
           while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                 {
-                       $Pregunta "$fila[Pregunta]";
+                       $Pregunta = "$fila[Pregunta]";
 
                 }
 
-         $Surveys .= "<tr><td>$Pregunta</td></tr>
+         $Surveys .= "<tr><td>sssss$Pregunta</td></tr>
               <tr>
                     <td>
                           <div class=\"form-group\">
