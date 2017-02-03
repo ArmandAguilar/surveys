@@ -20,8 +20,8 @@ switch ($_GET[o])
                 $info->idTarea = $_POST[idTarea];
                 $info->idEncuesta = $_POST[idEncuesta];
 
-                /*echo $obj->apply_surveys_random($info);*/
-                echo "Good";
+                echo $obj->apply_surveys_random($info);
+                /*echo "Good";*/
         break;
 
   }
