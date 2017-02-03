@@ -42,7 +42,7 @@ class CProyectos extends poolConnecion
     $obj->CerrarSQLSAP($RSet,$con);
     return $sql;
   }
-  fucntion apply_surveys_random($info)
+  function apply_surveys_random($info)
   {
     $idEncuestador = $info->idEncuestador;
     $idEncuestado = $info->idEncuestado;
@@ -95,7 +95,7 @@ class CProyectos extends poolConnecion
 
     $claves_aleatorias = array_rand($ArrayAsk, 5);
 $j = 0;
-/*foreach ($claves_aleatorias as $key => $value)
+foreach ($claves_aleatorias as $key => $value)
   {
       if ($value)
        {
@@ -151,7 +151,7 @@ $j = 0;
                     </td>
               </tr>";
             }
-  }*/
+  }
     $Surveys .= "         </tbody>
                 </table>";
     return $Surveys;
