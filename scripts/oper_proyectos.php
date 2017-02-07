@@ -14,6 +14,7 @@ switch ($_GET[o])
 
             echo $obj->apply_surveys($info);
       break;
+
       case '2':
                 $info->idEncuestador = $_POST[idEncuestador];
                 $info->idEncuestado = $_POST[idEncuestado];
@@ -23,8 +24,16 @@ switch ($_GET[o])
                 echo $obj->apply_surveys_random($info);
                 /*echo "Good";*/
         break;
+
         case '3':
                 echo $obj->Close_Surveys($_POST[idTarea]);
+        break;
+
+        case '4':
+                  $objLastSurveysFormActualizar = new poolConnecion();
+                  $Sql="UPDATE [SAP].[dbo].[AA_Encuestado] SET [Respuesta] = '$_POST[txtValor]' WHERE [Id] = '$_POST[txtId]'";
+                  $con=$objLastSurveysFormActualizar->ConexionSQLSAP();
+                  $RSet=$objLastSurveysFormActualizar->QuerySQLSAP($Sql,$con);
         break;
 
   }

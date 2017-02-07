@@ -388,5 +388,25 @@ desired effect
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout.    -->
+<script>
+
+     function setValPregunta(Id,Valor)
+     {
+       /*alert('IdActualizar: ' + Id + ' Valor :' + Valor);*/
+       var losdatos = {txtId:Id,txtValor:Valor};
+       $.ajax({
+                 url:'./scripts/oper_proyectos.php?o=4',
+                 type:'POST',
+                 data:losdatos,
+                 success:function(data)
+                 {
+
+                 },
+                 error:function(req,e,er) {
+                   alert(er);
+                 }
+               });
+     }
+</script>
 </body>
 </html>
