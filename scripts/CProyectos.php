@@ -50,7 +50,7 @@ class CProyectos extends poolConnecion
     $idEncuesta = $info->idEncuesta;
     /*get the number of questions */
     $NumAsk = 0;
-    /*$obj = new poolConnecion();
+    $obj = new poolConnecion();
     $Sql="SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] WHERE [IdEncuesta] = '$idEncuesta'";
     $con=$obj->ConexionSQLSAP();
     $RSet=$obj->QuerySQLSAP($Sql,$con);
@@ -61,7 +61,7 @@ class CProyectos extends poolConnecion
            }
     $obj->CerrarSQLSAP($RSet,$con);
     /*insert in teh table the surveys*/
-    /*foreach ($ArrayID as $key => $value) {
+    foreach ($ArrayID as $key => $value) {
       if (!empty($value))
       {
         $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','$idTarea','$value','0','$idEncuesta')";
@@ -69,7 +69,7 @@ class CProyectos extends poolConnecion
         $RSet=$obj->QuerySQLSAP($sql,$con);
         $obj->CerrarSQLSAP($RSet,$con);
       }
-    }*/
+    }
 
 
 
@@ -168,6 +168,18 @@ foreach ($NewArrayAks as $key => $value)
     $obj->CerrarSQLSAP($RSet,$con);
 
     return $valor;
+  }
+  function Get_Surveys($Profile)
+  {
+    $Sql="SELECT [Id] FROM [SAP].[dbo].[AAEncuesta] Where [Area] = '$Profile'";
+    $objIdSurveys = new poolConnecion();
+    $con=$objIdSurveys->ConexionSQLSAP();
+    $RSet=$objIdSurveys->QuerySQLSAP($Sql,$con);
+     while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+           {
+                 $IdSurverys = $fila[Id];
+           }
+     return $IdSurverys;
   }
 
 }

@@ -35,9 +35,6 @@ function set_surveys(idEncuesta,idEncuestado,idTarea,Tarea,Nombre,Correo)
                             alert(er);
                           }
                         });
-
-
-
 }
 
 function Close_Surveys(NumProy)

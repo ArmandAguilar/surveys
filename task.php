@@ -3,7 +3,9 @@ ini_set('session.auto_start()','On');
 session_start();
 include("../sis.php");
 include("$path/libs/conexion.php");
+include("$path/libs/CProyectos.php");
 
+$objProy = CProyectos();
 
 $Activar = "No";
 switch ($_SESSION[IdUsuario])
@@ -181,6 +183,7 @@ desired effect
                                       <th>Encuesta</th>
                                   </tr>
                                   <?php
+
                                           $objTable = new poolConnecion();
                                           $SqlID="SELECT
                                                       [SAP].[dbo].[AATareasTeamWork].[Id]
@@ -191,6 +194,7 @@ desired effect
                                                       ,[Northwind].[dbo].Usuarios.[Nombre]
                                                       ,[Northwind].[dbo].Usuarios.[Apellidos]
                                                       ,[Northwind].[dbo].Usuarios.[Email]
+                                                      ,[Northwind].[dbo].Usuarios.[Perfil]
                                                       ,[SAP].[dbo].[AATareasTeamWork].[Tarea]
                                                       ,[SAP].[dbo].[AATareasTeamWork].[Evaluada]
                                                 FROM
@@ -207,7 +211,8 @@ desired effect
                                                  {
                                                    $i++;
                                                    /* Get id encuesta for perfil  */
-                                                   $IdEncuesta = 17;
+                                                  /* $IdEncuesta = 17;*/
+                                                  $IdEncuesta = $objProy->Get_Surveys($fila[Perfil]);
                                    ?>
                                  <tr>
                                     <td><?php echo $i; ?>.</td>
