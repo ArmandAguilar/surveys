@@ -163,6 +163,7 @@ foreach ($NewArrayAks as $key => $value)
     $valor  = "Si";
     /*change the staus of 0 in field Evaluado*/
     $Sql="UPDATE [SAP].[dbo].[AATareasTeamWork] SET [Evaluada] = 'Si' WHERE [IdTeamWork]='$idTarea'";
+    $obj = new poolConnecion();
     $con=$obj->ConexionSQLSAP();
     $RSet=$obj->QuerySQLSAP($Sql,$con);
     $obj->CerrarSQLSAP($RSet,$con);
