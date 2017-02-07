@@ -389,7 +389,6 @@ desired effect
      user experience. Slimscroll is required when using the
      fixed layout.    -->
 <script>
-
      function setValPregunta(Id,Valor)
      {
        /*alert('IdActualizar: ' + Id + ' Valor :' + Valor);*/
