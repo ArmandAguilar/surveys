@@ -5,7 +5,7 @@ include("../sis.php");
 include("$path/libs/conexion.php");
 include("$path/scripts/CProyectos.php");
 
-$objProy = CProyectos();
+$objProy = new CProyectos();
 
 $Activar = "No";
 switch ($_SESSION[IdUsuario])
