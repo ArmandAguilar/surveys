@@ -392,14 +392,14 @@ desired effect
      function setValPregunta(Id,Valor)
      {
        /*alert('IdActualizar: ' + Id + ' Valor :' + Valor);*/
-       var losdatos = {txtId:Id,txtValor:Valor};
+       var losdatos = {txtId:Id,txtValor:Valor,txtIdTarea:$('#txtIdTarea').val()};
        $.ajax({
                  url:'./scripts/oper_proyectos.php?o=4',
                  type:'POST',
                  data:losdatos,
                  success:function(data)
                  {
-                      /*alert(data);*/
+                      alert(data);
                  },
                  error:function(req,e,er) {
                    alert(er);

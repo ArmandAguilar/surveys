@@ -31,7 +31,7 @@ switch ($_GET[o])
 
         case '4':
                   $objLastSurveysFormActualizar = new poolConnecion();
-                  $Sql="UPDATE [SAP].[dbo].[AA_Encuestado] SET [Respuesta] = '$_POST[txtValor]' WHERE [IdPregunta] = '$_POST[txtId]'";
+                  $Sql="UPDATE [SAP].[dbo].[AA_Encuestado] SET [Respuesta] = '$_POST[txtValor]' WHERE [IdPregunta] = '$_POST[txtId]' and IdTarea = '$_POST[txtIdTarea]'";
                   $con=$objLastSurveysFormActualizar->ConexionSQLSAP();
                   $RSet=$objLastSurveysFormActualizar->QuerySQLSAP($Sql,$con);
                   echo $Sql;
