@@ -34,6 +34,7 @@ switch ($_GET[o])
                   $Sql="UPDATE [SAP].[dbo].[AA_Encuestado] SET [Respuesta] = '$_POST[txtValor]' WHERE [Id] = '$_POST[txtId]'";
                   $con=$objLastSurveysFormActualizar->ConexionSQLSAP();
                   $RSet=$objLastSurveysFormActualizar->QuerySQLSAP($Sql,$con);
+                  echo $Sql;
         break;
 
   }

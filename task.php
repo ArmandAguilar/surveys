@@ -399,7 +399,7 @@ desired effect
                  data:losdatos,
                  success:function(data)
                  {
-
+                      alert(data);
                  },
                  error:function(req,e,er) {
                    alert(er);
