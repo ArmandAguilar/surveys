@@ -29,6 +29,7 @@ function set_surveys(idEncuesta,idEncuestado,idTarea,Tarea,Nombre,Correo)
                           {
 
                               $('#Pencuesta').append(data);
+                              Close_Surveys_in_app($('#txtIdTarea').val());
 
                           },
                           error:function(req,e,er) {
@@ -49,6 +50,23 @@ function Close_Surveys(NumProy)
                     if (data == 'Si') {
                       window.location.href = 'task.php?NumProy=' + NumProy;
                     }
+                },
+                error:function(req,e,er) {
+                  alert(er);
+                }
+              });
+
+}
+function Close_Surveys_in_app(NumProy)
+{
+     var losdatos = {idTarea:$('#txtIdTarea').val()};
+      $.ajax({
+                url:'./scripts/oper_proyectos.php?o=3',
+                type:'POST',
+                data:losdatos,
+                success:function(data)
+                {
+
                 },
                 error:function(req,e,er) {
                   alert(er);
