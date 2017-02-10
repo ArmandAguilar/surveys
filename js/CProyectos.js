@@ -151,7 +151,7 @@ function setValAnswers(campo,valor)
   }
 
 }
-function setValPregunta_new()
+function setValPregunta_new(NumProy)
 {
     /*var losdatos = {txtId:Id,txtValor:Valor,txtIdTarea:$('#txtIdTarea').val()};*/
       var losdatos = {
@@ -177,7 +177,7 @@ function setValPregunta_new()
                 data:losdatos,
                 success:function(data)
                 {
-                    Close_Surveys($('#txtIdTarea').val());
+                    Close_Surveys(NumProy);
                 },
                 error:function(req,e,er) {
                   alert(er);
