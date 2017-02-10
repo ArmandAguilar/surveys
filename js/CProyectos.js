@@ -173,7 +173,7 @@ function setValPregunta_new()
                     };
       $.ajax({
                 url:'./scripts/oper_proyectos.php?o=5',
-                type:'GET',
+                type:'POST',
                 data:losdatos,
                 success:function(data)
                 {
