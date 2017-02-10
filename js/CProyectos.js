@@ -29,7 +29,7 @@ function set_surveys(idEncuesta,idEncuestado,idTarea,Tarea,Nombre,Correo)
                           {
 
                               $('#Pencuesta').append(data);
-                              Close_Surveys_in_app($('#txtIdTarea').val());
+                              /*Close_Surveys_in_app($('#txtIdTarea').val());*/
 
                           },
                           error:function(req,e,er) {

@@ -21,7 +21,7 @@ switch ($_GET[o])
                 $info->idTarea = $_POST[idTarea];
                 $info->idEncuesta = $_POST[idEncuesta];
 
-                echo $obj->apply_surveys_random($info);
+                echo $obj->apply_surveys_random_2($info);
                 /*echo "Good";*/
         break;
 
