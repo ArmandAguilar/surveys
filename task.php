@@ -264,6 +264,11 @@ desired effect
                   <input type="hidden" name = "txtCorreo" id="txtCorreo" value=""/>
                   <input type="hidden" name = "txtNombre" id="txtNombre" value=""/>
                   <input type="hidden" name = "txtTareaNombre" id="txtTareaNombre" value=""/>
+                  <input type="hidden" name = "txtRespuesta1" id="txtRespuesta1"/>
+                  <input type="hidden" name = "txtRespuesta2" id="txtRespuesta2"/>
+                  <input type="hidden" name = "txtRespuesta3" id="txtRespuesta3"/>
+                  <input type="hidden" name = "txtRespuesta4" id="txtRespuesta4"/>
+                  <input type="hidden" name = "txtRespuesta5" id="txtRespuesta5"/>
                 </div>
                 <div id="msj" class="alert alert-success alert-dismissible" style="display:none">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -273,7 +278,7 @@ desired effect
               </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="Close_Surveys(<?php echo $_GET[NumProy]; ?>);">Aplicar</button>
+                <button type="button" class="btn btn-primary" onclick="setValPregunta_new();">Aplicar</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
               </div>
             </div>

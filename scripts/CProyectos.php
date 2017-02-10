@@ -118,7 +118,7 @@ foreach ($NewArrayAks as $key => $value)
                           <div class=\"form-group\">
                                 <div class=\"radio\">
                                     <label>
-                                        <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"1\">
+                                        <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"1\" onclick=\"setValAnswers($j,'1');\">
                                         Simpre
                                     </label>
                                   </div>
@@ -127,7 +127,7 @@ foreach ($NewArrayAks as $key => $value)
                           <div class=\"form-group\">
                                 <div class=\"radio\">
                                     <label>
-                                        <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.75\">
+                                        <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.75\" onclick=\"setValAnswers($j,'0.75');\">
                                         Normalmente Si
                                     </label>
                                   </div>
@@ -136,7 +136,7 @@ foreach ($NewArrayAks as $key => $value)
                           <div class=\"form-group\">
                                 <div class=\"radio\">
                                     <label>
-                                        <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.5\">
+                                        <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.5\" onclick=\"setValAnswers($j,'0.5');\">
                                         Normalmente No
                                     </label>
                                   </div>
@@ -145,7 +145,7 @@ foreach ($NewArrayAks as $key => $value)
                           <div class=\"form-group\">
                                 <div class=\"radio\">
                                     <label>
-                                        <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.25\">
+                                        <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.25\" onclick=\"setValAnswers($j,'0.25');\">
                                         Nunca
                                     </label>
                                   </div>
