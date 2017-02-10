@@ -114,7 +114,7 @@ foreach ($NewArrayAks as $key => $value)
          $Surveys .= "<tr><td>$Pregunta</td></tr>
               <tr>
                     <td>
-                          <input type=\"hidden\" name=\"txtPregunta_$j\" id=\"txtPregunta_$j\" value=\"$Pregunta\">
+                          <input type=\"text\" name=\"txtPregunta_$j\" id=\"txtPregunta_$j\" value=\"$Pregunta\" />
                           <div class=\"form-group\">
                                 <div class=\"radio\">
                                     <label>
