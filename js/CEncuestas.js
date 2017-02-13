@@ -12,7 +12,8 @@ function encuesta_save()
                     txtPregunta7:$('#txtPregunta7').val(),
                     txtPregunta8:$('#txtPregunta8').val(),
                     txtPregunta9:$('#txtPregunta9').val(),
-                    txtPregunta10:$('#txtPregunta10').val()
+                    txtPregunta10:$('#txtPregunta10').val(),
+                    txtIdArea:$('#cboPerfil').val()
                   };
    $.ajax({
              url:'./scripts/oper_cencuesta.php?o=1',

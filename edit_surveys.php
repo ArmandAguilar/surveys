@@ -140,7 +140,7 @@ desired effect
           </a>
           <ul class="treeview-menu" style="display: block;">
             <li><a href="new_surveys.php"><i class="fa fa-book"></i> Nueva</a></li>
-            <li><a href="edit_surveys.php"><i class="fa fa-edit"></i> Editar</a></li>
+            <li><a href="edit_surveys.php"><i class="fa fa-edit"></i>&nbsp;</a></li>
           </ul>
         </li>
         <?php
@@ -201,7 +201,7 @@ desired effect
                           <td><?php echo $i; ?>.</td>
                           <td><?php echo $fila[Encuesta]; ?></td>
                           <td><div style="cursor:pointer;" onclick="encuesta_see('<?php echo $fila[Id]; ?>');">Editar</div></td>
-                          <td><div style="cursor:pointer;" onclick="encuesta_delete('<?php echo $fila[Id]; ?>');">Borrar</div></td>
+                          <td><div style="cursor:pointer;">&nbsp;</div></td>
                       </tr>
                   <?php
                              }
