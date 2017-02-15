@@ -5,7 +5,7 @@ function show_all_task(IdProyecto)
 }
 function set_surveys(idEncuesta,idEncuestado,idTarea,Tarea,Nombre,Correo)
 {
-
+  $('#Carga').show();
   $('#Pencuesta').empty();
 
   $('#txtIdEncuesta').val(idEncuesta);
@@ -30,6 +30,7 @@ function set_surveys(idEncuesta,idEncuestado,idTarea,Tarea,Nombre,Correo)
 
                               $('#Pencuesta').append(data);
                               /*Close_Surveys_in_app($('#txtIdTarea').val());*/
+                              $('#Carga').hide();
 
                           },
                           error:function(req,e,er) {

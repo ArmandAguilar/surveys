@@ -160,7 +160,7 @@ foreach ($NewArrayAks as $key => $value)
     $Surveys .= "         </tbody>
                 </table>";
     if ($EncuestaVacia == "Si") {
-      $Surveys ="<h3>Este perfil no tiene una encuesta asignada</h3>";
+      $Surveys = "<h3>Este perfil no tiene una encuesta asignada</h3>";
     }
     return $Surveys;
   }
