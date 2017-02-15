@@ -253,7 +253,7 @@ desired effect
                 <h4 class="modal-title" id="myModalLabel">Encuestas</h4>
               </div>
               <div class="modal-body">
-                <div id="Carga"><img src="/img/loading.gif" high="200px" width="200px" style="display:none"></div>
+                <div id="Carga"><img src="img/loading.gif" high="200px" width="200px" style="display:none"></div>
                 <div class="form-group">
                    <!-- Aqui la encuesta -->
                    <div id="Pencuesta"></div>
