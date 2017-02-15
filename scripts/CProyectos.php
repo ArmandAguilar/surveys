@@ -98,10 +98,12 @@ class CProyectos extends poolConnecion
     $NewArrayAks[3] = $ArrayAsk[3];
     $NewArrayAks[4] = $ArrayAsk[4];
     $j = 0;
+    $EncuestaVacia = "Si";
 foreach ($NewArrayAks as $key => $value)
   {
       if ($value)
        {
+         $EncuestaVacia = "No";
          $j++;
          $Sql="SELECT [Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta' and [Id] = '$value'";
          $objAksAll = new poolConnecion();
@@ -157,6 +159,9 @@ foreach ($NewArrayAks as $key => $value)
   }
     $Surveys .= "         </tbody>
                 </table>";
+    if ($EncuestaVacia == "Si") {
+      $Surveys ="<h3>Este perfil no tiene una encuesta asignada</h3>";
+    }
     return $Surveys;
   }
   function apply_surveys_random($info)
