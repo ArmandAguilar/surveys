@@ -5,9 +5,8 @@ function show_all_task(IdProyecto)
 }
 function set_surveys(idEncuesta,idEncuestado,idTarea,Tarea,Nombre,Correo)
 {
-  $('#Carga').show();
   $('#Pencuesta').empty();
-  alert('Oka');
+  $('#Carga').show();
   $('#txtIdEncuesta').val(idEncuesta);
   $('#txtIdEncuestado').val(idEncuestado);
   $('#txtIdTarea').val(idTarea);

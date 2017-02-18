@@ -223,7 +223,7 @@ desired effect
                                             if ($fila[Evaluada] == "No") {
                                               # code...
                                               ?>
-                                              <td><div data-toggle="modal" data-target="#myModal" style="cursor:pointer" onclick="set_surveys(<?php echo $IdEncuesta;?>,<?php echo $fila[IdUsuarioAEncuestar]; ?>,<?php echo $fila[IdTeamWork]; ?>,'<?php echo $fila[Tarea]; ?>','<?php echo "$fila[Nombre] $fila[Apellidos]"; ?>','<?php echo $fila[Email]; ?>')"> Aplicar encuesta</div></td>
+                                              <td><div data-toggle="modal" data-target="#myModal" style="cursor:pointer" onclick="set_surveys(<?php echo $IdEncuesta;?>,<?php echo $fila[IdUsuarioAEncuestar]; ?>,<?php echo $fila[IdTeamWork]; ?>,'<?php echo $fila[Tarea]; ?>','<?php echo "$fila[Nombre] $fila[Apellidos]"; ?>','<?php echo $fila[Email]; ?>');"> Aplicar encuesta</div></td>
 
                                     <?php
                                             }
@@ -256,7 +256,7 @@ desired effect
                 <div id="Carga"><img src="img/loading.gif" high="200px" width="200px"></div>
                 <div class="form-group">
                    <!-- Aqui la encuesta -->
-                   <div id="Pencuesta"></div>
+                   <div id="Pencuesta" name="Pencuesta"></div>
                   <input type="hidden" name = "txtIdEncuesta" id="txtIdEncuesta"/>
                   <input type="hidden" name = "txtIdEncuestador" id="txtIdEncuestador"  value="<?php echo $_SESSION[IdUsuario]; ?>"/>
                   <input type="hidden" name = "txtIdEncuestado" id="txtIdEncuestado" />
