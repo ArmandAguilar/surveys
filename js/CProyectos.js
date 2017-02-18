@@ -1,7 +1,7 @@
 function show_all_task(IdProyecto)
 {
   /*redirecto to new script where , we show all task*/
-  window.location.href= 'task.php?NumProy=' + IdProyecto
+  window.location.href= 'task.php?NumProy=' + IdProyecto;
 }
 function set_surveys(idEncuesta,idEncuestado,idTarea,Tarea,Nombre,Correo)
 {
@@ -20,7 +20,7 @@ function set_surveys(idEncuesta,idEncuestado,idTarea,Tarea,Nombre,Correo)
                   idEncuestado:$('#txtIdEncuestado').val(),
                   idTarea:$('#txtIdTarea').val(),
                   idEncuesta:$('#txtIdEncuesta').val()
-                }
+                };
                 $.ajax({
                           url:'./scripts/oper_proyectos.php?o=2',
                           type:'POST',
