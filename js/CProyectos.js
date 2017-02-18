@@ -7,7 +7,7 @@ function set_surveys(idEncuesta,idEncuestado,idTarea,Tarea,Nombre,Correo)
 {
   $('#Carga').show();
   $('#Pencuesta').empty();
-
+  alert('Oka');
   $('#txtIdEncuesta').val(idEncuesta);
   $('#txtIdEncuestado').val(idEncuestado);
   $('#txtIdTarea').val(idTarea);
