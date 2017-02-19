@@ -223,7 +223,7 @@ desired effect
                                             if ($fila[Evaluada] == "No") {
                                               # code...
                                               ?>
-                                              <td><div data-toggle="modal" data-target="#myModal" style="cursor:pointer" onclick="set_surveys(<?php echo $IdEncuesta;?>,<?php echo $fila[IdUsuarioAEncuestar]; ?>,<?php echo $fila[IdTeamWork]; ?>,'<?php echo $fila[Tarea]; ?>','<?php echo "$fila[Nombre] $fila[Apellidos]"; ?>','<?php echo $fila[Email]; ?>');"> Aplicar encuesta</div></td>
+                                              <td><div data-toggle="modal" data-target="#myModal" style="cursor:pointer" onclick="set_surveys(<?php echo $IdEncuesta;?>,<?php echo $fila[IdUsuarioAEncuestar]; ?>,<?php echo $fila[IdTeamWork]; ?>,'<?php echo $fila[Tarea]; ?>','<?php echo "$fila[Nombre] $fila[Apellidos]"; ?>','<?php echo $fila[Email]; ?>');"> Aplicar encuesta ($fila[Perfil]))</div></td>
 
                                     <?php
                                             }

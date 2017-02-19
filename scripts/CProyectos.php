@@ -294,6 +294,7 @@ foreach ($NewArrayAks as $key => $value)
   }
   function Get_Surveys($Profile)
   {
+     $IdSurverys = 0;
     $Sql="SELECT [Id] FROM [SAP].[dbo].[AAEncuesta] Where [Area] = '$Profile'";
     $objIdSurveys = new poolConnecion();
     $con=$objIdSurveys->ConexionSQLSAP();
