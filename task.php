@@ -311,7 +311,7 @@ desired effect
               </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="setValPregunta_new(<?php echo $_GET[NumProy]; ?>);">Aplicar</button>
+                <button type="button" id ='btn-primarys' class="btn btn-primary" onclick="setValPregunta_new(<?php echo $_GET[NumProy]; ?>);">Aplicar</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
               </div>
             </div>
