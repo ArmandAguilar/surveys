@@ -222,11 +222,12 @@ desired effect
                                           $NewArrayTask[1] = $ArraysTask[1];
                                           $NewArrayTask[2] = $ArraysTask[2];
                                           #Prin the 3 task
-
+                                          $j = 0;
                                           foreach ($NewArrayTask as $key => $value)
                                            {
                                                 if (!empty($value))
                                                 {
+
                                                     $SqlTask="SELECT
                                                               [SAP].[dbo].[AATareasTeamWork].[Id]
                                                               ,[SAP].[dbo].[AATareasTeamWork].[IdTeamWork]
@@ -251,8 +252,8 @@ desired effect
                                                       $RSet=$objTask->QuerySQLSAP($SqlTask,$con);
                                                        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                                                              {
-                                                                   $ArraysTask[$i] = $fila[Id];
-                                                                   $i++;
+
+                                                                   $j++;
                                                                    /* Get id encuesta for perfil  */
                                                                   /* $IdEncuesta = 17;*/
                                                                   $IdEncuesta = $objProy->Get_Surveys($fila[Perfil]);
