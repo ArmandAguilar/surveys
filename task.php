@@ -257,7 +257,6 @@ desired effect
                                                                   /* $IdEncuesta = 17;*/
                                                                   $IdEncuesta = $objProy->Get_Surveys($fila[Perfil]);
                                                                   echo "<tr>
-                                                                     <td>$i</td>
                                                                      <td>$fila[NoProyecto]</td>
                                                                      <td>$fila[Tarea]</td>
                                                                      <td>$fila[Nombre] $fila[Apellidos]</td>
