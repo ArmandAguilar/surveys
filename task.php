@@ -176,7 +176,6 @@ desired effect
                   <table class="table table-condensed">
                           <tbody>
                                   <tr>
-                                      <th style="width: 10px">#</th>
                                       <th>Proyecto</th>
                                       <th>Tarea</th>
                                       <th>Usuario</th>
