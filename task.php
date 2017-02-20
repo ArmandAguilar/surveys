@@ -183,8 +183,8 @@ desired effect
                                       <th>Encuesta</th>
                                   </tr>
                                   <?php
-
-                                          $objTable = new poolConnecion();
+                                          $i = 0;
+                                          $objId = new poolConnecion();
                                           $SqlID="SELECT
                                                       [SAP].[dbo].[AATareasTeamWork].[Id]
 	                                                    ,[SAP].[dbo].[AATareasTeamWork].[IdTeamWork]
@@ -203,41 +203,73 @@ desired effect
                                                       [Northwind].[dbo].[Usuarios]
                                                       WHERE
                                                             ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] =  [SAP].[dbo].[CatalogoDeProyectos].[NumProyecto] and
-                                                            [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id]) and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '$_GET[NumProy]') and [Northwind].[dbo].[Usuarios].[Id] <> '$_SESSION[IdUsuario]'";
+                                                            [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id]) and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '$_GET[NumProy]') and ()[Northwind].[dbo].[Usuarios].[Id] <> '$_SESSION[IdUsuario]') and ([SAP].[dbo].[AATareasTeamWork].[Evaluada] = 'No')";
 
-                                          $con=$objTable->ConexionSQLSAP();
-                                          $RSet=$objTable->QuerySQLSAP($SqlID,$con);
+                                          $con=$objId->ConexionSQLSAP();
+                                          $RSet=$objId->QuerySQLSAP($SqlID,$con);
                                            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                                                  {
+                                                   $ArraysTask[$i] = $fila[Id];
                                                    $i++;
                                                    /* Get id encuesta for perfil  */
                                                   /* $IdEncuesta = 17;*/
-                                                  $IdEncuesta = $objProy->Get_Surveys($fila[Perfil]);
-                                   ?>
-                                 <tr>
-                                    <td><?php echo $i; ?>.</td>
-                                    <td><?php echo $fila[NoProyecto]; ?></td>
-                                    <td><?php echo "($fila[IdTeamWork]) $fila[Tarea]"; ?></td>
-                                    <td><?php echo "$fila[Nombre] $fila[Apellidos]"; ?></td>
-                                    <?php
-                                            if ($fila[Evaluada] == "No") {
-                                              # code...
-                                              ?>
-                                              <td><div data-toggle="modal" data-target="#myModal" style="cursor:pointer" onclick="set_surveys(<?php echo $IdEncuesta;?>,<?php echo $fila[IdUsuarioAEncuestar]; ?>,<?php echo $fila[IdTeamWork]; ?>,'<?php echo $fila[Tarea]; ?>','<?php echo "$fila[Nombre] $fila[Apellidos]"; ?>','<?php echo $fila[Email]; ?>');"> Aplicar encuesta (<?php echo $fila[Perfil]; ?>))</div></td>
-
-                                    <?php
-                                            }
-                                            else{
-                                            ?>
-                                              <td><div> Encuesta aplicada</div></td>
-                                          <?php
-                                            }
-                                     ?>
-
-                                </tr>
-                                <?php
+                                                  #$IdEncuesta = $objProy->Get_Surveys($fila[Perfil]);
                                                 }
-                                 ?>
+                                          $objId->CerrarSQLSAP($RSet,$con);
+
+                                          shuffle($ArraysTask);
+                                          $NewArrayTask[0] = $ArraysTask[0];
+                                          $NewArrayTask[1] = $ArraysTask[1];
+                                          $NewArrayTask[2] = $ArraysTask[2];
+                                          #Prin the 3 task
+
+                                          foreach ($NewArrayTask as $key => $value)
+                                           {
+                                                if (!empty($value))
+                                                {
+                                                    $SqlTask="SELECT
+                                                              [SAP].[dbo].[AATareasTeamWork].[Id]
+                                                              ,[SAP].[dbo].[AATareasTeamWork].[IdTeamWork]
+                                                              ,[SAP].[dbo].[AATareasTeamWork].[NoProyecto]
+                                                              ,[SAP].[dbo].CatalogoDeProyectos.[NomProyecto]
+                                                              ,[Northwind].[dbo].Usuarios.[Id] As IdUsuarioAEncuestar
+                                                              ,[Northwind].[dbo].Usuarios.[Nombre]
+                                                              ,[Northwind].[dbo].Usuarios.[Apellidos]
+                                                              ,[Northwind].[dbo].Usuarios.[Email]
+                                                              ,[Northwind].[dbo].Usuarios.[Perfil]
+                                                              ,[SAP].[dbo].[AATareasTeamWork].[Tarea]
+                                                              ,[SAP].[dbo].[AATareasTeamWork].[Evaluada]
+                                                        FROM
+                                                              [SAP].[dbo].[AATareasTeamWork],
+                                                              [SAP].[dbo].[CatalogoDeProyectos],
+                                                              [Northwind].[dbo].[Usuarios]
+                                                              WHERE
+                                                                    ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] =  [SAP].[dbo].[CatalogoDeProyectos].[NumProyecto] and
+                                                                    [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id]) and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '$_GET[NumProy]') and ([Northwind].[dbo].[Usuarios].[Id] <> '$_SESSION[IdUsuario]') and ([SAP].[dbo].[AATareasTeamWork].[Evaluada] = 'No') and ([SAP].[dbo].[AATareasTeamWork].[Id] = '$value')";
+                                                      $con=$objTask->ConexionSQLSAP();
+                                                      $RSet=$objTask->QuerySQLSAP($SqlTask,$con);
+                                                       while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                                             {
+                                                                   $ArraysTask[$i] = $fila[Id];
+                                                                   $i++;
+                                                                   /* Get id encuesta for perfil  */
+                                                                  /* $IdEncuesta = 17;*/
+                                                                  $IdEncuesta = $objProy->Get_Surveys($fila[Perfil]);
+                                                                  echo "<tr>
+                                                                     <td><$i .</td>
+                                                                     <td>$fila[NoProyecto]</td>
+                                                                     <td>$fila[IdTeamWork] - $fila[Tarea]</td>
+                                                                     <td>$fila[Nombre] $fila[Apellidos]</td>
+                                                                     <td><div data-toggle=\"modal\" data-target=\"#myModal\" style=\"cursor:pointer\" onclick=\"set_surveys($IdEncuesta,$fila[IdUsuarioAEncuestar],$fila[IdTeamWork],'$fila[Tarea]','$fila[Nombre] $fila[Apellidos]','$fila[Email]');\"> Aplicar encuesta </div></td>
+                                                                 </tr>";
+
+                                                            }
+                                                      $objTask->CerrarSQLSAP($RSet,$con);
+                                                }
+                                          }
+                                   ?>
+
+
                         </tbody>
                 </table>
           </div>
