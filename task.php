@@ -245,7 +245,8 @@ desired effect
                                                               [Northwind].[dbo].[Usuarios]
                                                               WHERE
                                                                     ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] =  [SAP].[dbo].[CatalogoDeProyectos].[NumProyecto] and
-                                                                    [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id]) and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '$_GET[NumProy]') and ([Northwind].[dbo].[Usuarios].[Id] <> '$_SESSION[IdUsuario]') and ([SAP].[dbo].[AATareasTeamWork].[Evaluada] = 'No') and ([SAP].[dbo].[AATareasTeamWork].[Id] = '$value')";
+                                                                    [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id]) and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '$_GET[NumProy]') and ([Northwind].[dbo].[Usuarios].[Id] <> '$_SESSION[IdUsuario]') and ([SAP].[dbo].[AATareasTeamWork].[Id] = '$value')";
+                                                      $objTask = new poolConnecion();
                                                       $con=$objTask->ConexionSQLSAP();
                                                       $RSet=$objTask->QuerySQLSAP($SqlTask,$con);
                                                        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
