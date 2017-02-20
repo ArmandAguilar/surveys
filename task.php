@@ -253,17 +253,17 @@ desired effect
                                                        while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                                                              {
 
-                                                                   $j++;
                                                                    /* Get id encuesta for perfil  */
                                                                   /* $IdEncuesta = 17;*/
                                                                   $IdEncuesta = $objProy->Get_Surveys($fila[Perfil]);
                                                                   echo "<tr>
-                                                                     <td>$i .</td>
+                                                                     <td>$i</td>
                                                                      <td>$fila[NoProyecto]</td>
                                                                      <td>$fila[Tarea]</td>
                                                                      <td>$fila[Nombre] $fila[Apellidos]</td>
                                                                      <td><div data-toggle=\"modal\" data-target=\"#myModal\" style=\"cursor:pointer\" onclick=\"set_surveys($IdEncuesta,$fila[IdUsuarioAEncuestar],$fila[IdTeamWork],'$fila[Tarea]','$fila[Nombre] $fila[Apellidos]','$fila[Email]');\"> Aplicar encuesta </div></td>
                                                                  </tr>";
+                                                                 $j++;
 
                                                             }
                                                       $objTask->CerrarSQLSAP($RSet,$con);
