@@ -64,7 +64,28 @@ function Close_Surveys(NumProy)
 
 }
 
+function setValAnswers(campo,valor)
+ {
+   switch (campo) {
+     case 1:
+               $('#txtRespuesta1').val(valor);
+       break;
+     case 2:
+               $('#txtRespuesta2').val(valor);
+         break;
+     case 3:
+             $('#txtRespuesta3').val(valor);
+       break;
+     case 4:
+             $('#txtRespuesta4').val(valor);
+       break;
+     case 5:
+            $('#txtRespuesta5').val(valor);
+       break;
 
+   }
+
+ }
 function setValPregunta_new(NumProy)
 {
     /*var losdatos = {txtId:Id,txtValor:Valor,txtIdTarea:$('#txtIdTarea').val()};*/
