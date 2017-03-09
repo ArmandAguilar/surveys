@@ -218,7 +218,7 @@ desired effect
                   <select class="form-control" name='cboPerfil' id='cboPerfil'>
                     <option value = '<?php echo $CboArea; ?>' selected><?php echo $CboArea; ?></option>
                     <?php
-                            $SqlCbo = "SELECT distinct([Perfil]) FROM [Northwind].[dbo].[Usuarios] Where Departamento <> 'Baja'";
+                            $SqlCbo = "SELECT distinct([Perfil]) FROM [Northwind].[dbo].[Usuarios] Where Departamento <> 'Baja' order by Perfil asc";
                             $objPefil = new poolConnecion();
                             $con=$objPefil->ConexionSQLSAP();
                             $RSet=$objPefil->QuerySQLSAP($SqlCbo,$con);

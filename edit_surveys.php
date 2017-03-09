@@ -192,7 +192,7 @@ desired effect
                   <th style="width: 10px">#</th>
                   <th>Encuesta</th>
                   <th>Editar</th>
-                  <th>Eliminar</th>
+                  <th>&nbsp;</th>
                 </tr>
                 <?php
                           $objTable = new poolConnecion();
