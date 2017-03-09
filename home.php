@@ -17,6 +17,12 @@ switch ($_SESSION[IdUsuario])
   case '375':
             $Activar = "Si";
         break;
+  case '41':
+            $Activar = "Si";
+        break;
+  case '89':
+            $Activar = "Si";
+        break;
 
   default:
     $Activar = "No";
@@ -85,7 +91,7 @@ desired effect
   		 						window.location.href='logout.php'
   					</script>";
   	}
-  ?>  
+  ?>
 <div class="wrapper">
 
   <!-- Main Header -->
