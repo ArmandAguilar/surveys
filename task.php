@@ -202,7 +202,7 @@ desired effect
                                                       [Northwind].[dbo].[Usuarios]
                                                       WHERE
                                                             ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] =  [SAP].[dbo].[CatalogoDeProyectos].[NumProyecto] and
-                                                            [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id]) and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '$_GET[NumProy]') and ([Northwind].[dbo].[Usuarios].[Id] <> '$_SESSION[IdUsuario]') and ([SAP].[dbo].[AATareasTeamWork].[Evaluada] = 'No') and ([Avance] == '100')";
+                                                            [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id]) and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '$_GET[NumProy]') and ([Northwind].[dbo].[Usuarios].[Id] <> '$_SESSION[IdUsuario]') and ([SAP].[dbo].[AATareasTeamWork].[Evaluada] = 'No') and ([SAP].[dbo].[AATareasTeamWork].[Avance] == '100')";
 
                                           $con=$objId->ConexionSQLSAP();
                                           $RSet=$objId->QuerySQLSAP($SqlID,$con);
