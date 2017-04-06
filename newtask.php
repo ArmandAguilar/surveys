@@ -28,6 +28,19 @@ switch ($_SESSION[IdUsuario])
     break;
 }
 
+/* get proyect */
+
+$objNameProyect = new poolConnecion();
+$SqlID="SELECT [NomProyecto] FROM [SAP].[dbo].[CatalogoDeProyectos] Where NumProyecto = '$_GET[NumProy]'";
+
+$con=$objNameProyect->ConexionSQLSAP();
+$RSet=$objNameProyect->QuerySQLSAP($SqlID,$con);
+ while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+       {
+           $NomProyect = $fila[NomProyecto];
+      }
+$objNameProyect->CerrarSQLSAP($RSet,$con);
+
  ?>
 <!DOCTYPE html>
 <!--
@@ -168,7 +181,7 @@ desired effect
       <!-- Your Page Content Here -->
       <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Proyectos</h3>
+            <h3 class="box-title">Proyectos:<?php echo $_GET[NumProy]; ?> .- <?php $NomProyect; ?> </h3>
           </div>
           <!-- /.box-header -->
 
