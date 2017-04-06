@@ -203,17 +203,11 @@ desired effect
                                                  {
                                                    echo "<tr>
                                                       <td>$fila[Nombre] $fila[Apellidos]</td>
-                                                      <td><div data-toggle=\"modal\" data-target=\"#myModal\" style=\"cursor:pointer\" onclick=\"set_surveys($IdEncuesta,$fila[IdUsuarioAEncuestar],$fila[IdTeamWork],'$fila[Tarea]','$fila[Nombre] $fila[Apellidos]','$fila[Email]');\"> Aplicar encuesta </div></td>
+                                                      <td><div data-toggle=\"modal\" data-target=\"#myModal\" style=\"cursor:pointer\">Evaluar</div></td>
                                                   </tr>";
                                                 }
                                           $objId->CerrarSQLSAP($RSet,$con);
-
-
-                                                }
-                                          }
                                    ?>
-
-
                         </tbody>
                 </table>
           </div>
