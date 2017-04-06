@@ -181,7 +181,9 @@ desired effect
       <!-- Your Page Content Here -->
       <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Proyectos:<?php echo $_GET[NumProy]; ?> .- <?php echo $NomProyect; ?> </h3>
+            <h3 class="box-title">Proyectos:<?php echo $_GET[NumProy]; ?> .- <?php echo $NomProyect; ?> </h3><br>
+            <h3 class="box-title">Nombre:Armando Aguilar L. </h3>
+            <h3 class="box-title">Pefil:Full Stack Developer </h3>
           </div>
           <!-- /.box-header -->
 
@@ -200,10 +202,7 @@ desired effect
             <table class="table table-condensed">
                     <tbody>
                             <tr>
-                                <th>Proyecto</th>
                                 <th>Tarea</th>
-                                <th>Usuario</th>
-                                <th>Encuesta</th>
                             </tr>
                             <?php
                                     $i = 0;
@@ -275,18 +274,13 @@ desired effect
                                                 $RSet=$objTask->QuerySQLSAP($SqlTask,$con);
                                                  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                                                        {
-
                                                              /* Get id encuesta for perfil  */
                                                             /* $IdEncuesta = 17;*/
                                                             $IdEncuesta = $objProy->Get_Surveys($fila[Perfil]);
                                                             echo "<tr>
-                                                               <td>$fila[NoProyecto]</td>
-                                                               <td>$fila[Tarea]</td>
-                                                               <td>$fila[Nombre] $fila[Apellidos]</td>
-                                                               <td><div data-toggle=\"modal\" data-target=\"#myModal\" style=\"cursor:pointer\" onclick=\"set_surveys($IdEncuesta,$fila[IdUsuarioAEncuestar],$fila[IdTeamWork],'$fila[Tarea]','$fila[Nombre] $fila[Apellidos]','$fila[Email]');\"> Aplicar encuesta </div></td>
-                                                           </tr>";
+                                                                      <td>$fila[Tarea]</td>
+                                                                </tr>";
                                                            $j++;
-
                                                       }
                                                 $objTask->CerrarSQLSAP($RSet,$con);
                                           }
