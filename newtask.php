@@ -196,7 +196,7 @@ desired effect
                                           $i = 0;
                                           $objId = new poolConnecion();
                                           $SqlID="SELECT
-                                                      DISTINCT([Northwind].[dbo].Usuarios.[Id])
+                                                      DISTINCT([Northwind].[dbo].Usuarios.[Id]) As IdUsuario
                                                       ,[SAP].[dbo].[AATareasTeamWork].[NoProyecto]
                                                       ,[SAP].[dbo].CatalogoDeProyectos.[NomProyecto]
                                                       ,[Northwind].[dbo].Usuarios.[Id] As IdUsuarioAEncuestar
@@ -216,7 +216,7 @@ desired effect
                                                  {
                                                    echo "<tr>
                                                       <td>$fila[Nombre] $fila[Apellidos]</td>
-                                                      <td><div data-toggle=\"modal\" data-target=\"#myModal\" style=\"cursor:pointer\">Evaluar</div></td>
+                                                      <td><div data-toggle=\"modal\" data-target=\"#myModal\" style=\"cursor:pointer\" onclick=\"sendValue($_GET[NumProy],$fila[IdUsuario]);\">Evaluar</div></td>
                                                   </tr>";
                                                 }
                                           $objId->CerrarSQLSAP($RSet,$con);
@@ -227,47 +227,13 @@ desired effect
 
           <!-- /.box-body -->
         </div>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Encuestas</h4>
-              </div>
-              <div class="modal-body">
-                <div id="Carga"><img src="img/loading.gif" high="200px" width="200px"></div>
-                <div class="form-group">
-                   <!-- Aqui la encuesta -->
-                   <div id="Pencuesta" name="Pencuesta"></div>
-                  <input type="hidden" name = "txtIdEncuesta" id="txtIdEncuesta"/>
-                  <input type="hidden" name = "txtIdEncuestador" id="txtIdEncuestador"  value="<?php echo $_SESSION[IdUsuario]; ?>"/>
-                  <input type="hidden" name = "txtIdEncuestado" id="txtIdEncuestado" />
-                  <input type="hidden" name = "txtIdTarea" id="txtIdTarea" />
-                  <input type="hidden" name = "txtNumProyectos" id="txtNumProyectos" value="<?php echo $_GET[NumProy]; ?>"/>
-                  <input type="hidden" name = "txtCorreo" id="txtCorreo" value=""/>
-                  <input type="hidden" name = "txtNombre" id="txtNombre" value=""/>
-                  <input type="hidden" name = "txtTareaNombre" id="txtTareaNombre" value=""/>
-                  <input type="hidden" name = "txtRespuesta1" id="txtRespuesta1"/>
-                  <input type="hidden" name = "txtRespuesta2" id="txtRespuesta2"/>
-                  <input type="hidden" name = "txtRespuesta3" id="txtRespuesta3"/>
-                  <input type="hidden" name = "txtRespuesta4" id="txtRespuesta4"/>
-                  <input type="hidden" name = "txtRespuesta5" id="txtRespuesta5"/>
-                </div>
-                <div id="msj" class="alert alert-success alert-dismissible" style="display:none">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h4><i class="icon fa fa-check"></i> Encuesta aplicada</h4>
-                En un momento se notificara al usuario y se actualizara el sistema.
-                No Cierres este mensaje !!!
-              </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" id ='btn-primarys' class="btn btn-primary" onclick="setValPregunta_new(<?php echo $_GET[NumProy]; ?>);">Aplicar</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- section for post methos -->
+        <form id="frmProfile" name="frmPrfile" action="profile.php" method="">
+            <input type="hidden" id="txtNoProyecto" name="txtNoProyecto" />
+            <input type="hidden" id="txtIdUsuarioSelecionado" name="txtIdUsuarioSelecionado" />
+        </form>
+
+          <!-- section for post methos -->
     </section>
     <!-- /.content -->
   </div>
@@ -377,6 +343,13 @@ desired effect
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout.    -->
-
+<script>
+     function sendValue(NoProyecto,IdUsuarioSelecionado)
+          {
+              $("#txtNoProyecto").val(NoProyecto);
+              $("#txtIdUsuarioSelecionado").val(IdUsuarioSelecionado);
+              document.frmPrfile.submit();
+          }
+</script>
 </body>
 </html>
