@@ -236,6 +236,7 @@ desired effect
                   <label for="exampleInputPassword1">Pregunta 1</label>
                   <textarea class="form-control" id="txtPregunta1" name="txtPregunta1" rows="3" placeholder="texto..."><?php echo $txtPregunta[0]; ?></textarea>
                   <input type="hidden" id="txtIdPregunta1" name="txtIdPregunta1" value="<?php echo $IdPregunta[0]; ?>"/>
+                  <input type="checkbox" id="chkIdPregunta1" name="chkIdPregunta1" />Obligado
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 2</label>
