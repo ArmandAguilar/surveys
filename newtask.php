@@ -217,7 +217,7 @@ desired effect
                                                  {
                                                    echo "<tr>
                                                       <td>$fila[Nombre] $fila[Apellidos]</td>
-                                                      <td><div data-toggle=\"modal\" data-target=\"#myModal\" style=\"cursor:pointer\" onclick=\"sendValue($_GET[NumProy],$fila[IdUsuario],\'$fila[Perfil]\',\'$fila[Nombre] $fila[Apellidos]\');\">Evaluar</div></td>
+                                                      <td><div data-toggle=\"modal\" data-target=\"#myModal\" style=\"cursor:pointer\" onclick=\"sendValue($_GET[NumProy],$fila[IdUsuario],'$fila[Perfil]','$fila[Nombre] $fila[Apellidos]');\">Evaluar</div></td>
                                                   </tr>";
                                                 }
                                           $objId->CerrarSQLSAP($RSet,$con);
