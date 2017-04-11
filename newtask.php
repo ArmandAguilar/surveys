@@ -202,7 +202,7 @@ desired effect
                                                       ,[Northwind].[dbo].Usuarios.[Id] As IdUsuarioAEncuestar
                                                       ,[Northwind].[dbo].Usuarios.[Nombre]
                                                       ,[Northwind].[dbo].Usuarios.[Apellidos]
-                                                      ,[Northwind].[dbo].Usuarios.[Pefil]
+                                                      ,[Northwind].[dbo].Usuarios.[Perfil]
                                                 FROM
                                                       [SAP].[dbo].[AATareasTeamWork],
                                                       [SAP].[dbo].[CatalogoDeProyectos],
