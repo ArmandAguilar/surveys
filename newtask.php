@@ -229,8 +229,8 @@ desired effect
         </div>
         <!-- section for post methos -->
         <form id="frmProfile" name="frmPrfile" action="profile.php" method="post">
-            <input type="hidden" id="txtNoProyecto" name="txtNoProyecto" />
-            <input type="hidden" id="txtIdUsuarioSelecionado" name="txtIdUsuarioSelecionado" />
+            <input type="text" id="txtNoProyecto" name="txtNoProyecto" />
+            <input type="text" id="txtIdUsuarioSelecionado" name="txtIdUsuarioSelecionado" />
         </form>
 
           <!-- section for post methos -->
