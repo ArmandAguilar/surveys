@@ -31,7 +31,7 @@ switch ($_SESSION[IdUsuario])
 /* get proyect */
 
 $objNameProyect = new poolConnecion();
-$SqlIDP="SELECT [NomProyecto] FROM [SAP].[dbo].[CatalogoDeProyectos] Where NumProyecto = '$_POST[NumProy]'";
+$SqlIDP="SELECT [NomProyecto] FROM [SAP].[dbo].[CatalogoDeProyectos] Where NumProyecto = '$_POST[txtNoProyecto]'";
 
 $con=$objNameProyect->ConexionSQLSAP();
 $RSet=$objNameProyect->QuerySQLSAP($SqlIDP,$con);
@@ -181,7 +181,7 @@ desired effect
       <!-- Your Page Content Here -->
       <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Proyectos:<?php echo $_POST[NumProy]; ?> .- <?php echo $NomProyect; ?> </h3><br>
+            <h3 class="box-title">Proyectos:<?php echo $_POST[txtNoProyecto]; ?> .- <?php echo $NomProyect; ?> </h3><br>
             <h3 class="box-title">Nombre:Armando Aguilar L. </h3>
             <h3 class="box-title">Pefil:Full Stack Developer </h3>
           </div>
@@ -225,7 +225,7 @@ desired effect
                                                 [Northwind].[dbo].[Usuarios]
                                                 WHERE
                                                       ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] =  [SAP].[dbo].[CatalogoDeProyectos].[NumProyecto] and
-                                                      [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id]) and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '$_POST[NumProy]') and ([Northwind].[dbo].[Usuarios].[Id] = '$_POST[txtIdUsuarioSelecionado]') and ([SAP].[dbo].[AATareasTeamWork].[Evaluada] = 'No') and ([SAP].[dbo].[AATareasTeamWork].[Avance] = '100')";
+                                                      [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id]) and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '$_POST[txtNoProyecto]') and ([Northwind].[dbo].[Usuarios].[Id] = '$_POST[txtIdUsuarioSelecionado]') and ([SAP].[dbo].[AATareasTeamWork].[Evaluada] = 'No') and ([SAP].[dbo].[AATareasTeamWork].[Avance] = '100')";
 
                                     $con=$objId->ConexionSQLSAP();
                                     $RSet=$objId->QuerySQLSAP($SqlID,$con);
