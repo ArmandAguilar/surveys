@@ -216,7 +216,7 @@ desired effect
                                                  {
                                                    echo "<tr>
                                                       <td>$fila[Nombre] $fila[Apellidos]</td>
-                                                      <td><div data-toggle=\"modal\" data-target=\"#myModal\" style=\"cursor:pointer\" onclick=\"sendValue($_GET[NumProy],$fila[IdUsuario]);\">Evaluar</div></td>
+                                                      <td><div data-toggle=\"modal\" data-target=\"#myModal\" style=\"cursor:pointer\" onclick=\"sendValue($_GET[NumProy],$fila[IdUsuario],);\">Evaluar</div></td>
                                                   </tr>";
                                                 }
                                           $objId->CerrarSQLSAP($RSet,$con);
@@ -229,10 +229,11 @@ desired effect
         </div>
         <!-- section for post methos -->
         <form id="frmProfile" name="frmPrfile" action="profile.php" method="post">
-            <input type="text" id="txtNoProyecto" name="txtNoProyecto" />
-            <input type="text" id="txtIdUsuarioSelecionado" name="txtIdUsuarioSelecionado" />
+            <input type="hidden" id="txtNoProyecto" name="txtNoProyecto" />
+            <input type="hidden" id="txtIdUsuarioSelecionado" name="txtIdUsuarioSelecionado" />
+            <input type="hidden" id="txtProfile" name="txtProfile"/>
+            <input type="hidden" id="txtName" name="txtName"/>
         </form>
-
           <!-- section for post methos -->
     </section>
     <!-- /.content -->
@@ -344,10 +345,12 @@ desired effect
      user experience. Slimscroll is required when using the
      fixed layout.    -->
 <script>
-     function sendValue(NoProyecto,IdUsuarioSelecionado)
+     function sendValue(NoProyecto,IdUsuarioSelecionado,Perfil,Nombre)
           {
               $("#txtNoProyecto").val(NoProyecto);
               $("#txtIdUsuarioSelecionado").val(IdUsuarioSelecionado);
+              $("#txtProfile").val(Perfil);
+              $("#txtName").val(Nombre);
               document.frmPrfile.submit();
           }
 </script>
