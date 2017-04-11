@@ -182,8 +182,8 @@ desired effect
       <div class="box">
           <div class="box-header">
             <h3 class="box-title">Proyectos:<?php echo $_POST[txtNoProyecto]; ?> .- <?php echo $NomProyect; ?> </h3><br>
-            <h3 class="box-title">Nombre:<?php echo $_POST[txtName]; ?></h3>
-            <h3 class="box-title">Pefil:<?php echo $_POST[txtProfile]; ?> </h3>
+            <h3 class="box-title">Nombre:<?php echo $_POST[txtName]; ?></h3><br>
+            <h3 class="box-title">Pefil:<?php echo $_POST[txtProfile]; ?> </h3><br>
           </div>
           <!-- /.box-header -->
 
