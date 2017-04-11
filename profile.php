@@ -183,7 +183,7 @@ desired effect
           <div class="box-header">
             <h3 class="box-title">Proyectos:<?php echo $_POST[txtNoProyecto]; ?> .- <?php echo $NomProyect; ?> </h3><br>
             <h3 class="box-title">Nombre:<?php echo $_POST[txtName]; ?></h3><br>
-            <h3 class="box-title">Pefil:<?php echo $_POST[txtProfile]; ?> </h3><br>
+            <h3 class="box-title">Perfil:<?php echo $_POST[txtProfile]; ?> </h3><br>
           </div>
           <!-- /.box-header -->
 
@@ -268,7 +268,7 @@ desired effect
                                                         [Northwind].[dbo].[Usuarios]
                                                         WHERE
                                                               ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] =  [SAP].[dbo].[CatalogoDeProyectos].[NumProyecto] and
-                                                              [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id]) and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '$_GET[NumProy]') and ([Northwind].[dbo].[Usuarios].[Id] <> '$_SESSION[IdUsuario]') and ([SAP].[dbo].[AATareasTeamWork].[Id] = '$value')";
+                                                              [SAP].[dbo].[AATareasTeamWork].[IdUsuario] = [Northwind].[dbo].[Usuarios].[Id]) and  ([SAP].[dbo].[AATareasTeamWork].[NoProyecto] = '$_POST[txtNoProyecto]') and ([Northwind].[dbo].[Usuarios].[Id] = '$_POST[txtIdUsuarioSelecionado]') and ([SAP].[dbo].[AATareasTeamWork].[Id] = '$value')";
                                                 $objTask = new poolConnecion();
                                                 $con=$objTask->ConexionSQLSAP();
                                                 $RSet=$objTask->QuerySQLSAP($SqlTask,$con);
