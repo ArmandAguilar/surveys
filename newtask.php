@@ -202,6 +202,7 @@ desired effect
                                                       ,[Northwind].[dbo].Usuarios.[Id] As IdUsuarioAEncuestar
                                                       ,[Northwind].[dbo].Usuarios.[Nombre]
                                                       ,[Northwind].[dbo].Usuarios.[Apellidos]
+                                                      ,[Northwind].[dbo].Usuarios.[Pefil]
                                                 FROM
                                                       [SAP].[dbo].[AATareasTeamWork],
                                                       [SAP].[dbo].[CatalogoDeProyectos],
@@ -216,7 +217,7 @@ desired effect
                                                  {
                                                    echo "<tr>
                                                       <td>$fila[Nombre] $fila[Apellidos]</td>
-                                                      <td><div data-toggle=\"modal\" data-target=\"#myModal\" style=\"cursor:pointer\" onclick=\"sendValue($_GET[NumProy],$fila[IdUsuario],);\">Evaluar</div></td>
+                                                      <td><div data-toggle=\"modal\" data-target=\"#myModal\" style=\"cursor:pointer\" onclick=\"sendValue($_GET[NumProy],$fila[IdUsuario],\'$fila[Perfil]\',\'$fila[Nombre] $fila[Apellidos]\');\">Evaluar</div></td>
                                                   </tr>";
                                                 }
                                           $objId->CerrarSQLSAP($RSet,$con);
