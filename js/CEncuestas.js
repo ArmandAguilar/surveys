@@ -119,7 +119,7 @@ function encuesta_save_edit()
              data:losdatos,
              success:function(data)
                     {
-                        alert(data);
+                        /*alert(data);*/
                         $("#alerta-err").hide(500);
                         $("#alerta-oka").show(1000);
                         $("#alerta-oka").hide(1000);
