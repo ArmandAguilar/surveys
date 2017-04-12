@@ -1,8 +1,8 @@
 <?php
 include("../sis.php");
 include("$path/libs/conexion.php");
-//include("$path/scripts/CEncuesta.php");
-//$obj = new CEncuestas();
+include("$path/scripts/CEncuesta.php");
+$obj = new CEncuestas();
 switch ($_GET[o])
   {
     /*insert */
@@ -19,7 +19,7 @@ switch ($_GET[o])
               $info->Pregunta8 = $_POST[txtPregunta8];
               $info->Pregunta9 = $_POST[txtPregunta9];
               $info->Pregunta10 = $_POST[txtPregunta10];
-              /*$info->chkIdPregunta1 = $_POST[chkIdPregunta1];
+              $info->chkIdPregunta1 = $_POST[chkIdPregunta1];
               $info->chkIdPregunta2 = $_POST[chkIdPregunta2];
               $info->chkIdPregunta3 = $_POST[chkIdPregunta3];
               $info->chkIdPregunta4 = $_POST[chkIdPregunta4];
@@ -28,18 +28,18 @@ switch ($_GET[o])
               $info->chkIdPregunta7 = $_POST[chkIdPregunta7];
               $info->chkIdPregunta8 = $_POST[chkIdPregunta8];
               $info->chkIdPregunta9 = $_POST[chkIdPregunta9];
-              $info->chkIdPregunta10 = $_POST[chkIdPregunta10];*/
-              //$info->IdArea = $_POST[txtIdArea];
-              //echo $obj->save_encuesta($info);
+              $info->chkIdPregunta10 = $_POST[chkIdPregunta10];
+              $info->IdArea = $_POST[txtIdArea];
+              echo $obj->save_encuesta($info);
       break;
       /*delete*/
       case '2':
               $info -> Id = $_POST[Id];
-              //echo $obj->delete_encuesta($info);
+              echo $obj->delete_encuesta($info);
       break;
       /*update*/
       case '3':
-              /*  $info->txtEncuesta = $_POST[txtEncuesta];
+                $info->txtEncuesta = $_POST[txtEncuesta];
                 $info->txtIdEncuesta = $_POST[txtIdEncuesta];
                 $info->txtPregunta1 = $_POST[txtPregunta1];
                 $info->txtPregunta2 = $_POST[txtPregunta2];
@@ -72,7 +72,7 @@ switch ($_GET[o])
                 $info->chkIdPregunta9 = $_POST[chkIdPregunta9];
                 $info->chkIdPregunta10 = $_POST[chkIdPregunta10];
                 $info->IdArea = $_POST[txtIdArea];
-                echo $obj->save_edit_encuesta($info);*/
+                echo $obj->save_edit_encuesta($info);
 
       break;
 
