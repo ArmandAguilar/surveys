@@ -19,7 +19,7 @@ switch ($_GET[o])
               $info->Pregunta8 = $_POST[txtPregunta8];
               $info->Pregunta9 = $_POST[txtPregunta9];
               $info->Pregunta10 = $_POST[txtPregunta10];
-              $info->chkIdPregunta1 = $_POST[chkIdPregunta1];
+              /*$info->chkIdPregunta1 = $_POST[chkIdPregunta1];
               $info->chkIdPregunta2 = $_POST[chkIdPregunta2];
               $info->chkIdPregunta3 = $_POST[chkIdPregunta3];
               $info->chkIdPregunta4 = $_POST[chkIdPregunta4];
@@ -28,7 +28,7 @@ switch ($_GET[o])
               $info->chkIdPregunta7 = $_POST[chkIdPregunta7];
               $info->chkIdPregunta8 = $_POST[chkIdPregunta8];
               $info->chkIdPregunta9 = $_POST[chkIdPregunta9];
-              $info->chkIdPregunta10 = $_POST[chkIdPregunta10];
+              $info->chkIdPregunta10 = $_POST[chkIdPregunta10];*/
               $info->IdArea = $_POST[txtIdArea];
               echo $obj->save_encuesta($info);
       break;
@@ -61,7 +61,7 @@ switch ($_GET[o])
                 $info->txtIdPregunta8 = $_POST[txtIdPregunta8];
                 $info->txtIdPregunta9 = $_POST[txtIdPregunta9];
                 $info->txtIdPregunta10 = $_POST[txtIdPregunta10];
-                $info->chkIdPregunta1 = $_POST[chkIdPregunta1];
+                /*$info->chkIdPregunta1 = $_POST[chkIdPregunta1];
                 $info->chkIdPregunta2 = $_POST[chkIdPregunta2];
                 $info->chkIdPregunta3 = $_POST[chkIdPregunta3];
                 $info->chkIdPregunta4 = $_POST[chkIdPregunta4];
@@ -70,7 +70,7 @@ switch ($_GET[o])
                 $info->chkIdPregunta7 = $_POST[chkIdPregunta7];
                 $info->chkIdPregunta8 = $_POST[chkIdPregunta8];
                 $info->chkIdPregunta9 = $_POST[chkIdPregunta9];
-                $info->chkIdPregunta10 = $_POST[chkIdPregunta10];
+                $info->chkIdPregunta10 = $_POST[chkIdPregunta10];*/
                 $info->IdArea = $_POST[txtIdArea];
                 echo $obj->save_edit_encuesta($info);
                 /*echo "OKA";*/
