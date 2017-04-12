@@ -13,16 +13,16 @@ function encuesta_save()
                     txtPregunta8:$('#txtPregunta8').val(),
                     txtPregunta9:$('#txtPregunta9').val(),
                     txtPregunta10:$('#txtPregunta10').val(),
-                    chkIdPregunta1:$('#chkIdPregunta1').val(),
-                    chkIdPregunta2:$('#chkIdPregunta2').val(),
-                    chkIdPregunta3:$('#chkIdPregunta3').val(),
-                    chkIdPregunta4:$('#chkIdPregunta4').val(),
-                    chkIdPregunta5:$('#chkIdPregunta5').val(),
-                    chkIdPregunta6:$('#chkIdPregunta6').val(),
-                    chkIdPregunta7:$('#chkIdPregunta7').val(),
-                    chkIdPregunta8:$('#chkIdPregunta8').val(),
-                    chkIdPregunta9:$('#chkIdPregunta9').val(),
-                    chkIdPregunta10:$('#chkIdPregunta10').val(),
+                    chkIdPregunta1:$('#chkIdPregunta1').is(':checked'),
+                    chkIdPregunta2:$('#chkIdPregunta2').is(':checked'),
+                    chkIdPregunta3:$('#chkIdPregunta3').is(':checked'),
+                    chkIdPregunta4:$('#chkIdPregunta4').is(':checked'),
+                    chkIdPregunta5:$('#chkIdPregunta5').is(':checked'),
+                    chkIdPregunta6:$('#chkIdPregunta6').is(':checked'),
+                    chkIdPregunta7:$('#chkIdPregunta7').is(':checked'),
+                    chkIdPregunta8:$('#chkIdPregunta8').is(':checked'),
+                    chkIdPregunta9:$('#chkIdPregunta9').is(':checked'),
+                    chkIdPregunta10:$('#chkIdPregunta10').is(':checked'),
                     txtIdArea:$('#cboPerfil').val()
                   };
    $.ajax({
@@ -113,8 +113,7 @@ function encuesta_save_edit()
                     chkIdPregunta10:$('#chkIdPregunta10').is(':checked'),
                     txtIdArea:$('#cboPerfil').val()
                   };
-                  alert($('#chkIdPregunta1').is(':checked'));
-                  alert($('#chkIdPregunta2').is(':checked'));
+
    $.ajax({
              url:'./scripts/oper_cencuesta.php?o=3',
              type:'POST',
