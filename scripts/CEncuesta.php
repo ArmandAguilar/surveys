@@ -22,7 +22,7 @@ class CEncuestas extends poolConnecion
     $arrayAks[8] = $info->Pregunta9;
     $arrayAks[9] = $info->Pregunta10;
 
-    $arrayObligado[0] = $info->chkIdPregunta1;
+    /*$arrayObligado[0] = $info->chkIdPregunta1;
     $arrayObligado[1] = $info->chkIdPregunta2;
     $arrayObligado[2] = $info->chkIdPregunta3;
     $arrayObligado[3] = $info->chkIdPregunta4;
@@ -31,7 +31,7 @@ class CEncuestas extends poolConnecion
     $arrayObligado[6] = $info->chkIdPregunta7;
     $arrayObligado[7] = $info->chkIdPregunta8;
     $arrayObligado[8] = $info->chkIdPregunta9;
-    $arrayObligado[9] = $info->chkIdPregunta10;
+    $arrayObligado[9] = $info->chkIdPregunta10;*/
 
     $Area = $info->IdArea;
     $d = date(d);
@@ -58,12 +58,12 @@ class CEncuestas extends poolConnecion
        if (!empty($value)) {
              if(!empty($Pregunta))
              {
-               if (!empty($arrayObligado[$key])) {
+               /*if (!empty($arrayObligado[$key])) {
                    $obligado = "Si";
                }
                else{
                  $obligado = "No";
-               }
+               }*/
                 $SqlAsk = "INSERT INTO [SAP].[dbo].[AAPreguntas] VALUES ('$IdEncuesta','$value','$obligado')";
                 $obj = new poolConnecion();
                 $con=$obj->ConexionSQLSAP();
@@ -127,12 +127,12 @@ class CEncuestas extends poolConnecion
                 $Pregunta = $txtPregunta[$key];
                 if(!empty($Pregunta))
                 {
-                  if (!empty($arrayObligado[$key])) {
+                  /*if (!empty($arrayObligado[$key])) {
                       $obligado = "Si";
                   }
                   else{
                     $obligado = "No";
-                  }
+                  }*/
                   $sql = "UPDATE [SAP].[dbo].[AAPreguntas] SET [Pregunta] = '$txtPregunta[$key]',[Obligado] = '$obligado' WHERE Id='$value'";
                   $obj = new poolConnecion();
                   $con=$obj->ConexionSQLSAP();
