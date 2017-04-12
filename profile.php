@@ -323,7 +323,7 @@ desired effect
                  <!-- Fisrt question -->
                  <?php
                            $i = 0;
-                           $Surveys = "<table class=\"table table-condensed\">
+                           $SurveysObligado = "<table class=\"table table-condensed\">
                                            <tbody>";
 
                            $Sql="SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta' And [Obligado] = 'Si'";
@@ -411,7 +411,7 @@ desired effect
                  <!-- end Fisrt question -->
                  <!-- Random Quiestion -->
                  <?php
-                           $i = 0;
+                           $i=0;
                            $Surveys = "<table class=\"table table-condensed\">
                                            <tbody>";
 
