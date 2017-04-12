@@ -62,7 +62,7 @@ class CEncuestas extends poolConnecion
                 $Pregunta = $txtPregunta[$key];
                 if(!empty($Pregunta))
                 {
-                  if (!empty($arrayObligado[$key])) {
+                  if ($arrayObligado[$key] == '1') {
                       $obligado = "Si";
                   }
                   else{
