@@ -242,46 +242,55 @@ desired effect
                   <label for="exampleInputPassword1">Pregunta 2</label>
                   <textarea class="form-control" id="txtPregunta2" name="txtPregunta3" rows="3" placeholder="texto..."><?php echo $txtPregunta[1]; ?></textarea>
                   <input type="hidden" id="txtIdPregunta2" name="txtIdPregunta2" value="<?php echo $IdPregunta[1]; ?>"/>
+                  <input type="checkbox" id="chkIdPregunta2" name="chkIdPregunta2" />Obligado
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 3</label>
                   <textarea class="form-control" id="txtPregunta3" name="txtPregunta3" rows="3" placeholder="texto..."><?php echo $txtPregunta[2]; ?></textarea>
                   <input type="hidden" id="txtIdPregunta3" name="txtIdPregunta3" value="<?php echo $IdPregunta[2]; ?>"/>
+                  <input type="checkbox" id="chkIdPregunta3" name="chkIdPregunta3" />Obligado
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 4</label>
                   <textarea class="form-control" id="txtPregunta4" name="txtPregunta4" rows="3" placeholder="texto..."><?php echo $txtPregunta[3]; ?></textarea>
                   <input type="hidden" id="txtIdPregunta4" name="txtIdPregunta4" value="<?php echo $IdPregunta[3]; ?>"/>
+                  <input type="checkbox" id="chkIdPregunta4" name="chkIdPregunta4" />Obligado
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 5</label>
                   <textarea class="form-control" id="txtPregunta5" name="txtPregunta5"rows="3" placeholder="texto..."><?php echo $txtPregunta[4]; ?></textarea>
                   <input type="hidden" id="txtIdPregunta5" name="txtIdPregunta5" value="<?php echo $IdPregunta[4]; ?>"/>
+                  <input type="checkbox" id="chkIdPregunta5" name="chkIdPregunta5" />Obligado
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 6</label>
                   <textarea class="form-control" id="txtPregunta6" name="txtPregunta6" rows="3" placeholder="texto..."><?php echo $txtPregunta[5]; ?></textarea>
                   <input type="hidden" id="txtIdPregunta6" name="txtIdPregunta6" value="<?php echo $IdPregunta[5]; ?>"/>
+                  <input type="checkbox" id="chkIdPregunta6" name="chkIdPregunta6" />Obligado
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 7</label>
                   <textarea class="form-control" id="txtPregunta7" name="txtPregunta7" rows="3" placeholder="texto..."><?php echo $txtPregunta[6]; ?></textarea>
                   <input type="hidden" id="txtIdPregunta7" name="txtIdPregunta7" value="<?php echo $IdPregunta[6]; ?>"/>
+                  <input type="checkbox" id="chkIdPregunta7" name="chkIdPregunta7" />Obligado
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 8</label>
                   <textarea class="form-control" id="txtPregunta8" name="txtPregunta8" rows="3" placeholder="texto..."><?php echo $txtPregunta[7]; ?></textarea>
                   <input type="hidden" id="txtIdPregunta8" name="txtIdPregunta8" value="<?php echo $IdPregunta[7]; ?>"/>
+                  <input type="checkbox" id="chkIdPregunta8" name="chkIdPregunta8" />Obligado
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 9</label>
                   <textarea class="form-control" id="txtPregunta9" name="txtPregunta9" rows="3" placeholder="texto..."><?php echo $txtPregunta[8]; ?></textarea>
                   <input type="hidden" id="txtIdPregunta9" name="txtIdPregunta9" value="<?php echo $IdPregunta[8]; ?>"/>
+                  <input type="checkbox" id="chkIdPregunta9" name="chkIdPregunta9" />Obligado
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Pregunta 10</label>
                   <textarea class="form-control" id="txtPregunta10" name="txtPregunta10" rows="3" placeholder="texto..."><?php echo $txtPregunta[9]; ?></textarea>
                   <input type="hidden" id="txtIdPregunta10" name="txtIdPregunta10" value="<?php echo $IdPregunta[9]; ?>"/>
+                  <input type="checkbox" id="chkIdPregunta10" name="chkIdPregunta10" />Obligado
                 </div>
               </div>
               <!-- /.box-body -->

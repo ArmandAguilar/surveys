@@ -13,6 +13,16 @@ function encuesta_save()
                     txtPregunta8:$('#txtPregunta8').val(),
                     txtPregunta9:$('#txtPregunta9').val(),
                     txtPregunta10:$('#txtPregunta10').val(),
+                    chkIdPregunta1:$('#chkIdPregunta1').val(),
+                    chkIdPregunta2:$('#chkIdPregunta2').val(),
+                    chkIdPregunta3:$('#chkIdPregunta3').val(),
+                    chkIdPregunta4:$('#chkIdPregunta4').val(),
+                    chkIdPregunta5:$('#chkIdPregunta5').val(),
+                    chkIdPregunta6:$('#chkIdPregunta6').val(),
+                    chkIdPregunta7:$('#chkIdPregunta7').val(),
+                    chkIdPregunta8:$('#chkIdPregunta8').val(),
+                    chkIdPregunta9:$('#chkIdPregunta9').val(),
+                    chkIdPregunta10:$('#chkIdPregunta10').val(),
                     txtIdArea:$('#cboPerfil').val()
                   };
    $.ajax({
@@ -91,6 +101,16 @@ function encuesta_save_edit()
                     txtIdPregunta8:$('#txtIdPregunta8').val(),
                     txtIdPregunta9:$('#txtIdPregunta9').val(),
                     txtIdPregunta10:$('#txtIdPregunta10').val(),
+                    chkIdPregunta1:$('#chkIdPregunta1').val(),
+                    chkIdPregunta2:$('#chkIdPregunta2').val(),
+                    chkIdPregunta3:$('#chkIdPregunta3').val(),
+                    chkIdPregunta4:$('#chkIdPregunta4').val(),
+                    chkIdPregunta5:$('#chkIdPregunta5').val(),
+                    chkIdPregunta6:$('#chkIdPregunta6').val(),
+                    chkIdPregunta7:$('#chkIdPregunta7').val(),
+                    chkIdPregunta8:$('#chkIdPregunta8').val(),
+                    chkIdPregunta9:$('#chkIdPregunta9').val(),
+                    chkIdPregunta10:$('#chkIdPregunta10').val(),
                     txtIdArea:$('#cboPerfil').val()
                   };
    $.ajax({

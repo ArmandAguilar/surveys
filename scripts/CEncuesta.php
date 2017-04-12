@@ -21,6 +21,18 @@ class CEncuestas extends poolConnecion
     $arrayAks[7] = $info->Pregunta8;
     $arrayAks[8] = $info->Pregunta9;
     $arrayAks[9] = $info->Pregunta10;
+
+    $arrayObligado[0] = $info->chkIdPregunta1;
+    $arrayObligado[1] = $info->chkIdPregunta2;
+    $arrayObligado[2] = $info->chkIdPregunta3;
+    $arrayObligado[3] = $info->chkIdPregunta4;
+    $arrayObligado[4] = $info->chkIdPregunta5;
+    $arrayObligado[5] = $info->chkIdPregunta6;
+    $arrayObligado[6] = $info->chkIdPregunta7;
+    $arrayObligado[7] = $info->chkIdPregunta8;
+    $arrayObligado[8] = $$info->chkIdPregunta9;
+    $arrayObligado[9] = $info->chkIdPregunta10;
+
     $Area = $info->IdArea;
     $d = date(d);
     $m = date(m);
@@ -44,7 +56,15 @@ class CEncuestas extends poolConnecion
      /* save the ask in the table AAPreguntas */
      foreach ($arrayAks as $key => $value) {
        if (!empty($value)) {
-                $SqlAsk = "INSERT INTO [SAP].[dbo].[AAPreguntas] VALUES ('$IdEncuesta','$value')";
+             if(!empty($Pregunta))
+             {
+               if (!empty($arrayObligado[$key])) {
+                   $obligado = "Si";
+               }
+               else{
+                 $obligado = "No";
+               }
+                $SqlAsk = "INSERT INTO [SAP].[dbo].[AAPreguntas] VALUES ('$IdEncuesta','$value','$obligado')";
                 $obj = new poolConnecion();
                 $con=$obj->ConexionSQLSAP();
                 $RSet=$obj->QuerySQLSAP($SqlAsk,$con);
@@ -78,6 +98,17 @@ class CEncuestas extends poolConnecion
     $txtIdPregunta[7] = $info->txtIdPregunta8;
     $txtIdPregunta[8] = $info->txtIdPregunta9;
     $txtIdPregunta[9] = $info->txtIdPregunta10;
+
+    $arrayObligado[0] = $info->chkIdPregunta1;
+    $arrayObligado[1] = $info->chkIdPregunta2;
+    $arrayObligado[2] = $info->chkIdPregunta3;
+    $arrayObligado[3] = $info->chkIdPregunta4;
+    $arrayObligado[4] = $info->chkIdPregunta5;
+    $arrayObligado[5] = $info->chkIdPregunta6;
+    $arrayObligado[6] = $info->chkIdPregunta7;
+    $arrayObligado[7] = $info->chkIdPregunta8;
+    $arrayObligado[8] = $$info->chkIdPregunta9;
+    $arrayObligado[9] = $info->chkIdPregunta10;
     $Area = $info->IdArea;
 
     /* we update a name of surveys */
@@ -96,7 +127,13 @@ class CEncuestas extends poolConnecion
                 $Pregunta = $txtPregunta[$key];
                 if(!empty($Pregunta))
                 {
-                  $sql = "UPDATE [SAP].[dbo].[AAPreguntas] SET [Pregunta] = '$txtPregunta[$key]' WHERE Id='$value'";
+                  if (!empty($arrayObligado[$key])) {
+                      $obligado = "Si";
+                  }
+                  else{
+                    $obligado = "No";
+                  }
+                  $sql = "UPDATE [SAP].[dbo].[AAPreguntas] SET [Pregunta] = '$txtPregunta[$key]',Obligado='$obligado' WHERE Id='$value'";
                   $obj = new poolConnecion();
                   $con=$obj->ConexionSQLSAP();
                   $RSet=$obj->QuerySQLSAP($sql,$con);
