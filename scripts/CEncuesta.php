@@ -85,11 +85,25 @@ class CEncuestas extends poolConnecion
           }
           else
           {
-                $sql = "INSERT INTO [SAP].[dbo].[AAPreguntas] VALUES ('$IdEncuesta','$txtPregunta[$key]')";
+
+            if (!empty($txtPregunta[$key]))
+            {
+              $obligado = "No";
+
+              if ($arrayObligado[$key] == 'true')
+                {
+                   $obligado = "Si";
+               }
+              else{
+                    $obligado = "No";
+                 }
+                $sql = "INSERT INTO [SAP].[dbo].[AAPreguntas] VALUES ('$IdEncuesta','$txtPregunta[$key]','$obligado')";
                 $obj = new poolConnecion();
                 $con=$obj->ConexionSQLSAP();
                 $RSet=$obj->QuerySQLSAP($sql,$con);
                 $obj->CerrarSQLSAP($RSet,$con);
+            }
+
           }
       }
     return $sql;
