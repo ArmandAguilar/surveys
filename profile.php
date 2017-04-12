@@ -316,7 +316,6 @@ desired effect
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <div id="Carga"><img src="img/loading.gif" high="200px" width="200px"></div>
             <div class="form-group">
                <!-- Aqui la encuesta -->
                <div id="Pencuesta" name="Pencuesta">
@@ -339,7 +338,6 @@ desired effect
                                          $i++;
                                   }
                            $objAks->CerrarSQLSAP($RSet,$con);
-
 
                            shuffle($ArrayAsk);
                            $NewArrayAks[0] = $ArrayAsk[0];
@@ -412,6 +410,7 @@ desired effect
                            if ($EncuestaVacia == "Si") {
                              $Surveys = "<h3>Este perfil no tiene una encuesta asignada</h3><script>$('#btn-primarys').hide();</script>";
                            }
+                           echo $Surveys;
                  ?>
                  <!-- End Random Quiestion -->
                </div>
