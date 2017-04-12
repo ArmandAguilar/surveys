@@ -113,6 +113,7 @@ function encuesta_save_edit()
                     chkIdPregunta10:$('#chkIdPregunta10').is(':checked'),
                     txtIdArea:$('#cboPerfil').val()
                   };
+                  alert($('#chkIdPregunta1').is(':checked'));
    $.ajax({
              url:'./scripts/oper_cencuesta.php?o=3',
              type:'POST',
