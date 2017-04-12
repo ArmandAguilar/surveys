@@ -1,7 +1,7 @@
 <?php
 include("../sis.php");
 include("$path/libs/conexion.php");
-include("$path/scripts/CEncuesta.php");
+//include("$path/scripts/CEncuesta.php");
 //$obj = new CEncuestas();
 switch ($_GET[o])
   {
