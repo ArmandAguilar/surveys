@@ -114,6 +114,7 @@ function encuesta_save_edit()
                     txtIdArea:$('#cboPerfil').val()
                   };
                   alert($('#chkIdPregunta1').is(':checked'));
+                  alert($('#chkIdPregunta2').is(':checked'));
    $.ajax({
              url:'./scripts/oper_cencuesta.php?o=3',
              type:'POST',
