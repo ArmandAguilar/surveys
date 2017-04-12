@@ -43,12 +43,13 @@ $objNameProyect->CerrarSQLSAP($RSet,$con);
 
 /* get IdSurveys */
 $objIdSurveys = new poolConnecion();
-$SqlIdSurveys="SELECT [Id] FROM [SAP].[dbo].[AAEncuesta] Where Area ='$_POST[txtProfile]'";
+$SqlIdSurveys="SELECT [Id],[Encuesta] FROM [SAP].[dbo].[AAEncuesta] Where Area ='$_POST[txtProfile]'";
 $con=$objIdSurveys->ConexionSQLSAP();
 $RSet=$objIdSurveys->QuerySQLSAP($SqlIdSurveys,$con);
  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
        {
            $idEncuesta = $fila[Id];
+           $Encuesta = $fila[Encuesta];
       }
 $objIdSurveys->CerrarSQLSAP($RSet,$con);
  ?>
@@ -312,7 +313,7 @@ desired effect
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Encuesta</h3>
+              <h3 class="box-title">Encuesta:<?php echo $Encuesta; ?></h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
