@@ -40,6 +40,17 @@ $RSet=$objNameProyect->QuerySQLSAP($SqlIDP,$con);
            $NomProyect = $fila[NomProyecto];
       }
 $objNameProyect->CerrarSQLSAP($RSet,$con);
+
+/* get IdSurveys */
+$objIdSurveys = new poolConnecion();
+$SqlIdSurveys="SELECT [Id] FROM [SAP].[dbo].[AAEncuesta] Where Area ='$_POST[txtProfile]'";
+$con=$objIdSurveys->ConexionSQLSAP();
+$RSet=$objIdSurveys->QuerySQLSAP($SqlIdSurveys,$con);
+ while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+       {
+           $idEncuesta = $fila[Id];
+      }
+$objIdSurveys->CerrarSQLSAP($RSet,$con);
  ?>
 
 <!DOCTYPE html>
@@ -305,7 +316,125 @@ desired effect
             </div>
             <!-- /.box-header -->
             <!-- form start -->
+            <div id="Carga"><img src="img/loading.gif" high="200px" width="200px"></div>
+            <div class="form-group">
+               <!-- Aqui la encuesta -->
+               <div id="Pencuesta" name="Pencuesta">
+                 <!-- Fisrt question -->
 
+                 <!-- end Fisrt question -->
+                 <!-- Random Quiestion -->
+                 <?php
+                           $i = 0;
+                           $Surveys = "<table class=\"table table-condensed\">
+                                           <tbody>";
+
+                           $Sql="SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta' And [Obligado] <> 'Si'";
+                           $objAks = new poolConnecion();
+                           $con=$objAks->ConexionSQLSAP();
+                           $RSet=$objAks->QuerySQLSAP($Sql,$con);
+                            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                  {
+                                         $ArrayAsk[$i] =  $fila[Id];
+                                         $i++;
+                                  }
+                           $objAks->CerrarSQLSAP($RSet,$con);
+
+
+                           shuffle($ArrayAsk);
+                           $NewArrayAks[0] = $ArrayAsk[0];
+                           $NewArrayAks[1] = $ArrayAsk[1];
+                           $NewArrayAks[2] = $ArrayAsk[2];
+                           $NewArrayAks[3] = $ArrayAsk[3];
+                           $NewArrayAks[4] = $ArrayAsk[4];
+                           $j = 0;
+                           $EncuestaVacia = "Si";
+                       foreach ($NewArrayAks as $key => $value)
+                         {
+                             if ($value)
+                              {
+                                $EncuestaVacia = "No";
+                                $j++;
+                                $Sql="SELECT [Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta' and [Id] = '$value'";
+                                $objAksAll = new poolConnecion();
+                                $con=$objAksAll->ConexionSQLSAP();
+                                $RSet=$objAksAll->QuerySQLSAP($Sql,$con);
+                                 while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                       {
+                                             $Pregunta = $fila[Pregunta];
+                                       }
+                                $Surveys .= "<tr><td>$Pregunta</td></tr>
+                                     <tr>
+                                           <td>
+                                                 <input type=\"hidden\" name=\"txtPregunta_$j\" id=\"txtPregunta_$j\" value=\"$Pregunta\" />
+                                                 <div class=\"form-group\">
+                                                       <div class=\"radio\">
+                                                           <label>
+                                                               <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"1\" onclick=\"setValAnswers($j,'1');\">
+                                                               Simpre
+                                                           </label>
+                                                         </div>
+
+                                                 </div>
+                                                 <div class=\"form-group\">
+                                                       <div class=\"radio\">
+                                                           <label>
+                                                               <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.75\" onclick=\"setValAnswers($j,'0.75');\">
+                                                               Normalmente Si
+                                                           </label>
+                                                         </div>
+
+                                                 </div>
+                                                 <div class=\"form-group\">
+                                                       <div class=\"radio\">
+                                                           <label>
+                                                               <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.5\" onclick=\"setValAnswers($j,'0.5');\">
+                                                               Normalmente No
+                                                           </label>
+                                                         </div>
+
+                                                 </div>
+                                                 <div class=\"form-group\">
+                                                       <div class=\"radio\">
+                                                           <label>
+                                                               <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.25\" onclick=\"setValAnswers($j,'0.25');\">
+                                                               Nunca
+                                                           </label>
+                                                         </div>
+
+                                                 </div>
+                                           </td>
+                                     </tr>";
+                                   }
+                         }
+                           $Surveys .= "         </tbody>
+                                       </table><script>$('#btn-primarys').show();</script>";
+                           if ($EncuestaVacia == "Si") {
+                             $Surveys = "<h3>Este perfil no tiene una encuesta asignada</h3><script>$('#btn-primarys').hide();</script>";
+                           }
+                 ?>
+                 <!-- End Random Quiestion -->
+               </div>
+              <input type="hidden" name = "txtIdEncuesta" id="txtIdEncuesta"/>
+              <input type="hidden" name = "txtIdEncuestador" id="txtIdEncuestador"  value="<?php echo $_SESSION[IdUsuario]; ?>"/>
+              <input type="hidden" name = "txtIdEncuestado" id="txtIdEncuestado" />
+              <input type="hidden" name = "txtIdTarea" id="txtIdTarea" />
+              <input type="hidden" name = "txtNumProyectos" id="txtNumProyectos" value="<?php echo $_POST[txtNoProyecto]; ?>"/>
+              <input type="hidden" name = "txtCorreo" id="txtCorreo" value=""/>
+              <input type="hidden" name = "txtNombre" id="txtNombre" value=""/>
+              <input type="hidden" name = "txtTareaNombre" id="txtTareaNombre" value=""/>
+              <input type="hidden" name = "txtRespuesta1" id="txtRespuesta1"/>
+              <input type="hidden" name = "txtRespuesta2" id="txtRespuesta2"/>
+              <input type="hidden" name = "txtRespuesta3" id="txtRespuesta3"/>
+              <input type="hidden" name = "txtRespuesta4" id="txtRespuesta4"/>
+              <input type="hidden" name = "txtRespuesta5" id="txtRespuesta5"/>
+            </div>
+            <div id="msj" class="alert alert-success alert-dismissible" style="display:none">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4><i class="icon fa fa-check"></i> Encuesta aplicada</h4>
+            En un momento se notificara al usuario y se actualizara el sistema.
+            No Cierres este mensaje !!!
+          </div>
           </div>
           <!-- /.box -->
           <!-- general form elements disabled -->
