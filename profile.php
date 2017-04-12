@@ -321,7 +321,93 @@ desired effect
                <!-- Aqui la encuesta -->
                <div id="Pencuesta" name="Pencuesta">
                  <!-- Fisrt question -->
+                 <?php
+                           $i = 0;
+                           $Surveys = "<table class=\"table table-condensed\">
+                                           <tbody>";
 
+                           $Sql="SELECT [Id],[IdEncuesta],[Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta' And [Obligado] = 'Si'";
+                           $objAks = new poolConnecion();
+                           $con=$objAks->ConexionSQLSAP();
+                           $RSet=$objAks->QuerySQLSAP($Sql,$con);
+                            while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                  {
+                                         $ArrayAsk[$i] =  $fila[Id];
+                                         $i++;
+                                  }
+                           $objAks->CerrarSQLSAP($RSet,$con);
+
+                           shuffle($ArrayAsk);
+                           $NewArrayAks[0] = $ArrayAsk[0];
+                           $NewArrayAks[1] = $ArrayAsk[1];
+                           $NewArrayAks[2] = $ArrayAsk[2];
+                           $NewArrayAks[3] = $ArrayAsk[3];
+                           $NewArrayAks[4] = $ArrayAsk[4];
+                           $j = 0;
+                           $EncuestaVacia = "Si";
+                       foreach ($NewArrayAks as $key => $value)
+                         {
+                             if ($value)
+                              {
+                                $EncuestaVacia = "No";
+                                $j++;
+                                $Sql="SELECT [Pregunta] FROM [SAP].[dbo].[AAPreguntas] Where [IdEncuesta] = '$idEncuesta' and [Id] = '$value'";
+                                $objAksAll = new poolConnecion();
+                                $con=$objAksAll->ConexionSQLSAP();
+                                $RSet=$objAksAll->QuerySQLSAP($Sql,$con);
+                                 while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
+                                       {
+                                             $Pregunta = $fila[Pregunta];
+                                       }
+                                $SurveysObligado .= "<tr><td>$Pregunta</td></tr>
+                                     <tr>
+                                           <td>
+                                                 <input type=\"hidden\" name=\"txtPregunta_$j\" id=\"txtPregunta_$j\" value=\"$Pregunta\" />
+                                                 <div class=\"form-group\">
+                                                       <div class=\"radio\">
+                                                           <label>
+                                                               <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"1\" onclick=\"setValAnswers($j,'1');\">
+                                                               Simpre
+                                                           </label>
+                                                         </div>
+
+                                                 </div>
+                                                 <div class=\"form-group\">
+                                                       <div class=\"radio\">
+                                                           <label>
+                                                               <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.75\" onclick=\"setValAnswers($j,'0.75');\">
+                                                               Normalmente Si
+                                                           </label>
+                                                         </div>
+
+                                                 </div>
+                                                 <div class=\"form-group\">
+                                                       <div class=\"radio\">
+                                                           <label>
+                                                               <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.5\" onclick=\"setValAnswers($j,'0.5');\">
+                                                               Normalmente No
+                                                           </label>
+                                                         </div>
+
+                                                 </div>
+                                                 <div class=\"form-group\">
+                                                       <div class=\"radio\">
+                                                           <label>
+                                                               <input type=\"radio\" name=\"rdbtn_$j\" id=\"rdbtn_$j\" value=\"0.25\" onclick=\"setValAnswers($j,'0.25');\">
+                                                               Nunca
+                                                           </label>
+                                                         </div>
+
+                                                 </div>
+                                           </td>
+                                     </tr>";
+                                   }
+                         }
+                           $SurveysObligado .= "         </tbody>
+                                       </table><script>$('#btn-primarys').show();</script>";
+
+                           echo $SurveysObligado;
+                 ?>
                  <!-- end Fisrt question -->
                  <!-- Random Quiestion -->
                  <?php
