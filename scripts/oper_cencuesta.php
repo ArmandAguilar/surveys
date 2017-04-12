@@ -72,7 +72,7 @@ switch ($_GET[o])
                 $info->chkIdPregunta9 = $_POST[chkIdPregunta9];
                 $info->chkIdPregunta10 = $_POST[chkIdPregunta10];*/
                 $info->IdArea = $_POST[txtIdArea];
-                echo $obj->save_edit_encuesta($info);
+                //echo $obj->save_edit_encuesta($info);
                 /*echo "OKA";*/
       break;
 
