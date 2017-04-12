@@ -39,7 +39,7 @@ switch ($_GET[o])
       break;
       /*update*/
       case '3':
-                $info->txtEncuesta = $_POST[txtEncuesta];
+              /*  $info->txtEncuesta = $_POST[txtEncuesta];
                 $info->txtIdEncuesta = $_POST[txtIdEncuesta];
                 $info->txtPregunta1 = $_POST[txtPregunta1];
                 $info->txtPregunta2 = $_POST[txtPregunta2];
@@ -61,7 +61,7 @@ switch ($_GET[o])
                 $info->txtIdPregunta8 = $_POST[txtIdPregunta8];
                 $info->txtIdPregunta9 = $_POST[txtIdPregunta9];
                 $info->txtIdPregunta10 = $_POST[txtIdPregunta10];
-                /*$info->chkIdPregunta1 = $_POST[chkIdPregunta1];
+                $info->chkIdPregunta1 = $_POST[chkIdPregunta1];
                 $info->chkIdPregunta2 = $_POST[chkIdPregunta2];
                 $info->chkIdPregunta3 = $_POST[chkIdPregunta3];
                 $info->chkIdPregunta4 = $_POST[chkIdPregunta4];
@@ -70,10 +70,10 @@ switch ($_GET[o])
                 $info->chkIdPregunta7 = $_POST[chkIdPregunta7];
                 $info->chkIdPregunta8 = $_POST[chkIdPregunta8];
                 $info->chkIdPregunta9 = $_POST[chkIdPregunta9];
-                $info->chkIdPregunta10 = $_POST[chkIdPregunta10];*/
+                $info->chkIdPregunta10 = $_POST[chkIdPregunta10];
                 $info->IdArea = $_POST[txtIdArea];
-                //echo $obj->save_edit_encuesta($info);
-                /*echo "OKA";*/
+                echo $obj->save_edit_encuesta($info);*/
+
       break;
 
   }
