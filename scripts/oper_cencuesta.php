@@ -2,7 +2,7 @@
 include("../sis.php");
 include("$path/libs/conexion.php");
 include("$path/scripts/CEncuesta.php");
-$obj = new CEncuestas();
+//$obj = new CEncuestas();
 switch ($_GET[o])
   {
     /*insert */
@@ -29,13 +29,13 @@ switch ($_GET[o])
               $info->chkIdPregunta8 = $_POST[chkIdPregunta8];
               $info->chkIdPregunta9 = $_POST[chkIdPregunta9];
               $info->chkIdPregunta10 = $_POST[chkIdPregunta10];*/
-              $info->IdArea = $_POST[txtIdArea];
-              echo $obj->save_encuesta($info);
+              //$info->IdArea = $_POST[txtIdArea];
+              //echo $obj->save_encuesta($info);
       break;
       /*delete*/
       case '2':
               $info -> Id = $_POST[Id];
-              echo $obj->delete_encuesta($info);
+              //echo $obj->delete_encuesta($info);
       break;
       /*update*/
       case '3':
