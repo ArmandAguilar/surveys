@@ -1,7 +1,7 @@
 function show_all_task(IdProyecto)
 {
   /*redirecto to new script where , we show all task*/
-  window.location.href= 'task.php?NumProy=' + IdProyecto;
+  window.location.href= 'newtask.php?NumProy=' + IdProyecto;
 }
 function set_surveys(idEncuesta,idEncuestado,idTarea,Tarea,Nombre,Correo)
 {
