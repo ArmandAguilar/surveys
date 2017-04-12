@@ -127,6 +127,7 @@ function encuesta_save_edit()
                     },
              error:function(req,e,er) {
                 $("#alerta-err").show(1000);
+                alert(er);
              }
           });
 }
