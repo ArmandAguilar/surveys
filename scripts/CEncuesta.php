@@ -30,7 +30,7 @@ class CEncuestas extends poolConnecion
     $arrayObligado[5] = $info->chkIdPregunta6;
     $arrayObligado[6] = $info->chkIdPregunta7;
     $arrayObligado[7] = $info->chkIdPregunta8;
-    $arrayObligado[8] = $$info->chkIdPregunta9;
+    $arrayObligado[8] = $info->chkIdPregunta9;
     $arrayObligado[9] = $info->chkIdPregunta10;
 
     $Area = $info->IdArea;
@@ -107,7 +107,7 @@ class CEncuestas extends poolConnecion
     $arrayObligado[5] = $info->chkIdPregunta6;
     $arrayObligado[6] = $info->chkIdPregunta7;
     $arrayObligado[7] = $info->chkIdPregunta8;
-    $arrayObligado[8] = $$info->chkIdPregunta9;
+    $arrayObligado[8] = $info->chkIdPregunta9;
     $arrayObligado[9] = $info->chkIdPregunta10;
     $Area = $info->IdArea;
 
