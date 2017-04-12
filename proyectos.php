@@ -196,7 +196,7 @@ desired effect
                                    ?>
                                  <tr>
                                     <td><?php echo $i; ?>.</td>
-                                    <td><div style="cursor:pointer" onclick="show_all_task('<?php echo $fila[NoProyecto]; ?>')"><?php echo $fila[NoProyecto]; ?> .- <?php echo $fila[Proyecto]; ?></div></td>
+                                    <td><div style="cursor:pointer" onclick="show_all_task('<?php echo $fila[NoProyecto]; ?>')"><?php echo $fila[NoProyecto]; ?>.-<?php echo $fila[Proyecto]; ?></div></td>
                                 </tr>
                                 <?php
                                                 }
