@@ -133,7 +133,7 @@ class CEncuestas extends poolConnecion
                   else{
                     $obligado = "No";
                   }
-                  $sql = "UPDATE [SAP].[dbo].[AAPreguntas] SET [Pregunta] = '$txtPregunta[$key]',Obligado='$obligado' WHERE Id='$value'";
+                  $sql = "UPDATE [SAP].[dbo].[AAPreguntas] SET [Pregunta] = '$txtPregunta[$key]',[Obligado] = '$obligado' WHERE Id='$value'";
                   $obj = new poolConnecion();
                   $con=$obj->ConexionSQLSAP();
                   $RSet=$obj->QuerySQLSAP($sql,$con);
