@@ -3,7 +3,7 @@ function show_all_task(IdProyecto)
   /*redirecto to new script where , we show all task*/
   window.location.href= 'newtask.php?NumProy=' + IdProyecto;
 }
-/*function set_surveys(idEncuesta,idEncuestado,idTarea,Tarea,Nombre,Correo)
+function set_surveys(idEncuesta,idEncuestado,idTarea,Tarea,Nombre,Correo)
 {
   $('#Pencuesta').empty();
   $('#txtIdEncuesta').val(0);
@@ -42,7 +42,7 @@ function show_all_task(IdProyecto)
                             alert(er);
                           }
                         });
-}*/
+}
 
 function Close_Surveys(NumProy)
 {
