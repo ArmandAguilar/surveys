@@ -104,16 +104,16 @@ function setValAnswers(campo,valor)
 function setValPregunta_new(NumProy)
 {
     /*var losdatos = {txtId:Id,txtValor:Valor,txtIdTarea:$('#txtIdTarea').val()};*/
-    var txtPregunta_6 = ''
-    var txtRespuesta_6 = ''
-    var txtPregunta_7 = ''
-    var txtRespuesta_7 = ''
-    var txtPregunta_8 = ''
-    var txtRespuesta_8 = ''
-    var txtPregunta_9 = ''
-    var txtRespuesta_9 = ''
-    var txtPregunta_10 = ''
-    var txtRespuesta_10 = ''
+    var txtPregunta_6 = '';
+    var txtRespuesta_6 = '';
+    var txtPregunta_7 = '';
+    var txtRespuesta_7 = '';
+    var txtPregunta_8 = '';
+    var txtRespuesta_8 = '';
+    var txtPregunta_9 = '';
+    var txtRespuesta_9 = '';
+    var txtPregunta_10 = '';
+    var txtRespuesta_10 = '';
 
     if ( $("#txtPregunta_6").length )
      {
