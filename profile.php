@@ -286,12 +286,11 @@ desired effect
                                                 $RSet=$objTask->QuerySQLSAP($SqlTask,$con);
                                                  while($fila=sqlsrv_fetch_array($RSet,SQLSRV_FETCH_ASSOC))
                                                        {
-                                                             /* Get id encuesta for perfil  */
-                                                            /* $IdEncuesta = 17;*/
-                                                            $IdEncuesta = $objProy->Get_Surveys($fila[Perfil]);
+
                                                             echo "<tr>
                                                                       <td>$fila[Tarea]</td>
                                                                 </tr>";
+                                                            $listofIdWorks .= "$fila[Id],";
                                                            $j++;
                                                       }
                                                 $objTask->CerrarSQLSAP($RSet,$con);
@@ -432,7 +431,6 @@ desired effect
                            $NewArrayAks[2] = $ArrayAsk[2];
                            $NewArrayAks[3] = $ArrayAsk[3];
                            $NewArrayAks[4] = $ArrayAsk[4];
-                           $j = 0;
                            $EncuestaVacia = "Si";
                        foreach ($NewArrayAks as $key => $value)
                          {
@@ -504,23 +502,23 @@ desired effect
               <input type="hidden" name = "txtIdEncuesta" id="txtIdEncuesta"/>
               <input type="hidden" name = "txtIdEncuestador" id="txtIdEncuestador"  value="<?php echo $_SESSION[IdUsuario]; ?>"/>
               <input type="hidden" name = "txtIdEncuestado" id="txtIdEncuestado" />
-              <input type="hidden" name = "txtIdTarea" id="txtIdTarea" />
               <input type="hidden" name = "txtNumProyectos" id="txtNumProyectos" value="<?php echo $_POST[txtNoProyecto]; ?>"/>
-              <input type="hidden" name = "txtCorreo" id="txtCorreo" value=""/>
-              <input type="hidden" name = "txtNombre" id="txtNombre" value=""/>
-              <input type="hidden" name = "txtTareaNombre" id="txtTareaNombre" value=""/>
+              <input type="hidden" name = "txtIdWorskToClose" id="txtIdWorskToClose" value="<?php echo $listofIdWorks ?>" />
               <input type="hidden" name = "txtRespuesta1" id="txtRespuesta1"/>
               <input type="hidden" name = "txtRespuesta2" id="txtRespuesta2"/>
               <input type="hidden" name = "txtRespuesta3" id="txtRespuesta3"/>
               <input type="hidden" name = "txtRespuesta4" id="txtRespuesta4"/>
               <input type="hidden" name = "txtRespuesta5" id="txtRespuesta5"/>
+              <input type="hidden" name = "txtRespuesta6" id="txtRespuesta6"/>
+              <input type="hidden" name = "txtRespuesta7" id="txtRespuesta7"/>
+              <input type="hidden" name = "txtRespuesta8" id="txtRespuesta8"/>
+              <input type="hidden" name = "txtRespuesta9" id="txtRespuesta9"/>
+              <input type="hidden" name = "txtRespuesta10" id="txtRespuesta10"/>
+
             </div>
-            <div id="msj" class="alert alert-success alert-dismissible" style="display:none">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h4><i class="icon fa fa-check"></i> Encuesta aplicada</h4>
-            En un momento se notificara al usuario y se actualizara el sistema.
-            No Cierres este mensaje !!!
-          </div>
+            <div class="box-footer">
+              <button type="button" class="btn btn-primary">Evaluar</button>
+            </div>
           </div>
           <!-- /.box -->
           <!-- general form elements disabled -->
