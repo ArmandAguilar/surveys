@@ -290,7 +290,7 @@ desired effect
                                                             echo "<tr>
                                                                       <td>$fila[Tarea]</td>
                                                                 </tr>";
-                                                            $listofIdWorks .= "$fila[Id],";
+                                                            $listofIdWorks .= "$fila[IdTeamWork],";
                                                            $j++;
                                                       }
                                                 $objTask->CerrarSQLSAP($RSet,$con);
