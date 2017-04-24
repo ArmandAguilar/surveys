@@ -403,7 +403,7 @@ desired effect
                                    }
                          }
                            $SurveysObligado .= "         </tbody>
-                                       </table><script>$('#btn-primarys').show();</script>";
+                                       </table>";
 
                            echo $SurveysObligado;
                  ?>
@@ -491,7 +491,7 @@ desired effect
                                    }
                          }
                            $Surveys .= "         </tbody>
-                                       </table><script>$('#btn-primarys').show();</script>";
+                                       </table>";
                            if ($EncuestaVacia == "Si") {
                              $Surveys = "<h3>Este perfil no tiene una encuesta asignada</h3><script>$('#btn-primarys').hide();</script>";
                            }
@@ -632,7 +632,7 @@ desired effect
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
 <script src="dist/js/demo.js"></script>
-<!--<script src="js/CProyectos.js"></script>-->
+<script src="js/CProyectos.js"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
