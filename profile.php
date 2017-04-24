@@ -499,9 +499,9 @@ desired effect
                  ?>
                  <!-- End Random Quiestion -->
                </div>
-              <input type="text" name = "txtIdEncuesta" id="txtIdEncuesta"/>
+              <input type="text" name = "txtIdEncuesta" id="txtIdEncuesta" value="<?php echo $idEncuesta; ?>"/>
               <input type="text" name = "txtIdEncuestador" id="txtIdEncuestador"  value="<?php echo $_SESSION[IdUsuario]; ?>"/>
-              <input type="text" name = "txtIdEncuestado" id="txtIdEncuestado" />
+              <input type="text" name = "txtIdEncuestado" id="txtIdEncuestado" value="<?php echo $_POST[txtIdUsuarioSelecionado]; ?>"/>
               <input type="text" name = "txtNumProyectos" id="txtNumProyectos" value="<?php echo $_POST[txtNoProyecto]; ?>"/>
               <input type="text" name = "txtIdWorskToClose" id="txtIdWorskToClose" value="<?php echo $listofIdWorks ?>" />
               <input type="text" name = "txtRespuesta1" id="txtRespuesta1"/>
