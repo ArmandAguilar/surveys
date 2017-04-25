@@ -517,7 +517,7 @@ desired effect
 
             </div>
             <div class="box-footer">
-              <button type="button" class="btn btn-primary">Evaluar</button>
+              <button type="button" class="btn btn-primary" onlcick="setValPregunta_new(<?php echo $_POST[txtNoProyecto]; ?>);">Evaluar</button>
             </div>
           </div>
           <!-- /.box -->
