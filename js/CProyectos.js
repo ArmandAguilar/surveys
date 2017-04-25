@@ -164,7 +164,8 @@ function setValPregunta_new(NumProy)
                       txtRespuesta10:txtRespuesta_10,
                       idEncuestador:$('#txtIdEncuestador').val(),
                       idEncuestado:$('#txtIdEncuestado').val(),
-                      idEncuesta:$('#txtIdEncuesta').val()
+                      idEncuesta:$('#txtIdEncuesta').val(),
+                      txtIdWorskToClose:$('#txtIdWorskToClose').val()
                     };
       $.ajax({
                 url:'./scripts/oper_proyectos.php?o=5',
