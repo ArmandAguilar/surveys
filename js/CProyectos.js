@@ -173,7 +173,8 @@ function setValPregunta_new(NumProy)
                 data:losdatos,
                 success:function(data)
                 {
-                    Close_Surveys(NumProy);
+                    alert(data);
+                    window.location.href = 'newtask.php?NumProy=' + NumProy;
                 },
                 error:function(req,e,er) {
                   alert(er);

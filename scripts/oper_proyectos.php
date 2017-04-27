@@ -47,68 +47,68 @@ switch ($_GET[o])
                     $Y = date(Y);
                     $Fecha = "$D/$M/$Y";
                     /*Pregunta 1*/
-                    $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta1]','$idEncuesta','$_POST[txtPregunta1]','$Fecha')";
+                    $sql1 = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta1]','$idEncuesta','$_POST[txtPregunta1]','$Fecha')";
                     $con=$obj->ConexionSQLSAP();
-                    $RSet=$obj->QuerySQLSAP($sql,$con);
+                    $RSet=$obj->QuerySQLSAP($sql1,$con);
                     $obj->CerrarSQLSAP($RSet,$con);
 
                     /*Pregunta 2*/
-                    $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta2]','$idEncuesta','$_POST[txtPregunta2]','$Fecha')";
+                    $sql2 = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta2]','$idEncuesta','$_POST[txtPregunta2]','$Fecha')";
                     $con=$obj->ConexionSQLSAP();
-                    $RSet=$obj->QuerySQLSAP($sql,$con);
+                    $RSet=$obj->QuerySQLSAP($sql2,$con);
                     $obj->CerrarSQLSAP($RSet,$con);
 
                     /*Pregunta 3*/
-                    $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta3]','$idEncuesta','$_POST[txtPregunta3]','$Fecha')";
+                    $sql3 = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta3]','$idEncuesta','$_POST[txtPregunta3]','$Fecha')";
                     $con=$obj->ConexionSQLSAP();
-                    $RSet=$obj->QuerySQLSAP($sql,$con);
+                    $RSet=$obj->QuerySQLSAP($sql3,$con);
                     $obj->CerrarSQLSAP($RSet,$con);
 
                     /*Pregunta 4*/
-                    $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta4]','$idEncuesta','$_POST[txtPregunta4]','$Fecha')";
+                    $sql4 = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta4]','$idEncuesta','$_POST[txtPregunta4]','$Fecha')";
                     $con=$obj->ConexionSQLSAP();
-                    $RSet=$obj->QuerySQLSAP($sql,$con);
+                    $RSet=$obj->QuerySQLSAP($sql4,$con);
                     $obj->CerrarSQLSAP($RSet,$con);
 
                     /*Pregunta 5*/
-                    $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta5]','$idEncuesta','$_POST[txtPregunta5]','$Fecha')";
+                    $sql5 = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta5]','$idEncuesta','$_POST[txtPregunta5]','$Fecha')";
                     $con=$obj->ConexionSQLSAP();
-                    $RSet=$obj->QuerySQLSAP($sql,$con);
+                    $RSet=$obj->QuerySQLSAP($sql5,$con);
                     $obj->CerrarSQLSAP($RSet,$con);
 
                     /*Pregunta 6*/
                     if (!empty($_POST[txtRespuesta6])) {
-                      $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta6]','$idEncuesta','$_POST[txtPregunta6]','$Fecha')";
+                      $sql6 = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta6]','$idEncuesta','$_POST[txtPregunta6]','$Fecha')";
                       $con=$obj->ConexionSQLSAP();
-                      $RSet=$obj->QuerySQLSAP($sql,$con);
+                      $RSet=$obj->QuerySQLSAP($sql6,$con);
                       $obj->CerrarSQLSAP($RSet,$con);
                     }
                     /*Pregunta 7*/
                     if (!empty($_POST[txtRespuesta7])) {
-                      $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta7]','$idEncuesta','$_POST[txtPregunta7]','$Fecha')";
+                      $sql7 = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta7]','$idEncuesta','$_POST[txtPregunta7]','$Fecha')";
                       $con=$obj->ConexionSQLSAP();
-                      $RSet=$obj->QuerySQLSAP($sql,$con);
+                      $RSet=$obj->QuerySQLSAP($sql7,$con);
                       $obj->CerrarSQLSAP($RSet,$con);
                     }
                     /*Pregunta 8*/
                     if (!empty($_POST[txtRespuesta8])) {
-                      $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta8]','$idEncuesta','$_POST[txtPregunta8]','$Fecha')";
+                      $sql8 = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta8]','$idEncuesta','$_POST[txtPregunta8]','$Fecha')";
                       $con=$obj->ConexionSQLSAP();
-                      $RSet=$obj->QuerySQLSAP($sql,$con);
+                      $RSet=$obj->QuerySQLSAP($sql8,$con);
                       $obj->CerrarSQLSAP($RSet,$con);
                     }
                     /*Pregunta 9*/
                     if (!empty($_POST[txtRespuesta9])) {
-                      $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta9]','$idEncuesta','$_POST[txtPregunta9]','$Fecha')";
+                      $sql9 = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta9]','$idEncuesta','$_POST[txtPregunta9]','$Fecha')";
                       $con=$obj->ConexionSQLSAP();
-                      $RSet=$obj->QuerySQLSAP($sql,$con);
+                      $RSet=$obj->QuerySQLSAP($sql9,$con);
                       $obj->CerrarSQLSAP($RSet,$con);
                     }
                     /*Pregunta 10*/
                     if (!empty($_POST[txtRespuesta10])) {
-                      $sql = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta10]','$idEncuesta','$_POST[txtPregunta10]','$Fecha')";
+                      $sql10 = "INSERT INTO [SAP].[dbo].[AA_Encuestado] VALUES ('$idEncuestado','$idEncuestador','0','0','$_POST[txtRespuesta10]','$idEncuesta','$_POST[txtPregunta10]','$Fecha')";
                       $con=$obj->ConexionSQLSAP();
-                      $RSet=$obj->QuerySQLSAP($sql,$con);
+                      $RSet=$obj->QuerySQLSAP($sql10,$con);
                       $obj->CerrarSQLSAP($RSet,$con);
                     }
                     /* Procesing ListTask */
@@ -122,6 +122,7 @@ switch ($_GET[o])
                           $obj->CerrarSQLSAP($RSet,$con);
                       }
                     }
+                    echo "$sql1,$sql2,$sql3,$sql4,$sql5,$sql6,$sql7,$sql8,$sql9,$sql10";
         break;
 
   }
