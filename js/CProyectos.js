@@ -156,7 +156,7 @@ function setValPregunta_new(NumProy)
                       txtRespuesta6:txtRespuesta_6,
                       txtPregunta7:txtPregunta_7,
                       txtRespuesta7:txtRespuesta_7,
-                      txtPregunta8:$txtPregunta_8,
+                      txtPregunta8:txtPregunta_8,
                       txtRespuesta8:txtRespuesta_8,
                       txtPregunta9:txtPregunta_9,
                       txtRespuesta9:txtRespuesta_9,
