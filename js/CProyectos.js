@@ -114,30 +114,28 @@ function setValPregunta_new(NumProy)
     var txtRespuesta_9 = '';
     var txtPregunta_10 = '';
     var txtRespuesta_10 = '';
-    alert('txtPregunta_6' + $("#txtPregunta_6").length);
-    alert('txtPregunta_10' + $("#txtPregunta_10").length);
+
     if ($("#txtPregunta_6").length > 0 )
      {
-
        txtPregunta_6 = $('#txtPregunta_6').val();
        txtRespuesta_6 = $('#txtRespuesta_6').val();
      }
-    if ( $("#txtPregunta_7").length )
+    if ( $("#txtPregunta_7").length > 0 )
       {
         txtPregunta_7 = $('#txtPregunta_7').val();
         txtRespuesta_7 = $('#txtRespuesta_7').val();
       }
-    if ( $("#txtPregunta_8").length )
+    if ( $("#txtPregunta_8").length > 0)
        {
          txtPregunta_8 = $('#txtPregunta_8').val();
          txtRespuesta_8 = $('#txtRespuesta_8').val();
        }
-    if ( $("#txtPregunta_9").length )
+    if ( $("#txtPregunta_9").length > 0)
       {
         txtPregunta_9 = $('#txtPregunta_9').val();
         txtRespuesta_9 = $('#txtRespuesta_9').val();
       }
-    if ( $("#txtPregunta_10").length )
+    if ( $("#txtPregunta_10").length > 0)
       {
         txtPregunta_10 = $('#txtPregunta_10').val();
         txtRespuesta_10 = $('#txtRespuesta_10').val();
@@ -169,7 +167,7 @@ function setValPregunta_new(NumProy)
                       idEncuesta:$('#txtIdEncuesta').val(),
                       txtIdWorskToClose:$('#txtIdWorskToClose').val()
                     };
-      /*$.ajax({
+      $.ajax({
                 url:'./scripts/oper_proyectos.php?o=5',
                 type:'POST',
                 data:losdatos,
@@ -182,7 +180,7 @@ function setValPregunta_new(NumProy)
                 error:function(req,e,er) {
                   alert(er);
                 }
-              });*/
+              });
 }
 function processingTime(NumProy)
 {
