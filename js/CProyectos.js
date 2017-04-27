@@ -184,5 +184,5 @@ function setValPregunta_new(NumProy)
 }
 function processingTime(NumProy)
 {
-  setTimeout(function(){ window.location.href = 'newtask.php?NumProy=' + NumProy; }, 9000);
+  /*setTimeout(function(){ window.location.href = 'newtask.php?NumProy=' + NumProy; }, 9000);*/
 }
