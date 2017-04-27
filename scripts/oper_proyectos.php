@@ -112,7 +112,7 @@ switch ($_GET[o])
                       $obj->CerrarSQLSAP($RSet,$con);
                     }
                     /* Procesing ListTask */
-                    $ArrayTask = split(",", $_POST[txtIdWorskToClose]);
+                    /*$ArrayTask = split(",", $_POST[txtIdWorskToClose]);
                     foreach ($ArrayTask as $key => $value) {
                       if (!empty($value))
                       {
@@ -121,7 +121,7 @@ switch ($_GET[o])
                           $RSet=$obj->QuerySQLSAP($sql,$con);
                           $obj->CerrarSQLSAP($RSet,$con);
                       }
-                    }
+                    }*/
                     echo "$sql1,$sql2,$sql3,$sql4,$sql5,$sql6,$sql7,$sql8,$sql9,$sql10";
         break;
 

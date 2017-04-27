@@ -174,10 +174,15 @@ function setValPregunta_new(NumProy)
                 success:function(data)
                 {
                     alert(data);
-                    window.location.href = 'newtask.php?NumProy=' + NumProy;
+
+                    processingTime(NumProy);
                 },
                 error:function(req,e,er) {
                   alert(er);
                 }
               });
+}
+function processingTime(NumProy)
+{
+  setTimeout(function(){ window.location.href = 'newtask.php?NumProy=' + NumProy; }, 9000);
 }
