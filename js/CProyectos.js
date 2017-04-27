@@ -115,12 +115,12 @@ function setValPregunta_new(NumProy)
     var txtPregunta_10 = '';
     var txtRespuesta_10 = '';
 
-    if ($("#txtPregunta6").length > 0 )
+    if ($("#txtPregunta6").length > 0)
      {
        txtPregunta_6 = $('#txtPregunta6').val();
        txtRespuesta_6 = $('#txtRespuesta6').val();
      }
-    if ( $("#txtPregunta7").length > 0 )
+    if ( $("#txtPregunta7").length > 0)
       {
         txtPregunta_7 = $('#txtPregunta7').val();
         txtRespuesta_7 = $('#txtRespuesta7').val();
