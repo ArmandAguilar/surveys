@@ -117,28 +117,28 @@ function setValPregunta_new(NumProy)
 
     if ($("#txtPregunta_6").length > 0)
      {
-       txtPregunta_6 = $('#txtPregunta6').val();
+       txtPregunta_6 = $('#txtPregunta_6').val();
        txtRespuesta_6 = $('#txtRespuesta6').val();
-       alert(txtPregunta_6,txtRespuesta_6);
+       alert(txtPregunta_6 + ' _ ' + txtRespuesta6);
      }
     if ( $("#txtPregunta_7").length > 0)
       {
-        txtPregunta_7 = $('#txtPregunta7').val();
+        txtPregunta_7 = $('#txtPregunta_7').val();
         txtRespuesta_7 = $('#txtRespuesta7').val();
       }
     if ( $("#txtPregunta_8").length > 0)
        {
-         txtPregunta_8 = $('#txtPregunta8').val();
+         txtPregunta_8 = $('#txtPregunta_8').val();
          txtRespuesta_8 = $('#txtRespuesta8').val();
        }
     if ( $("#txtPregunta_9").length > 0)
       {
-        txtPregunta_9 = $('#txtPregunta9').val();
+        txtPregunta_9 = $('#txtPregunta_9').val();
         txtRespuesta_9 = $('#txtRespuesta9').val();
       }
     if ( $("#txtPregunta_10").length > 0)
       {
-        txtPregunta_10 = $('#txtPregunta10').val();
+        txtPregunta_10 = $('#txtPregunta_10').val();
         txtRespuesta_10 = $('#txtRespuesta10').val();
       }
       var losdatos = {
