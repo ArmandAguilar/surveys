@@ -119,6 +119,7 @@ function setValPregunta_new(NumProy)
      {
        txtPregunta_6 = $('#txtPregunta6').val();
        txtRespuesta_6 = $('#txtRespuesta6').val();
+       alert(txtPregunta_6,txtRespuesta_6);
      }
     if ( $("#txtPregunta7").length > 0)
       {
