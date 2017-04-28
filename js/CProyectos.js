@@ -168,7 +168,7 @@ function setValPregunta_new(NumProy)
                       idEncuesta:$('#txtIdEncuesta').val(),
                       txtIdWorskToClose:$('#txtIdWorskToClose').val()
                     };
-      $.ajax({
+      /*$.ajax({
                 url:'./scripts/oper_proyectos.php?o=5',
                 type:'POST',
                 data:losdatos,
@@ -181,7 +181,7 @@ function setValPregunta_new(NumProy)
                 error:function(req,e,er) {
                   alert(er);
                 }
-              });
+              });*/
 }
 function processingTime(NumProy)
 {
