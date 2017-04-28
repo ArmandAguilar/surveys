@@ -115,28 +115,28 @@ function setValPregunta_new(NumProy)
     var txtPregunta_10 = '';
     var txtRespuesta_10 = '';
 
-    if ($("#txtPregunta6").length > 0)
+    if ($("#txtPregunta_6").length > 0)
      {
        txtPregunta_6 = $('#txtPregunta6').val();
        txtRespuesta_6 = $('#txtRespuesta6').val();
        alert(txtPregunta_6,txtRespuesta_6);
      }
-    if ( $("#txtPregunta7").length > 0)
+    if ( $("#txtPregunta_7").length > 0)
       {
         txtPregunta_7 = $('#txtPregunta7').val();
         txtRespuesta_7 = $('#txtRespuesta7').val();
       }
-    if ( $("#txtPregunta8").length > 0)
+    if ( $("#txtPregunta_8").length > 0)
        {
          txtPregunta_8 = $('#txtPregunta8').val();
          txtRespuesta_8 = $('#txtRespuesta8').val();
        }
-    if ( $("#txtPregunta9").length > 0)
+    if ( $("#txtPregunta_9").length > 0)
       {
         txtPregunta_9 = $('#txtPregunta9').val();
         txtRespuesta_9 = $('#txtRespuesta9').val();
       }
-    if ( $("#txtPregunta10").length > 0)
+    if ( $("#txtPregunta_10").length > 0)
       {
         txtPregunta_10 = $('#txtPregunta10').val();
         txtRespuesta_10 = $('#txtRespuesta10').val();
