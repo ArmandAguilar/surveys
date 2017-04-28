@@ -119,7 +119,6 @@ function setValPregunta_new(NumProy)
      {
        txtPregunta_6 = $('#txtPregunta_6').val();
        txtRespuesta_6 = $('#txtRespuesta6').val();
-       alert(txtPregunta_6 + ' _ ' + txtRespuesta_6);
      }
     if ( $("#txtPregunta_7").length > 0)
       {
@@ -168,7 +167,7 @@ function setValPregunta_new(NumProy)
                       idEncuesta:$('#txtIdEncuesta').val(),
                       txtIdWorskToClose:$('#txtIdWorskToClose').val()
                     };
-      /*$.ajax({
+      $.ajax({
                 url:'./scripts/oper_proyectos.php?o=5',
                 type:'POST',
                 data:losdatos,
@@ -181,7 +180,7 @@ function setValPregunta_new(NumProy)
                 error:function(req,e,er) {
                   alert(er);
                 }
-              });*/
+              });
 }
 function processingTime(NumProy)
 {
