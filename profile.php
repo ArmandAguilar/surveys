@@ -499,21 +499,21 @@ desired effect
                  ?>
                  <!-- End Random Quiestion -->
                </div>
-              <input type="text" name = "txtIdEncuesta" id="txtIdEncuesta" value="<?php echo $idEncuesta; ?>"/>
-              <input type="text" name = "txtIdEncuestador" id="txtIdEncuestador"  value="<?php echo $_SESSION[IdUsuario]; ?>"/>
-              <input type="text" name = "txtIdEncuestado" id="txtIdEncuestado" value="<?php echo $_POST[txtIdUsuarioSelecionado]; ?>"/>
-              <input type="text" name = "txtNumProyectos" id="txtNumProyectos" value="<?php echo $_POST[txtNoProyecto]; ?>"/>
-              <input type="text" name = "txtIdWorskToClose" id="txtIdWorskToClose" value="<?php echo $listofIdWorks ?>" />
-              <input type="text" name = "txtRespuesta1" id="txtRespuesta1"/>
-              <input type="text" name = "txtRespuesta2" id="txtRespuesta2"/>
-              <input type="text" name = "txtRespuesta3" id="txtRespuesta3"/>
-              <input type="text" name = "txtRespuesta4" id="txtRespuesta4"/>
-              <input type="text" name = "txtRespuesta5" id="txtRespuesta5"/>
-              <input type="text" name = "txtRespuesta6" id="txtRespuesta6"/>
-              <input type="text" name = "txtRespuesta7" id="txtRespuesta7"/>
-              <input type="text" name = "txtRespuesta8" id="txtRespuesta8"/>
-              <input type="text" name = "txtRespuesta9" id="txtRespuesta9"/>
-              <input type="text" name = "txtRespuesta10" id="txtRespuesta10"/>
+              <input type="hidden" name = "txtIdEncuesta" id="txtIdEncuesta" value="<?php echo $idEncuesta; ?>"/>
+              <input type="hidden" name = "txtIdEncuestador" id="txtIdEncuestador"  value="<?php echo $_SESSION[IdUsuario]; ?>"/>
+              <input type="hidden" name = "txtIdEncuestado" id="txtIdEncuestado" value="<?php echo $_POST[txtIdUsuarioSelecionado]; ?>"/>
+              <input type="hidden" name = "txtNumProyectos" id="txtNumProyectos" value="<?php echo $_POST[txtNoProyecto]; ?>"/>
+              <input type="hidden" name = "txtIdWorskToClose" id="txtIdWorskToClose" value="<?php echo $listofIdWorks ?>" />
+              <input type="hidden" name = "txtRespuesta1" id="txtRespuesta1"/>
+              <input type="hidden" name = "txtRespuesta2" id="txtRespuesta2"/>
+              <input type="hidden" name = "txtRespuesta3" id="txtRespuesta3"/>
+              <input type="hidden" name = "txtRespuesta4" id="txtRespuesta4"/>
+              <input type="hidden" name = "txtRespuesta5" id="txtRespuesta5"/>
+              <input type="hidden" name = "txtRespuesta6" id="txtRespuesta6"/>
+              <input type="hidden" name = "txtRespuesta7" id="txtRespuesta7"/>
+              <input type="hidden" name = "txtRespuesta8" id="txtRespuesta8"/>
+              <input type="hidden" name = "txtRespuesta9" id="txtRespuesta9"/>
+              <input type="hidden" name = "txtRespuesta10" id="txtRespuesta10"/>
 
             </div>
             <div class="box-footer">

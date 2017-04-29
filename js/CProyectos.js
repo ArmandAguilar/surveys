@@ -173,8 +173,6 @@ function setValPregunta_new(NumProy)
                 data:losdatos,
                 success:function(data)
                 {
-                    alert(data);
-
                     processingTime(NumProy);
                 },
                 error:function(req,e,er) {
@@ -184,5 +182,5 @@ function setValPregunta_new(NumProy)
 }
 function processingTime(NumProy)
 {
-  /*setTimeout(function(){ window.location.href = 'newtask.php?NumProy=' + NumProy; }, 9000);*/
+  setTimeout(function(){ window.location.href = 'newtask.php?NumProy=' + NumProy; }, 9000);
 }
