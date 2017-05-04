@@ -186,7 +186,7 @@ desired effect
                                           $objTable = new poolConnecion();
                                           $SqlID="SELECT distinct([SAP].[dbo].[Presupuestos].[Proyecto]),[SAP].[dbo].[Presupuestos].[NoProyecto]
                                             FROM [SAP].[dbo].[Presupuestos],[SAP].dbo.AATareasTeamWork
-                                            Where [SAP].[dbo].[Presupuestos].[NoProyecto] = [SAP].dbo.AATareasTeamWork.NoProyecto and [SAP].[dbo].[AATareasTeamWork].[Avance] = '100'
+                                            Where [SAP].[dbo].[Presupuestos].[NoProyecto] = [SAP].dbo.AATareasTeamWork.NoProyecto and [SAP].[dbo].[AATareasTeamWork].[Avance] = '100' and [SAP].[dbo].[AATareasTeamWork].[Evaluada] = 'No'
                                             order by [SAP].[dbo].[Presupuestos].[NoProyecto] desc";
                                           $con=$objTable->ConexionSQLSAP();
                                           $RSet=$objTable->QuerySQLSAP($SqlID,$con);
